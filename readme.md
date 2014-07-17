@@ -1,5 +1,5 @@
 #Chalkbox
-![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox@2x.png =75x75 "Chalkbox")
+![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox.png "Chalkbox")
 ##Description of Chalbox
 Chalkbox is an important tool in web design and development, the working of a client project in a agile and ever changing environment. Manage your projects like a creative - not an accountant.
 

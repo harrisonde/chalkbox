@@ -1,7 +1,7 @@
 #Chalkbox
 ![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox.png "Chalkbox")
 ##Description of Chalbox
-Chalkbox is an important tool in web design and development, the working of a client project in a agile and ever changing environment. Manage your projects like a creative - not an accountant.
+Chalkbox makes tracking time really simple. Manage your projects like a creative - not an accountant. 
 
 ##Features
 ###User

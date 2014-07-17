@@ -10,20 +10,35 @@ Chalkbox is an important tool in web design and development, the working of a cl
 
 
 ###Project
+* Add project
+
 * Create project
 
 * Update project
+
 * Delete project 
 
 * Update time
 
+* Display all projects
+
+* Serach for projects
+
+* Add time to project
 
 #Extra (Future) Features
 * Project start date
+
 * Project end date
+
 * Project status
-* Notes
-* Groups
+
+* Project Notes
+
+* User Groups  
+
 * RESTful API 
+
 * Graphs
+
 * Email

@@ -13,5 +13,20 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
+});
+
+Route::get('/projects{project?}', function()
+{
+	return View::make('projects');
+});
+
+Route::get('/register', function()
+{
+	return View::make('register');
+});
+
+Route::get('/signin', function()
+{
+	return View::make('signin');
 });

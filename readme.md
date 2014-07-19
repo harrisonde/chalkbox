@@ -46,3 +46,13 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 * Email
 
 * Export
+
+##Routes
+Chalkbox listens at the following routes and will "catch" fhe following HTTP verbs:
+
+| Method  | Route                     | Description                  |
+|-------- | ------------------------- | ---------------------------- |
+| GET     | /                         | index			             |
+| GET     | /projects{project?}       | list project(s)              |
+| POST    | /user/signin{user}        | user sign in and auth        |
+| POST    | /user/registration{user}  | new user registration        |

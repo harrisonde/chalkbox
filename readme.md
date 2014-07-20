@@ -22,7 +22,7 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 * [ ]Display all projects
 
-* [ ]Serach for projects
+* [x]Search for projects
 
 * [ ]Add time to project
 
@@ -54,5 +54,6 @@ Chalkbox listens at the following routes and will "catch" fhe following HTTP ver
 |-------- | ------------------------- | ---------------------------- |
 | GET     | /                         | index			             |
 | GET     | /projects{project?}       | list project(s)              |
+| POST    | /search{projectName?}     | return project(s) matching   |
 | POST    | /user/signin{user}        | user sign in and auth        |
 | POST    | /user/registration{user}  | new user registration        |

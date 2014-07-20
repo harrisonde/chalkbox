@@ -33,12 +33,15 @@ class SearchController extends \BaseController {
 	/**
 	 * Search for projects and display the resources.
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @param  string  $serachString
+	 * @return array Projects
 	 */
-	public function show($id)
+	public function show($serachString)
 	{
-		echo 'show';
+		$projects = $this->dig($serachString);
+			
+		// Passing Data To View
+		return View::make('search')->with('query', $projects);
 			
 	}
 

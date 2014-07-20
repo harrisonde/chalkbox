@@ -18,7 +18,8 @@ Route::get('/', function()
 
 Route::get('/projects{project?}', function()
 {
-	return View::make('projects');
+	dd(Project::all());
+	//return View::make('projects');
 });
 
 Route::get('/register', function()

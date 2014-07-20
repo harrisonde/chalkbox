@@ -32,13 +32,13 @@ class ProjectController extends \BaseController {
 
 
 	/**
-	 * Store a newly created resource in storage.
+	 * The method will store projects.
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		//
+				
 	}
 
 

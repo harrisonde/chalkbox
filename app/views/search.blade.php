@@ -1,8 +1,8 @@
 @extends('_master')
 @section('body')
 	<h1>Chalkbox</h1>
-	<h2>Your Projects.</h2>
-	<a href="/">Back</a>
+	<h2>Search Results.</h2>
+	<a href="/projects">Back</a>
 	{{ Form::open( array('url' => 'search')) }}
 			{{ Form::text('search', Input::old('search'),  array('placeholder'=>'Project Name')) }}
 			{{ Form::submit('Search') }}
@@ -10,7 +10,7 @@
 
 	@if (isset($query))
 		@foreach($query as $node) 
-			<p>{{ $node['name'] }}</p>
+			<p>{{ $node }}</p>
 		@endforeach
 	@endif
 @stop 	

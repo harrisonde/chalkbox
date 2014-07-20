@@ -10,40 +10,40 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 
 ###Project
-* Add project
+* [ ]Add project
 
-* Create project
+* [ ]Create project
 
-* Update project
+* [ ]Update project
 
-* Delete project 
+* [ ]Delete project 
 
-* Update time
+* [ ]Update time
 
-* Display all projects
+* [ ]Display all projects
 
-* Serach for projects
+* [ ]Serach for projects
 
-* Add time to project
+* [ ]Add time to project
 
 #Extra (Future) Features
-* Project start date
+* [ ]Project start date
 
-* Project end date
+* [ ]Project end date
 
-* Project status
+* [ ]Project status
 
-* Project Notes
+* [ ]Project Notes
 
-* Share Proejct timeline
+* [ ]Share Proejct timeline
 
-* User Groups  
+* [ ]User Groups  
 
-* RESTful API 
+* [ ]RESTful API 
 
-* Graphs
+* [ ]Graphs
 
-* Email
+* [ ]Email
 
 * Export
 

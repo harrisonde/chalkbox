@@ -54,6 +54,7 @@ Chalkbox listens at the following routes and will "catch" fhe following HTTP ver
 |-------- | ------------------------- | ---------------------------- |
 | GET     | /                         | index			             |
 | GET     | /projects{project?}       | list project(s)              |
+| GET     | /search				      | new search input             |
 | POST    | /search{projectName?}     | return project(s) matching   |
 | POST    | /user/signin{user}        | user sign in and auth        |
 | POST    | /user/registration{user}  | new user registration        |

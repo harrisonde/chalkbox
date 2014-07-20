@@ -16,11 +16,8 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-Route::get('/projects{project?}', function()
-{
-	dd(Project::all());
-	//return View::make('projects');
-});
+Route::resource('projects{project?}', 'ProjectController');
+
 
 Route::get('/register', function()
 {

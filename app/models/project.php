@@ -8,22 +8,31 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class Project extends Eloquent {
 
 	/*
-	*	The Project class allows for CRUDy modification of the Projects table and related data
+	*	The Project class allows for CRUDy modification of the Projects table.
 	*/
 	
 	# Properties...
 	public $projects; # Array
 	
 	# Methods...
+	
+	
 		
 	//Create
-	
-	//Read
-	get_projects(){
 		
-		dd(Project::all());	
 	
+	/**
+	 * Get all projects in database.
+	 *
+	 * @return projects
+	 */
+	public function get_projects(){
+		
+		$projects = Project::all();
+		
+		return $projects;
 	}
+	
 	//Update
 	//Delete
 

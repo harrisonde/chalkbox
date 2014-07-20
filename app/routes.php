@@ -16,15 +16,8 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-Route::resource('projects{project?}', 'ProjectController');
+Route::resource('projects', 'ProjectController');
 
+Route::resource('register', 'RegisterController');
 
-Route::get('/register', function()
-{
-	return View::make('register');
-});
-
-Route::get('/signin', function()
-{
-	return View::make('signin');
-});
+Route::resource('signin', 'SignInController');

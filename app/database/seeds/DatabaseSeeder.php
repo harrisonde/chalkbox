@@ -32,6 +32,10 @@ class ProjectTableSeeder extends Seeder {
         
         # Build seed data
         $project->name = 'Chalkbox Welcome';
+        $project->time_elapsed_total = 00;
+        $project->time_elapsed_start = 00;
+        $project->time_elapsed_track = false;
+        
         
         # Magic: Eloquent
         $project->save();

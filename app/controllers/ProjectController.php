@@ -15,7 +15,8 @@ class ProjectController extends \BaseController {
 		# Get the projects
 		$project = $projects->get_projects();
 		
-		return View::make('projects');
+		// Passing Data To View
+		return View::make('projects')->with('query', $project);
 	}
 
 

@@ -3,35 +3,14 @@
 class SearchController extends \BaseController {
 
 	/**
-	 * Display a listing of the projects by serach critera.
+	 * Display a search form for the user.
 	 *
 	 * @return project list
 	 */
-	public function index()
+	public function index($serachString = '')
 	{
-		#Properties
-		$serachString = Input::get('search');
-		
-		if($serachString){
-			
-			echo('Alright, I might do that for you. One second.');
-		}
-		else
-		{
-			echo('Sorry, Charlie. You must provide search criteria');
-		}
-
-	}
-
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
+		// Display the default search form
+		return View::make('search');
 	}
 
 
@@ -59,65 +38,43 @@ class SearchController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		
+		echo 'show';
 			
 	}
 
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
+	
+	
 	/**
 	 * Search the projects table and return the results.
 	 *
 	 * @param   string  $searchString
-	 * @return projects 
+	 * @return array projects 
 	 */
 	private function dig($serachString){		
 		
-		$needles; # array
+		$results; # array
 		
 		if($serachString)
 		{
+			# search for projects with a name that match the search critera supplied by form.
+			$projectNames = Project::where('name', 'like', '%' . $serachString  . '%' )->get();
 			
-			$needles = array('Alright, I might do that for you. One second.');
+			# eloquent will return a emoty  array, don't return empty search results - we need a nice message.
+			if(sizeof($projectNames) == 0)
+			{
+				$results = array('error' => 'Sorry, Charlie. I can\'t find any projects that match "'.$serachString.'".');
+			}
+			else
+			{
+				$results = $projectNames;	
+			}
+			
 		}
+		# do not run empty search agains the db
 		else
 		{
-			$needles = array('Sorry, Charlie. You must provide search criteria');
+			$results = array('error' => 'Sorry, Charlie. You must provide search criteria');
 		}
-		return $needles;
+		return $results;
 	}
 }

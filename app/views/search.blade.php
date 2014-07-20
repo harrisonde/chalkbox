@@ -8,9 +8,21 @@
 			{{ Form::submit('Search') }}
 		{{ Form::close() }}
 
+	{{-- Loop the query object and display the items. If nothing found, display no results. --}}
 	@if (isset($query))
+	
 		@foreach($query as $node) 
-			<p>{{ $node }}</p>
+			
+			@if (isset($node['name']))
+				
+				<p>{{ $node['name'] }}</p>
+			@else
+				<p>{{ $node }}</p>	
+			@endif
+			
+			
+			
+		
 		@endforeach
 	@endif
 @stop 	

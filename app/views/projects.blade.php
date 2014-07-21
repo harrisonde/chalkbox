@@ -10,7 +10,7 @@
 
 	@if (isset($query))
 		@foreach($query as $node) 
-			<p>{{ $node['name'] }}</p>
+			<a href="/projects/details/{{ $node['id'] }}">{{ $node['name'] }}</a>
 		@endforeach
 	@endif
 @stop 	

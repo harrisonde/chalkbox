@@ -20,7 +20,9 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 * [ ]Update time
 
-* [ ]Display all projects
+* [x]Display all projects
+
+* [x]Display projects detail
 
 * [x]Search for projects
 

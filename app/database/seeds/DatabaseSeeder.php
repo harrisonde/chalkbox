@@ -60,7 +60,7 @@ class UsersTableSeeder extends Seeder{
 		
 		# Standard User
 		User::create(array('username' => 'Harrison', 'password' => Hash::make('P@ssword'), 'email' => 'harrison.destefano@gmail.com', 'is_admin' => false));
-
+		# Return string to CLI
 		$this->command->info('User table seeded with admin/P@ssword and harrison/P@ssword');
     }
 }

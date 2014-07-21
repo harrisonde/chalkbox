@@ -26,13 +26,34 @@ class SignInController extends \BaseController {
 
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Login attempts pass the username and password input values to the Auth::attempt method.
 	 *
-	 * @return Response
+	 * @return boolean Response and proper view
 	 */
 	public function store()
 	{
-		//
+				
+		if(Auth::attempt(Input::only('email', 'password'))) 
+		{
+			
+			# var to store projects
+			$projects = null; #array
+			
+			# find all projects the user has or has access to read
+			
+			
+			# return the proper view with readable projects
+			return View::make('projects')->with('query', $projects);
+			
+		} 
+		
+		else 
+		
+		{
+			return  View::make('signin')->with('error', "Invalid credentials");
+	    
+	    }
+	
 	}
 
 

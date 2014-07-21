@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		// $this->call('UserTableSeeder');
-	
 		$this->call('ProjectTableSeeder');
+		$this->call('UsersTableSeeder');
 	}
 
 }
@@ -45,4 +45,22 @@ class ProjectTableSeeder extends Seeder {
         
     }
 
+}
+
+class UsersTableSeeder extends Seeder{
+	/**
+	 * Run the database seeds adding default user data.
+	 *
+	 * @return string
+	 */
+	public function run()
+    {
+		# Admin User
+		User::create(array('username' => 'admin', 'password' => Hash::make('P@ssword'), 'email' => 'harrison.destefano@gmail.com', 'is_admin' => true));
+		
+		# Standard User
+		User::create(array('username' => 'Harrison', 'password' => Hash::make('P@ssword'), 'email' => 'harrison.destefano@gmail.com', 'is_admin' => false));
+
+		$this->command->info('User table seeded with admin/P@ssword and harrison/P@ssword');
+    }
 }

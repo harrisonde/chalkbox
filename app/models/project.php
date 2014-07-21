@@ -33,6 +33,21 @@ class Project extends Eloquent {
 		return $projects;
 	}
 	
+	/**
+	 * Get specific project detail in database.
+	 *
+	 * @pram string project ID
+	 * @return array project detail
+	 */
+	public function get_project_detail($id){
+		
+		# eloquent query for project
+		$projectDetail = Project::find($id);
+		
+		# return the results, only the attibutes
+		return $projectDetail['attributes'];
+	}
+	
 	//Update
 	//Delete
 

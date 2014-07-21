@@ -16,6 +16,9 @@ Route::get('/', function()
 	return View::make('index');
 });
 
+
+Route::resource('projects/details', 'ProjectDetailsController');
+
 Route::resource('projects', 'ProjectController');
 
 Route::resource('register', 'RegisterController');

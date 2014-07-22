@@ -8,8 +8,11 @@
 	@if(Auth::check())
        Logged in as
        <strong>{{{Auth::user()->username}}}</strong>
-       {{link_to('logout', 'Sign Out')}}
+       {{link_to('projects', 'Projects')}}
+       {{link_to('signout', 'Sign Out')}}
      @else
+       {{link_to('/', 'Home')}}
+       {{link_to('register', 'Register')}}
        {{link_to('signin', 'Sign In')}}
     @endif
 	

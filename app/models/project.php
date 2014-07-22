@@ -22,13 +22,15 @@ class Project extends Eloquent {
 		
 	
 	/**
-	 * Get all projects in database.
+	 * Get all projects in database related to the current user.
 	 *
 	 * @return projects
 	 */
 	public function get_projects(){
 		
-		$projects = Project::all();
+		$user_id = Auth::id(); #string
+		
+		$projects = Project::where('user_id', '=', $user_id)->get();
 		
 		return $projects;
 	}

@@ -22,6 +22,7 @@ class CreateUsers extends Migration {
 			$table->string('email');
 			$table->boolean('is_admin');
 			$table->timestamps();
+			$table->rememberToken();
 				
 		});
 	}

@@ -16,7 +16,6 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-
 Route::resource('projects/details', 'ProjectDetailsController');
 
 Route::resource('projects', 'ProjectController');
@@ -26,3 +25,5 @@ Route::resource('register', 'RegisterController');
 Route::resource('search', 'SearchController');
 
 Route::resource('signin', 'SignInController');
+
+Route::resource('signout', 'SignOutController');

@@ -1,16 +1,18 @@
 <?php
 
-class SignInController extends \BaseController {
+class SignOutController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
+	 * Logout the current session and return to /.
 	 *
-	 * @return Response
+	 * @return string Status
 	 */
 	public function index()
 	{
-		// Return default from view for user to signin.
-		return View::make('signin');
+		Auth::logout();
+		
+		return Redirect::to('/')->with('message', 'You are now logged out');
+	
 	}
 
 
@@ -26,26 +28,13 @@ class SignInController extends \BaseController {
 
 
 	/**
-	 * Login attempts pass the username and password input values to the Auth::attempt method.
+	 * Store a newly created resource in storage.
 	 *
-	 * @return boolean Response and proper view
+	 * @return Response
 	 */
 	public function store()
 	{
-				
-		if(Auth::attempt(Input::only('email', 'password'))) 
-		{
-			
-			return Redirect::to('projects');			
-		} 
-		
-		else 
-		
-		{
-			return View::make('signin')->with('error', "Invalid credentials");
-	    
-	    }
-	
+		//
 	}
 
 

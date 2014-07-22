@@ -40,7 +40,6 @@ class UsersTableSeeder extends Seeder{
 		# Seed the database with a default project for this user
 		$this->ProjectTableSeed($user);
 		
-		
 		# Standard User
 		$user = User::create(array('username' => 'Harrison', 'password' => Hash::make('P@ssword'), 'email' => 'harrison.destefano@gmail.com', 'is_admin' => false));
 		

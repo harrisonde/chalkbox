@@ -2,7 +2,7 @@
 @section('body')
 	<h1>Chalkbox</h1>
 	<h2>Project Details.</h2>
-	<a href="/">Back</a>
+	<a href="/projects">Back</a>
 	
 	{{ Form::open( array('url' => 'search')) }}
 	

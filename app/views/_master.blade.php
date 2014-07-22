@@ -7,7 +7,7 @@
 <body> 
 	@if(Auth::check())
        Logged in as
-       <strong>{{{Auth::user()->username}}}</strong>
+       <strong>{{{Auth::user()->email}}}</strong>
        {{link_to('projects', 'Projects')}}
        {{link_to('signout', 'Sign Out')}}
      @else

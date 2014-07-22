@@ -27,13 +27,21 @@ class RegisterController extends \BaseController {
 
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Store a newly created user in storage.
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		//
+
+		# Instantiating an object of the User class
+		$user_new = new User(); 
+	
+		# Get the new user
+		$user_new = $user_new->register( Input::all() );
+		
+		return View::make('register')->with('query', $user_new);
+;
 	}
 
 

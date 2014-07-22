@@ -61,6 +61,9 @@ class SearchController extends \BaseController {
 		{
 			# search for projects with a name that match the search critera supplied by form.
 			# this needs to be added into a model, not the controller
+			# also might be faster to filter() opposed to running a second eloquent query. 
+			# Query results in high CPU / memory usage on the webserver
+			# Please take a look at Eloquent Conllections.
 			$user_id = Auth::id();
 			$projectNames = Project::where('user_id', '=', $user_id)->where('name', 'like', '%' . $serachString  . '%')->get();
 			

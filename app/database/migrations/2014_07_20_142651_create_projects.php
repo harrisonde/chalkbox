@@ -38,7 +38,7 @@ class CreateProjects extends Migration {
 			$table->boolean('time_elapsed_track'); 
 			
 			// This maps the project to a user
-			$table->integer('user_id');
+			$table->integer('user_id'); #foreign key
 		
 		
 		});

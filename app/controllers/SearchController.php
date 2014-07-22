@@ -60,7 +60,9 @@ class SearchController extends \BaseController {
 		if($serachString)
 		{
 			# search for projects with a name that match the search critera supplied by form.
-			$projectNames = Project::where('name', 'like', '%' . $serachString  . '%' )->get();
+			# this needs to be added into a model, not the controller
+			$user_id = Auth::id();
+			$projectNames = Project::where('user_id', '=', $user_id)->where('name', 'like', '%' . $serachString  . '%')->get();
 			
 			# eloquent will return a emoty  array, don't return empty search results - we need a nice message.
 			if(sizeof($projectNames) == 0)

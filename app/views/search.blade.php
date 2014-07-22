@@ -26,9 +26,12 @@
 			
 			@if (isset($node['name']))
 				
-				<p>{{ $node['name'] }}</p>
+				<a href="/projects/details/{{ $node['id'] }}">{{ $node['name'] }}</a>
+			
 			@else
+			
 				<p>{{ $node }}</p>	
+			
 			@endif
 	
 		@endforeach

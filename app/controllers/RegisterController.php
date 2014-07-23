@@ -33,15 +33,40 @@ class RegisterController extends \BaseController {
 	 */
 	public function store()
 	{
-
-		# Instantiating an object of the User class
-		$user_new = new User(); 
-	
-		# Get the new user
-		$user_new = $user_new->register( Input::all() );
+		# input(s) to validate
+		$rules = array( 
+			'name' => 'required|username|unique:users',
+			'password' => 'required|min:8',
+			'email' => 'required|email|unique:users'
+			);
 		
-		return View::make('register')->with('query', $user_new);
-;
+		# Validation message
+		$message = array( 
+			'name.unique' => 'Ah, snap...that user name is used.',
+			'password' => 'You are going to need a stronger password',
+			'email.unique' => 'I have that email already, do you want to recover a password'
+			);
+		
+		# run validation
+		$validator = Validator::make(Input::all(), $rules, $message);
+		
+		if ( $validator->fails() )
+		{
+
+			# return to view with error messages        
+        	return View::make('register')->withErrors( $validator->messages() );
+		
+		} 
+		elseif( $validator->passes() ) 
+		{		
+			# Instantiating an object of the User class
+			$user_new = new User(); 
+		
+			# Get the new user
+			$user_new = $user_new->register( Input::all() );
+			
+			return View::make('register')->with('query', $user_new);
+		}
 	}
 
 

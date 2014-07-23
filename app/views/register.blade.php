@@ -6,55 +6,61 @@
 
 	<h2>Really Simple. Really Fast.</h2>
 
-	<a href="/">Back</a>
+	<a href="/">Back</a>	
 	
-	@if (isset( $query['response'][0][200]) )
 	
-		{{ $query['response'][0][200] }}			
+		
+		<ul class="errors">
+
+	    @foreach($errors->all() as $message)
+
+	        <li>{{ $message }}</li>
+
+	    @endforeach
+
+	    </ul>
+		
 
 	
-	@elseif (isset( $query['response'][0][409]) )
+	{{ Form::open() }}
+			
+		{{-- Email field. ------------------------}}
+		
+		<div class="formElement email">
+		
+		{{ Form::label('email:') }}
+		
+		{{ Form::text('email') }}
+		
+		</div>
+		
+		{{-- Username field. ------------------------}}	
 	
-		{{ $query['response'][0][409] }}			
+		<div class="formElement username">
+			
+		{{ Form::label('username', 'Username:') }}
+		
+		{{ Form::text('username') }}
+		
+		</div>
+		
+		{{-- Password field. ------------------------}}
+		
+		<div class="formElement password">
+		
+		{{ Form::label('password', 'Password:') }}
+		
+		{{ Form::text('password') }}
+		
+		</div>
+		
+		{{-- Submit Button. ------------------------}}
+		
+		<div class="formElement submit">
+		
+		{{ Form::submit('Register') }}
+		
+		</div>
+	{{ Form::close() }}
 
-		{{ Form::open() }}
-		
-			{{ Form::label('email', 'Email: (email@somewhere.com)') }}
-			
-			{{ Form::text('email') }}
-			
-			{{ Form::label('username', 'Username:') }}
-			
-			{{ Form::text('username') }}
-			
-			{{ Form::label('password', 'Password:') }}
-			
-			{{ Form::text('password') }}
-			
-			{{ Form::submit('Register') }}
-	
-		{{ Form::close() }}
-		
-	@else
-		
-		{{ Form::open() }}
-		
-			{{ Form::label('email', 'Email: (email@somewhere.com)') }}
-			
-			{{ Form::text('email') }}
-			
-			{{ Form::label('username', 'Username:') }}
-			
-			{{ Form::text('username') }}
-			
-			{{ Form::label('password', 'Password:') }}
-			
-			{{ Form::text('password') }}
-			
-			{{ Form::submit('Register') }}
-	
-		{{ Form::close() }}
-	
-	@endif
-	
 @stop 

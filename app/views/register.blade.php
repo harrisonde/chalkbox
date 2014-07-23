@@ -5,22 +5,20 @@
 	<h1>Chalkbox</h1>
 
 	<h2>Really Simple. Really Fast.</h2>
-
-	<a href="/">Back</a>	
 	
+	{{-- Validation. ------------------------}}
+		
+	<ul class="errors">
 	
+    @foreach($errors->all() as $message)
+
+        <li>{{ $message }}</li>
+
+    @endforeach
+
+    </ul>
 		
-		<ul class="errors">
-
-	    @foreach($errors->all() as $message)
-
-	        <li>{{ $message }}</li>
-
-	    @endforeach
-
-	    </ul>
-		
-
+	{{-- Registration Form. ------------------------}}
 	
 	{{ Form::open() }}
 			

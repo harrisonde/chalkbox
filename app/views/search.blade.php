@@ -8,7 +8,7 @@
 	
 	<a href="/projects">Back</a>
 	
-	{{-- Search form to allow Chalkbox users to search all projects --}}
+	{{-- Search Form. ------------------------}}
 	
 	{{ Form::open( array('url' => 'search')) }}
 	
@@ -18,7 +18,8 @@
 	
 		{{ Form::close() }}
 
-	{{-- Loop the query object and display the items. If nothing found, display no results. --}}
+		
+	{{-- Search Results. ------------------------}}
 	
 	@if (isset($query))
 	

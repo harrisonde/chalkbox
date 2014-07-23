@@ -1,8 +1,15 @@
 @extends('_master')
+
 @section('body')
+
 	<h1>Chalkbox</h1>
+
 	<h2>Your Projects.</h2>
+
 	<a href="/">Back</a>
+	
+			
+	{{-- Search Form. ------------------------}}
 	
 	{{ Form::open( array('url' => 'search')) }}
 			
@@ -12,6 +19,9 @@
 		
 		{{ Form::close() }}
 
+			
+	{{-- Project  List. ------------------------}}
+	
 	@if (isset($query))
 		
 		@foreach($query as $node) 

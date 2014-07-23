@@ -1,9 +1,16 @@
 @extends('_master')
+
 @section('body')
+
 	<h1>Chalkbox</h1>
+
 	<h2>Project Details.</h2>
+
 	<a href="/projects">Back</a>
-	
+
+		
+	{{-- Search Form. ------------------------}}
+		
 	{{ Form::open( array('url' => 'search')) }}
 	
 		{{ Form::text('search', Input::old('search'),  array('placeholder'=>'Project Name')) }}
@@ -16,6 +23,9 @@
 		# uncomment to display query
 		//print_r($query) 
 	?>
+	
+			
+	{{-- Search Results. ------------------------}}
 	
 	<h3>Project Name: {{ $query['name'] }}</h3>
 	

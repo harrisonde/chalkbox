@@ -28,7 +28,7 @@ class SignInController extends \BaseController {
 	/**
 	 * Login attempts pass the username and password input values to the Auth::attempt method.
 	 *
-	 * @return boolean Response and proper view
+	 * @return object Response
 	 */
 	public function store()
 	{
@@ -42,7 +42,10 @@ class SignInController extends \BaseController {
 		else 
 		
 		{
-			return View::make('signin')->with('error', "Invalid credentials");
+
+			$custom_error_message = array( 'Incorrect username or password.');
+			
+			return View::make('signin')->with('errors_custom', $custom_error_message);
 	    
 	    }
 	

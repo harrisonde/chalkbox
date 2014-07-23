@@ -73,7 +73,11 @@ class RegisterController extends \BaseController {
 		    	->subject('Welcome!');
 			});
 			
-			return View::make('register')->with('query', $user_new);
+			# success message
+			$custom_success_message = array( 'Thank you for registering!');
+			
+			# redirect to signin view
+			return View::make('signin')->with('message_custom', $custom_success_message);
 		}
 	}
 

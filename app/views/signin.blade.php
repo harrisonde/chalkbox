@@ -25,6 +25,21 @@
 		
 		@endif
     
+    {{-- Messages. ------------------------}}
+    
+    @if(isset($message_custom ))
+		
+		<ul class="success">
+
+		    @foreach($message_custom as $message)
+	
+	        <li>{{ $message }}</li>
+	
+			@endforeach
+		
+		</ul>
+	
+	@endif
 			
 	{{-- Sign In Form. ------------------------}}
 	

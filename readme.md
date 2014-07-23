@@ -5,7 +5,8 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 ##Features
 ###User
-* [ ]Allow registration
+* [x]Allow registration 
+* [ ]Allow registration two step via email
 * [ ]Allow password reminder via email
 * [x]Authentication - sign-in
 * [x]Authentication - sign-out

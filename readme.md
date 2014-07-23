@@ -6,10 +6,10 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 ##Features
 ###User
 * [x]Allow registration 
-* [ ]Allow registration two step via email
-* [ ]Allow password reminder via email
+* [x]Welcome email after registration
 * [x]Authentication - sign-in
 * [x]Authentication - sign-out
+* [ ]Authentication - Password Remider
 
 ###Project
 * [ ]Add project

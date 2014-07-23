@@ -32,15 +32,6 @@
 		
 		</div>
 		
-		{{-- Username field. ------------------------}}	
-	
-		<div class="formElement username">
-			
-		{{ Form::label('username', 'Username:') }}
-		
-		{{ Form::text('username') }}
-		
-		</div>
 		
 		{{-- Password field. ------------------------}}
 		

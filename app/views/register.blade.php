@@ -7,17 +7,21 @@
 	<h2>Really Simple. Really Fast.</h2>
 	
 	{{-- Validation. ------------------------}}
-		
-	<ul class="errors">
 	
-    @foreach($errors->all() as $message)
+	@if( sizeof($errors) > 0 )
 
-        <li>{{ $message }}</li>
-
-    @endforeach
-
-    </ul>
-		
+		<ul class="errors">
+	    
+	    @foreach($errors->all() as $message)
+	
+	        <li>{{ $message }}</li>
+	
+	    @endforeach
+	
+	    </ul>
+	
+	@endif	
+	
 	{{-- Registration Form. ------------------------}}
 	
 	{{ Form::open() }}

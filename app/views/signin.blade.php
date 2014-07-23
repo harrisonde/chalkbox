@@ -10,18 +10,21 @@
 	
 	{{-- Validation. ------------------------}}
 	
-	<ul class="errors">
+	
 		@if(isset($errors_custom ))
-
-		    @foreach($errors_custom as $message)
+		
+			<ul class="errors">
 	
-	        <li>{{ $message }}</li>
-	
-			@endforeach
+			    @foreach($errors_custom as $message)
+		
+		        <li>{{ $message }}</li>
+		
+				@endforeach
+			
+			</ul>
 		
 		@endif
     
-    </ul>
 			
 	{{-- Sign In Form. ------------------------}}
 	

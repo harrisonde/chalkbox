@@ -41,7 +41,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		# Build table prams
 		$new_user->username = $username[0];
 		$new_user->email = $userdata['email'];
-		$new_user->password =  Hash::make($userdata['password']);
+		$new_user->password = Hash::make($userdata['password']);
+		$new_user->remember_token = $userdata['_token'];
 		
 		# Eloquent, do yo thang!
 		$new_user->save();

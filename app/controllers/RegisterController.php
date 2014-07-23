@@ -69,7 +69,7 @@ class RegisterController extends \BaseController {
 			# Add email to background queue so the registration page will not hang
 			Mail::queue($name, $data, function($message) 
 			{
-		    	$message->to('harrison.destefano@gmail.com', 'Harrison')
+		    	$message->to( Input::get('email'), Input::get('email') ) # using email for simplicity sake.
 		    	->subject('Welcome!');
 			});
 			

@@ -27,9 +27,9 @@
 
 {{-- Password  Form. ------------------------}}
 
-<form action="post">
+<form>
 
-    <input type="hidden" name="token" value="{{ $token }}">
+    <input type="hidden" name="token" value="<?php if(isset($token)){echo($token);} ?>">
 	
 	<div class="formElement email">
     	

@@ -8,15 +8,12 @@
 	
 	{{-- Validation. ------------------------}}
 	
-	@if( sizeof($errors) > 0 )
+	@if( isset($error) )
 
 		<ul class="errors">
-	    
-	    @foreach($errors->all() as $message)
 	
-	        <li>{{ $message }}</li>
+	        <li>{{ $error }}</li>
 	
-	    @endforeach
 	
 	    </ul>
 	

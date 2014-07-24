@@ -1,15 +1,3 @@
-<?php 
-
-	if( isset($error) )
-	{ 
-		print_r($error);
-	}
-	
-	if( isset($status) )
-	{ 
-		print_r($status);
-	}
-?>
 @extends('_master')
 
 @section('body')
@@ -23,11 +11,11 @@
 	{{-- Validation. ------------------------}}
 	
 	
-		@if( isset($errors) && sizeof($errors)  > 0)
+		@if( isset($error) )
 		
 		<ul class="errors">
 	  
-	        <li>{{ $errors }}</li>
+	        <li>{{ $error }}</li>
 	
 	    </ul>
 	

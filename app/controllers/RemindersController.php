@@ -22,14 +22,15 @@ class RemindersController extends Controller {
 	 */
 	public function store() # postRemind()
 	{
-		echo('b');
+
 		switch ($response = Password::remind(Input::only('email')))
 		{
 			case Password::INVALID_USER:
-				return Redirect::back()->with('error', Lang::get($response));
+				return View::make('password_remind')->with('error', Lang::get($response));
 
 			case Password::REMINDER_SENT:
-				return Redirect::back()->with('status', Lang::get($response));
+				$message_custom =  array( Lang::get($response) );
+				return View::make('password_remind')->with('message_custom', $message_custom);
 		}
 	}
 
@@ -72,20 +73,22 @@ class RemindersController extends Controller {
 		
 					$user->save();
 				});
-		
+				
+				# Need to clean up this logic - works for now.
 				switch ($response)
 				{
 					case Password::INVALID_PASSWORD:
+						return View::make('password_reset')->with('error', Lang::get($response));
 					break;
 					case Password::INVALID_TOKEN:
+						return View::make('password_reset')->with('error', Lang::get($response));
 					break;
 					case Password::INVALID_USER:
-						echo(Lang::get($response));
 						return View::make('password_reset')->with('error', Lang::get($response));
 					break;
 					case Password::PASSWORD_RESET:
-						echo('PASSWORD_RESET');
-						//return Redirect::to('/signin');
+						$message_custom =  array( 'Password reset. Please sign-in.');
+						return Redirect::to('/signin')->with('message_custom', $message_custom);
 					break;
 				}
 			
@@ -93,41 +96,19 @@ class RemindersController extends Controller {
 			else # wait for user to add datat to form
 			{
 				return View::make('password_reset')->with('token', $token);
-			}
-			
+			}	
 		
 		}
 	}
 
 	/**
-	 * Handle a POST request to reset a user's password.
+	 * Not in use.
 	 *
 	 * @return Response
 	 */
 	public function update() # postReset();
 	{
-		echo('d');
-		$credentials = Input::only(
-			'email', 'password', 'password_confirmation', 'token'
-		);
-
-		$response = Password::reset($credentials, function($user, $password)
-		{
-			$user->password = Hash::make($password);
-
-			$user->save();
-		});
-
-		switch ($response)
-		{
-			case Password::INVALID_PASSWORD:
-			case Password::INVALID_TOKEN:
-			case Password::INVALID_USER:
-				return Redirect::back()->with('error', Lang::get($response));
-
-			case Password::PASSWORD_RESET:
-				return Redirect::to('/');
-		}
+		
 	}
 
 }

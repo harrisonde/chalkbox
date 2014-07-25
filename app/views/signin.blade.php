@@ -2,9 +2,7 @@
 
 @section('body')
 
-	<h1>Chalkbox</h1>
-
-	<h2>Sign in</h2>
+	<h1>Sign in</h1>
 
 	<a href="/">Back</a>
 	

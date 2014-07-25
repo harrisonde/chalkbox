@@ -2,12 +2,7 @@
 
 @section('body')
 
-	<h1>Chalkbox</h1>
-
-	<h2>Project Details.</h2>
-
-	<a href="/projects">Back</a>
-
+	<h1><a href="/projects">Projects</a> / {{ $query['name'] }}</h1>
 		
 	{{-- Search Form. ------------------------}}
 		

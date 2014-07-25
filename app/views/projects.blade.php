@@ -2,12 +2,7 @@
 
 @section('body')
 
-	<h1>Chalkbox</h1>
-
-	<h2>Your Projects.</h2>
-
-	<a href="/">Back</a>
-	
+	<h1>Your Projects.</h1>
 			
 	{{-- Search Form. ------------------------}}
 	

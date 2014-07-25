@@ -39,9 +39,18 @@ class SearchController extends \BaseController {
 		# Flash the from input sice we return a view, no redirect
 		Input::flash();
 	
-		// Passing Data To View
-		return View::make('search')->with('query', $projects);
-
+		#return any errors
+		switch(isset($projects['error']))
+		{
+			case true:
+				// Passing Data To View
+				return View::make('search')->with('error', $projects);
+			break;
+			default:
+				// Passing Data To View
+				return View::make('search')->with('query', $projects);
+			break;
+		}
 	}
 
 
@@ -54,6 +63,9 @@ class SearchController extends \BaseController {
 	public function show($serachString)
 	{
 		$projects = $this->dig($serachString);
+		
+		# Flash the from input sice we return a view, no redirect
+		Input::flash();
 			
 		// Passing Data To View
 		return View::make('search')->with('query', $projects);

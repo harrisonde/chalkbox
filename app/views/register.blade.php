@@ -2,9 +2,7 @@
 
 @section('body')
 
-	<h1>Chalkbox</h1>
-
-	<h2>Really Simple. Really Fast.</h2>
+	<h1>Really Simple. Really Fast.</h1>
 	
 	{{-- Validation. ------------------------}}
 	

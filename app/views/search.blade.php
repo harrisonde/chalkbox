@@ -6,7 +6,37 @@
 	
 	<h2>Search Results.</h2>
 	
-	<a href="/projects">Back</a>
+	{{-- Validation. ------------------------}}
+	
+	@if( isset($error) )
+		
+		<ul class="errors">
+	  
+	        @foreach($error as $error)
+	
+	        <li>{{ $error }}</li>
+	
+			@endforeach
+	    </ul>
+	
+	@endif	
+    
+    {{-- Messages. ------------------------}}
+    
+    @if(isset($message_custom ))
+		
+		<ul class="success">
+
+		    @foreach($message_custom as $message)
+	
+	        <li>{{ $message }}</li>
+	
+			@endforeach
+		
+		</ul>
+	
+	@endif
+
 	
 	{{-- Search Form. ------------------------}}
 	

@@ -15,10 +15,12 @@
 			
 	{{-- Navigation. ------------------------}}
 	
+	{{link_to('/', 'Chalkbox')}}
+	 
 	@if(Auth::check())
     
        Logged in as
-    
+	   
        <strong>{{{Auth::user()->username}}}</strong>
     
        {{link_to('projects', 'Projects')}}
@@ -26,8 +28,6 @@
        {{link_to('signout', 'Sign Out')}}
     
      @else
-    
-       {{link_to('/', 'Home')}}
     
        {{link_to('register', 'Register')}}
     

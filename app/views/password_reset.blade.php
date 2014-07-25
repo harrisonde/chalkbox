@@ -2,9 +2,7 @@
 
 @section('body')
 
-	<h1>Chalkbox</h1>
-
-	<h2>Password Reset.</h2>
+	<h1>Password Reset.</h1>
 	
 	{{-- Validation. ------------------------}}
 	

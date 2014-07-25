@@ -56,7 +56,7 @@
 
 		{{ Form::label('password', 'Password:') }}
 		
-		{{ Form::text('password') }}
+		{{ Form::password('password') }}
 		
 	    </div>
 		

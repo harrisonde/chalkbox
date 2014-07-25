@@ -34,7 +34,11 @@
 		</ul>
 	
 	@endif
-					
+	
+	{{-- Create Project. ------------------------}}		
+	
+	{{link_to('projects', '+ New Project')}}	
+	
 	{{-- Project  List. ------------------------}}
 	
 	@if (isset($query))

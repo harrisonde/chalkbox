@@ -3,6 +3,18 @@
 class SearchController extends \BaseController {
 
 	/**
+	 * Called each time class is requested
+	 *
+	 * @return Boolen
+	 */
+	 public function __construct()
+    {
+       
+		$this->beforeFilter('auth'); # filter as we don't want to reauthenticate
+		
+		$this->beforeFilter('csrf', array('on' => 'post')); # prevent cross site request forgery
+    }
+	/**
 	 * Display a search form for the user.
 	 *
 	 * @return project list
@@ -23,7 +35,10 @@ class SearchController extends \BaseController {
 	{
 		
 		$projects = $this->dig(Input::get('search'));
-			
+		
+		# Flash the from input sice we return a view, no redirect
+		Input::flash();
+	
 		// Passing Data To View
 		return View::make('search')->with('query', $projects);
 

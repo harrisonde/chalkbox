@@ -10,7 +10,6 @@
 	
 	{{-- Validation. ------------------------}}
 	
-	
 		@if(isset($errors_custom ))
 		
 			<ul class="errors">
@@ -49,7 +48,7 @@
 		
 		<div class="formElement email">
 		
-		{{ Form::label('email', 'Email: (email@somewhere.com)') }}
+		{{ Form::label('email', 'Email: (email@somewhere.com)', Input::Old('email')) }}
 		
 		{{ Form::text('email') }}	
 		

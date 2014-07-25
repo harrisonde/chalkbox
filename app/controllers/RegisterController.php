@@ -42,7 +42,7 @@ class RegisterController extends \BaseController {
 
 
 	/**
-	 * Store a newly created user in storage.
+	 * Store a newly created user.
 	 *
 	 * @return Response
 	 */
@@ -65,6 +65,10 @@ class RegisterController extends \BaseController {
 		
 		if ( $validator->fails() )
 		{
+			
+			# Flash the from input sice we return a view, no redirect
+			Input::flash();
+
 			# return to view with error messages        
         	return View::make('register')->withErrors( $validator->messages() );
 		

@@ -27,7 +27,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @pram named array $userdata['username'], $userdata['email']
 	 * 
 	 */
-	 public function register($userdata){
+	public function register($userdata){
 		# here we will try and insert the user if the username and email are not duplicated
 		# we do this to stop mulit-registration 
 		# really need to filter this opposed to a second query. 
@@ -44,8 +44,22 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$new_user->password = Hash::make($userdata['password']);
 		$new_user->remember_token = $userdata['_token'];
 		
-		# Eloquent, do yo thang!
-		$new_user->save();
+		# Try to add the user 
+		try {    
+		    # Eloquent, do yo thang!
+			$new_user->save();
+		}
+		# Fail
+		catch (Exception $e) {
+		 	# bounce back to register with an error.  
+		 	return Redirect::to('/register')->with('flash_message', 'Sign up failed; please try again.')->withInput();
+		}
 		
-	 }
+		# Log the user in
+		Auth::login($user);
+
+		# go to projects page
+        return Redirect::to('/pojects')->with('flash_message', 'Welcome to Foobooks!');
+	
+	}
 }

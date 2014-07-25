@@ -1,7 +1,20 @@
 <?php
 
 class ProjectDetailsController extends \BaseController {
-
+	
+	/**
+	 * Called each time class is requested
+	 *
+	 * @return Boolen
+	 */
+	public function __construct()
+    {
+       
+		$this->beforeFilter('auth'); # filter as we don't want to reauthenticate
+		
+		$this->beforeFilter('csrf', array('on' => 'post')); # prevent cross site request forgery
+    }
+    
 	/**
 	 * Route back to porjects, do not call directly.
 	 *

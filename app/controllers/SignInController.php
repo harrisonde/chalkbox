@@ -57,10 +57,12 @@ class SignInController extends \BaseController {
 		else 
 		
 		{
+			# Flash the from input sice we return a view, no redirect
+			Input::flash();
 
 			$custom_error_message = array( 'Incorrect username or password.');
 			
-			return View::make('signin')->with('errors_custom', $custom_error_message);
+			return View::make('signin')->with('errors_custom', $custom_error_message)->withInput(Input::only('email'));
 	    
 	    }
 	

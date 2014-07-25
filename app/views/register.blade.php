@@ -32,7 +32,7 @@
 		
 		{{ Form::label('email:') }}
 		
-		{{ Form::text('email') }}
+		{{ Form::text('email', Input::Old('email') ) }}
 		
 		</div>
 		

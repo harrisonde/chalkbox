@@ -2,6 +2,21 @@
 
 class RegisterController extends \BaseController {
 
+	
+	/**
+	 * Called each time class is requested
+	 *
+	 * @return Boolen
+	 */
+	public function __construct()
+    {
+       
+		$this->beforeFilter('guest'); # filter as we don't want to reauthenticate
+		
+		$this->beforeFilter('csrf', array('on' => 'post')); # prevent cross site request forgery
+    }
+
+	
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,8 +24,8 @@ class RegisterController extends \BaseController {
 	 */
 	public function index()
 	{
-		// Return default form view for registration
 		
+		// Return default form view for registration
 		return View::make('register');
 	}
 

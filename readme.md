@@ -41,7 +41,7 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 * [ ]Share Proejct timeline
 
-* [ ]User Groups  
+* [ ]User Groups (Roles) 
 
 * [ ]RESTful API 
 

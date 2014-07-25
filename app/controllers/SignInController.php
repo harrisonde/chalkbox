@@ -3,12 +3,27 @@
 class SignInController extends \BaseController {
 
 	/**
+	 * Called each time class is requested
+	 *
+	 * @return Boolen
+	 */
+	public function __construct()
+    {
+       
+		$this->beforeFilter('guest'); # filter as we don't want to reauthenticate
+		
+		$this->beforeFilter('csrf', array('on' => 'post')); # prevent cross site request forgery
+    }
+
+    
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
+		
 		// Return default from view for user to signin.
 		return View::make('signin');
 	}

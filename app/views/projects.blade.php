@@ -34,18 +34,7 @@
 		</ul>
 	
 	@endif
-		
-	{{-- Search Form. ------------------------}}
-	
-	{{ Form::open( array('url' => 'search')) }}
-			
-			{{ Form::text('search', Input::old('search'),  array('placeholder'=>'Project Name')) }}
-			
-			{{ Form::submit('Search') }}
-		
-		{{ Form::close() }}
-
-			
+					
 	{{-- Project  List. ------------------------}}
 	
 	@if (isset($query))

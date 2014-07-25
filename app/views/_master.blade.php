@@ -23,6 +23,19 @@
 	   
        <strong>{{{Auth::user()->email}}}</strong>
     
+       {{-- Search Form. ------------------------}}
+	
+	   {{ Form::open( array('url' => 'search')) }}
+		
+	   		{{ Form::text('search', Input::old('search'),  array('placeholder'=>'Project Name')) }}
+		
+	   		{{ Form::submit('Search') }}
+		
+	    {{ Form::close() }}
+
+		{{-- Anchors. ------------------------}}
+
+       
        {{link_to('projects', 'Projects')}}
     
        {{link_to('signout', 'Sign Out')}}

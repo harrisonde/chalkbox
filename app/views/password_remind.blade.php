@@ -4,28 +4,29 @@
 
 	<h1>Password Reset</h1>
 
-	<a href="/">Back</a>
-	
 	{{-- Validation. ------------------------}}
 	
-	
-		@if( isset($error) )
+	@if( isset($flash_message_error) )
 		
 		<ul class="errors">
 	  
+	        @foreach($flash_message_error as $error)
+	
 	        <li>{{ $error }}</li>
 	
+			@endforeach
+	   
 	    </ul>
 	
 	@endif	
     
     {{-- Messages. ------------------------}}
-    
-    @if(isset($message_custom ))
+       
+    @if(isset($flash_message_success ))
 		
 		<ul class="success">
 
-		    @foreach($message_custom as $message)
+		    @foreach($flash_message_success as $message)
 	
 	        <li>{{ $message }}</li>
 	
@@ -53,7 +54,7 @@
 		
 		<div class="formElement submit">
 
-		{{ Form::submit('Sign in') }}
+		{{ Form::submit('Reset Password') }}
 		
 		</div>
 	

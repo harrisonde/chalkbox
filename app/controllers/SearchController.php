@@ -44,11 +44,11 @@ class SearchController extends \BaseController {
 		{
 			case true:
 				// Passing Data To View
-				return View::make('search')->with('error', $projects);
+				return View::make('search')->with('flash_message_error', $projects);
 			break;
 			default:
 				// Passing Data To View
-				return View::make('search')->with('query', $projects);
+				return View::make('search')->with('query_results', $projects);
 			break;
 		}
 	}
@@ -68,7 +68,7 @@ class SearchController extends \BaseController {
 		Input::flash();
 			
 		// Passing Data To View
-		return View::make('search')->with('query', $projects);
+		return View::make('search')->with('query_results', $projects);
 			
 	}
 

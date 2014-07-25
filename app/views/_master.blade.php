@@ -21,7 +21,7 @@
     
        Logged in as
 	   
-       <strong>{{{Auth::user()->username}}}</strong>
+       <strong>{{{Auth::user()->email}}}</strong>
     
        {{link_to('projects', 'Projects')}}
     

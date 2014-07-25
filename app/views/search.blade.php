@@ -2,17 +2,15 @@
 
 @section('body')
 	
-	<h1>Chalkbox</h1>
-	
 	<h2>Search Results.</h2>
 	
 	{{-- Validation. ------------------------}}
 	
-	@if( isset($error) )
+	@if( isset($flash_message_error) )
 		
 		<ul class="errors">
 	  
-	        @foreach($error as $error)
+	        @foreach($flash_message_error as $error)
 	
 	        <li>{{ $error }}</li>
 	
@@ -23,11 +21,11 @@
     
     {{-- Messages. ------------------------}}
     
-    @if(isset($message_custom ))
+    @if(isset($flash_message_success ))
 		
 		<ul class="success">
 
-		    @foreach($message_custom as $message)
+		    @foreach($flash_message_success as $message)
 	
 	        <li>{{ $message }}</li>
 	
@@ -51,9 +49,9 @@
 		
 	{{-- Search Results. ------------------------}}
 	
-	@if (isset($query))
+	@if (isset($query_results))
 	
-		@foreach($query as $node) 
+		@foreach($query_results as $node) 
 			
 			@if (isset($node['name']))
 				

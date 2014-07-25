@@ -2,8 +2,39 @@
 
 @section('body')
 
-	<h1>Your Projects.</h1>
-			
+	<h1>Your Projects.</h1>		
+		
+	
+	{{-- Validation. ------------------------}}
+	@if( isset($flash_message_error) )
+		
+		<ul class="errors">
+	  
+	        @foreach($flash_message_error as $error)
+	
+	        <li>{{ $error }}</li>
+	
+			@endforeach
+	    </ul>
+	
+	@endif	
+    
+    {{-- Messages. ------------------------}}
+       
+    @if(isset($flash_message_success ))
+		
+		<ul class="success">
+
+		    @foreach($flash_message_success as $message)
+	
+	        <li>{{ $message }}</li>
+	
+			@endforeach
+		
+		</ul>
+	
+	@endif
+		
 	{{-- Search Form. ------------------------}}
 	
 	{{ Form::open( array('url' => 'search')) }}

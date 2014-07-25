@@ -6,56 +6,71 @@
 	
 	{{-- Validation. ------------------------}}
 	
-	@if( isset($error) )
-
+	@if( isset($flash_message_error) )
+		
 		<ul class="errors">
+	  
+	        @foreach($flash_message_error as $error)
 	
 	        <li>{{ $error }}</li>
 	
-	
+			@endforeach
 	    </ul>
 	
 	@endif	
-	
-	{{-- Registration Form. ------------------------}}
-
-
-{{-- Password  Form. ------------------------}}
-
-<form>
-
-    <input type="hidden" name="token" value="<?php if(isset($token)){echo($token);} ?>">
-	
-	<div class="formElement email">
-    	
-    	{{ Form::label('email:') }}
-    	
-    	<input type="email" name="email">
-	
-	</div>
-	
-	<div class="formElement password">
-	
-		{{ Form::label('password:') }}
+    
+    {{-- Messages. ------------------------}}
+       
+    @if(isset($flash_message_success ))
 		
-		<input type="password" name="password">
+		<ul class="success">
 
-	</div>
+		    @foreach($flash_message_success as $message)
 	
-	<div class="formElement password">		
+	        <li>{{ $message }}</li>
+	
+			@endforeach
 		
-		{{ Form::label('Password Confirmation:') }}
+		</ul>
+	
+	@endif
+
+	{{-- Password  Form. ------------------------}}
+	
+	<form>
+	
+	    <input type="hidden" name="token" value="<?php if(isset($token)){echo($token);} ?>">
 		
-		<input type="password" name="password_confirmation">
+		<div class="formElement email">
+	    	
+	    	{{ Form::label('email:') }}
+	    	
+	    	<input type="email" name="email">
+		
+		</div>
+		
+		<div class="formElement password">
+		
+			{{ Form::label('password:') }}
+			
+			<input type="password" name="password">
 	
-	</div>
-
-	<div class="formElement password">
+		</div>
+		
+		<div class="formElement password">		
+			
+			{{ Form::label('Password Confirmation:') }}
+			
+			<input type="password" name="password_confirmation">
+		
+		</div>
 	
-    	<input type="submit" value="Reset Password">
-
-	</div>
-
-</form>
+		<div class="formElement password">
+		
+	    	<input type="submit" value="Reset Password">
+	
+		</div>
+	
+	</form>
 
 @stop

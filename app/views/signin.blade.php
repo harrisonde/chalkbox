@@ -3,16 +3,14 @@
 @section('body')
 
 	<h1>Sign in</h1>
-
-	<a href="/">Back</a>
 	
 	{{-- Validation. ------------------------}}
 	
-		@if(isset($errors_custom ))
+		@if(isset($flash_message_error ))
 		
 			<ul class="errors">
 	
-			    @foreach($errors_custom as $message)
+			    @foreach($flash_message_error as $message)
 		
 		        <li>{{ $message }}</li>
 		
@@ -24,11 +22,11 @@
     
     {{-- Messages. ------------------------}}
     
-    @if(isset($message_custom ))
+    @if(isset($flash_message_success ))
 		
 		<ul class="success">
 
-		    @foreach($message_custom as $message)
+		    @foreach($flash_message_success as $message)
 	
 	        <li>{{ $message }}</li>
 	

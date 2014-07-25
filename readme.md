@@ -12,8 +12,6 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 * [x]Authentication - Password Remider
 
 ###Project
-* [ ]Add project
-
 * [ ]Create project
 
 * [ ]Update project
@@ -30,6 +28,11 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 * [ ]Add time to project
 
+###Validation
+ * [x]Error messages
+ 
+ * [x]Success messages
+
 #Extra (Future) Features
 * [ ]Project start date
 
@@ -37,7 +40,11 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 * [ ]Project status
 
+* [ ]Project Description
+
 * [ ]Project Notes
+
+* [ ]Project Total Project Hours
 
 * [ ]Share Proejct timeline
 

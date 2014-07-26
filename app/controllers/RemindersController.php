@@ -102,20 +102,21 @@ class RemindersController extends Controller {
 				switch ($response)
 				{
 					case Password::INVALID_PASSWORD:
-						return View::make('password_reset')->with('flash_message_error', (array) Lang::get($response));
+						return View::make('password_reset')->withErrors(Lang::get($response));
 					break;
 					case Password::INVALID_TOKEN:
-						return View::make('password_reset')->with('flash_message_error', (array) Lang::get($response));
+						return View::make('password_reset')->withErrors(Lang::get($response));
 					break;
 					case Password::INVALID_USER:
-						return View::make('password_reset')->with('flash_message_error', (array) Lang::get($response));
+						return View::make('password_reset')->withErrors(Lang::get($response));
 					break;
 					case Password::PASSWORD_RESET:
 						
-						# Must use flash to pass
-						Session::put('flash_message_success', 'Password reset. Please sign-in.');
-												
-						return Redirect::to('/signin')->with('flash_message_success');
+						#Flash message
+						Session::flash('flash_message_success', 'Password reset. Please sign-in.');						
+						
+						#Redirect
+						return Redirect::to('/signin');
 					
 					break;
 				}

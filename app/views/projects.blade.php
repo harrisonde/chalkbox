@@ -37,7 +37,7 @@
 	
 	{{-- Create Project. ------------------------}}		
 	
-	{{link_to('projects', '+ New Project')}}	
+	{{link_to('projects/create', '+ New Project')}}	
 	
 	{{-- Project  List. ------------------------}}
 	
@@ -45,7 +45,7 @@
 		
 		@foreach($query as $node) 
 		
-			<a href="/projects/details/{{ $node['id'] }}">{{ $node['name'] }}</a>
+			<a href="/projects/{{ $node['id'] }}">{{ $node['name'] }}</a>
 		
 		@endforeach
 	

@@ -40,7 +40,7 @@ class ProjectController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('project_create');
 	}
 
 
@@ -51,21 +51,46 @@ class ProjectController extends \BaseController {
 	 */
 	public function store()
 	{
-				
+		
+		 echo 'store a new project ... to come';
+		 
+			
+		
 	}
 
 
 	/**
-	 * Display the specified resource.
+	 * Display the specified project detail, if no project detail found, route back to project list.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
-		//
-	}
+		# Instantiating an object of the Project class
+		$projects = new Project(); 
+	
+		# Get the projects
+		$project = $projects->get_project_detail($id);
+		
+		// check id and return view
+		switch(sizeof($project))
+		{
+			case 0:
+			
+				return View::make('projects');
+			
+			break;
+			
+			default:
+				
+				// Passing Data To View	
+				return View::make('projects_details')->with('query', $project);
+			
+			break;
+		}
 
+	}
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -76,6 +101,7 @@ class ProjectController extends \BaseController {
 	public function edit($id)
 	{
 		//
+		echo 'edit a project';
 	}
 
 
@@ -88,6 +114,7 @@ class ProjectController extends \BaseController {
 	public function update($id)
 	{
 		//
+		 echo 'update';
 	}
 
 
@@ -100,6 +127,7 @@ class ProjectController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+		 echo 'destroy';
 	}
 
 

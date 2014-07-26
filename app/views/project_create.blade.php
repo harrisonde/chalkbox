@@ -38,7 +38,7 @@
 			
 	{{-- Sign In Form. ------------------------}}
 	
-	{{ Form::open() }}
+	{{ Form::open(array('url' => '/projects')) }}
 		
 		{{-- Name field. ------------------------}}
 		
@@ -54,9 +54,26 @@
 		
 	    <div class="formElement description">
 
-		{{ Form::label('Description:', '(Optional)', Input::Old('description')) }}
+		{{ Form::label('Description: (Optional)', Input::Old('description')) }}
 		
 		{{ Form::text('description') }}
+		
+	    </div>
+	    
+	     {{-- Status field. ------------------------}}
+		
+	    <div class="formElement status">
+
+		{{ Form::label('Status: ',  Input::Old('date_end')) }}
+		
+		{{ Form::select('panda_colour', array(
+        	'Open'      => 'Open',
+			'In Progress'     => 'In Progress',
+			'Close'     => 'Close',
+			'Resolved'  => 'Resolved',
+			'Reopened'  => 'Reopened',
+			), 'Open') 
+		}}
 		
 	    </div>
 	    
@@ -64,7 +81,7 @@
 		
 	    <div class="formElement date_start">
 
-		{{ Form::label('Start Date:', '(Optional)', Input::Old('date_start')) }}
+		{{ Form::label('Start Date: (Optional)', Input::Old('date_start')) }}
 		
 		{{ Form::text('date_start') }}
 		
@@ -74,21 +91,12 @@
 		
 	    <div class="formElement date_end">
 
-		{{ Form::label('End Date:', '(Optional)', Input::Old('date_end')) }}
+		{{ Form::label('End Date: (Optional)', Input::Old('date_end')) }}
 		
 		{{ Form::text('date_end') }}
 		
 	    </div>
 	    
-	    {{-- Status (Start) field. ------------------------}}
-		
-	    <div class="formElement date_start">
-
-		{{ Form::label('Status:', '(Optional)', Input::Old('status')) }}
-		
-		{{ Form::text('status') }}
-		
-	    </div>
 		
 		{{-- Submit Button. ------------------------}}
 		

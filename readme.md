@@ -66,13 +66,13 @@ Chalkbox listens at the following routes and will "catch" fhe following HTTP ver
 | GET     | /                         | index			             |
 | GET     | /projects{project?}       | list project(s)              |
 | GET     | /search				      | new search input             |
+| GET     | /projects/create          | make a new project           |
 | GET     | /projects/details         | route to project list        |
 | GET     | /signout                  | logout current session       |
 | GET     | /password                 | password rest link email     |
-| GET     | /create                   | make a new project           |
 | POST    | /search{projectName?}     | return project(s) matching   |
 | POST    | /user/signin{user}        | user sign in and auth        |
 | POST    | /user/registration{user}  | new user registration        |
+| POST    | /projects/create{project} | Add project to database      |
 | POST    | /projects/details         | list project detail          |
 | POST    | /password                 | password reset with token    |
-| POST     | /create{project}         | A project to database        |

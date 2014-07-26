@@ -2,7 +2,7 @@
 
 @section('body')
 
-	<h1>Your Projects.</h1>		
+	<h1>Projects.</h1>		
 	
 	{{-- Validation. ------------------------}}
 	@if( isset($flash_message_error) )

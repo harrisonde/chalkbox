@@ -5,35 +5,34 @@
 	<h2>Search Results.</h2>
 	
 	{{-- Validation. ------------------------}}
-	
-	@if( isset($flash_message_error) )
 		
-		<ul class="errors">
-	  
-	        @foreach($flash_message_error as $error)
-	
-	        <li>{{ $error }}</li>
-	
+	@if(sizeof($errors) > 0)
+		
+			<ul class="errors">
+			
+			@foreach ($errors->all('<li>:message</li>') as $message)
+			
+				{{ $message }}
+			
 			@endforeach
-	    </ul>
-	
-	@endif	
+			
+			</ul>
+		
+	@endif
+	    
+    {{-- Flash Messages. ------------------------}}
     
-    {{-- Messages. ------------------------}}
-    
-    @if(isset($flash_message_success ))
+    <?php $value = Session::get('flash_message_success'); ?>
+		
+	<?php if(sizeof($value) > 0){ ?>
 		
 		<ul class="success">
-
-		    @foreach($flash_message_success as $message)
-	
-	        <li>{{ $message }}</li>
-	
-			@endforeach
 		
-		</ul>
+			<?php { echo($value); } ?>
+		
+		</ul>	
 	
-	@endif
+	<?php }  ?>
 
 	
 	{{-- Search Form. ------------------------}}
@@ -55,7 +54,7 @@
 			
 			@if (isset($node['name']))
 				
-				<a href="/projects/details/{{ $node['id'] }}">{{ $node['name'] }}</a>
+				<a href="/projects/{{ $node['id'] }}">{{ $node['name'] }}</a>
 			
 			@else
 			

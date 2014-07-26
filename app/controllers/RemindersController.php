@@ -1,9 +1,19 @@
 <?php
-
-class RemindersController extends Controller {
-
-	#RESTful 
-	
+/*
+ *  Actions Handled By Resource Controller
+ *	
+ *	|Verb	   | Path	                   | Action	 | Route Name          |
+ *  |----------| ------------------------- |---------|---------------------| 
+ *	|GET	   | /resource	               | index	 | resource.index      |
+ *	|GET	   | /resource/create	       | create	 | resource.create     |
+ *	|POST	   | /resource	               | store	 | resource.store      |
+ *	|GET       | /resource/{resource}	   | show	 | resource.show       |
+ *	|GET       | /resource/{resource}/edit | edit	 | resource.edit       |
+ *	|PUT/PATCH | /resource/{resource}	   | update	 | resource.update     |
+ *	|DELETE	   | /resource/{resource}	   | destroy | resource.destroy    |
+ *
+*/
+class RemindersController extends Controller { 
 	/**
 	 * Display the password reminder view.
 	 *
@@ -26,10 +36,14 @@ class RemindersController extends Controller {
 		switch ($response = Password::remind(Input::only('email')))
 		{
 			case Password::INVALID_USER:
-				return View::make('password_remind')->with('flash_message_error', (array) Lang::get($response));
+				return View::make('password_remind')->withErrors(Lang::get($response));
 
 			case Password::REMINDER_SENT:
-				return View::make('password_remind')->with('flash_message_success', (array) Lang::get($response));
+				
+				#Flash message
+				Session::flash('flash_message_success', Lang::get($response));
+		
+				return View::make('password_remind');
 		}
 	}
 
@@ -79,7 +93,7 @@ class RemindersController extends Controller {
 					#fail
 					catch (Exception $e) 
 					{
-						return Redirect::to('/signup')->with('flash_message', 'Sign up failed; please try again.')->withInput();
+						return Redirect::to('/signup')->withErrors(['Sign up failed; please try again.'])->withInput();
 					}
 					
 				});

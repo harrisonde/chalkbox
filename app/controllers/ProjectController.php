@@ -94,10 +94,7 @@ class ProjectController extends \BaseController {
 				array_push($messageArray, $value[0]);
 			}
 			
-			# Flash the from input sice we return a view, no redirect
-			Input::flash();
-			
-			return View::make('project_create')->with('flash_message_error', $messageArray)->withInput(Input::All());
+			return View::make('project_create')->withErrors($messageArray)->withInput(Input::All());
 					
 		} 
 		elseif( $validator->passes() ) 
@@ -108,14 +105,11 @@ class ProjectController extends \BaseController {
 			
 			# create new project
 			$project = $project->create_project(Input::all());
-			 		
-			# Flash the from input sice we return a view, no redirect
-			Input::flash(); // might not need flash if not returning any input - check this! 
 		
 			# return to projects
 			if(isset($project['flash_message_error']))
 			{
-				 return View::make('projects')->with('flash_message_error', $project);
+				 return View::make('projects')->withErrors($project);
 			}
 			# project details view
 			else
@@ -123,8 +117,11 @@ class ProjectController extends \BaseController {
 				#get project id
 				$project_id = $project['project_id'];
 				
-				# retuen with message and PK
-				return Redirect::to('projects/'. $project_id)->with('flash_message_success', $project);	
+				#Flash message
+				Session::flash('flash_message_success', 'Project created!');
+
+				# PK
+				return Redirect::to('projects/'. $project_id)->with('query', $project);	
 			}
 		
 		}

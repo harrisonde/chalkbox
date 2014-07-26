@@ -58,7 +58,7 @@ class Project extends Eloquent {
         // Get use id to link this project
         $project->user_id = Auth::id();
         
-        try
+       try
         {
 	        # Magic: Eloquent
 	        $project->save();
@@ -72,9 +72,9 @@ class Project extends Eloquent {
 		
 		# Fail
 		catch (Exception $e)
-		{
+		{ 
 		
-			$error = array('flash_message_error' => 'Oops. Try again.');
+			$error = array('flash_message_error' => 'Something went wrong - please try again, later.');
 			
 			return $error;		
 		}

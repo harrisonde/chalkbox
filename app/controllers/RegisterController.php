@@ -70,7 +70,7 @@ class RegisterController extends \BaseController {
 			Input::flash();
 
 			# return to view with error messages        
-        	return View::make('register')->withErrors( $validator->messages() );
+        	return View::make('register')->with('flash_message_error', $validator->messages() );
 		
 		} 
 		elseif( $validator->passes() ) 
@@ -92,11 +92,14 @@ class RegisterController extends \BaseController {
 		    	->subject('Welcome!');
 			});
 			
+			# Flash the from input sice we return a view, no redirect
+			Input::flash();
+			
 			# success message
 			$custom_success_message = array( 'Thank you for registering!');
 			
 			# redirect to signin view
-			return View::make('signin')->with('message_custom', $custom_success_message);
+			return View::make('signin')->with('flash_message_success', $custom_success_message);
 		}
 	}
 

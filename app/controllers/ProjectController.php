@@ -54,7 +54,50 @@ class ProjectController extends \BaseController {
 		
 		 echo 'store a new project ... to come';
 		 
+		// validate data
+		# input(s) to validate
+		$rules = array( 
+			'name'        => 'required|min:1',
+			'status'      => 'required|min:1', # might want to be more strict
+			'date_start'  => 'required|min:1',
+			'date_end'    => 'required|min:1',
+
+			);
+		
+		# Validation message
+		$message = array( 
+			'name'       => 'Please specify a name for your project.',
+			'status'     => 'The project status must be included',
+			'date_start' => 'You have to have a start date!',
+			'date_end'   => 'Please choose the end date, thank you!',
+			);
+		
+		# run validation
+		$validator = Validator::make(Input::all(), $rules, $message);
+		
+		if ( $validator->fails() )
+		{
 			
+			# Validator returns worng format for our flash_message_error method
+			$messageObj =  $validator->messages()->toArray(); #named array
+			$messageArray = array(); # numberd array
+			# iterate named array and push to numberd array
+			foreach($messageObj as $key => $value)
+			{
+
+				array_push($messageArray, $value[0]);
+			}
+			
+			return View::make('project_create')->with('flash_message_error', $messageArray);
+					
+		} 
+		elseif( $validator->passes() ) 
+		{	
+			
+			echo 'pass';
+		
+		}
+	
 		
 	}
 

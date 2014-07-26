@@ -5,20 +5,34 @@
 	<h1>Really Simple. Really Fast.</h1>
 	
 	{{-- Validation. ------------------------}}
-	
-	@if( sizeof($errors) > 0 )
-
+	@if( isset($flash_message_error) )
+		
 		<ul class="errors">
-	    
-	    @foreach($errors->all() as $message)
+	  
+	        @foreach($flash_message_error as $error)
 	
-	        <li>{{ $message }}</li>
+	        <li>{{ $error }}</li>
 	
-	    @endforeach
-	
+			@endforeach
 	    </ul>
 	
 	@endif	
+    
+    {{-- Messages. ------------------------}}
+       
+    @if(isset($flash_message_success ))
+		
+		<ul class="success">
+
+		    @foreach($flash_message_success as $message)
+	
+	        <li>{{ $message }}</li>
+	
+			@endforeach
+		
+		</ul>
+	
+	@endif
 	
 	{{-- Registration Form. ------------------------}}
 	

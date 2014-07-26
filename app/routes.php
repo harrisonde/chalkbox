@@ -20,8 +20,6 @@ Route::resource('password', 'RemindersController');
 
 Route::resource('password/reset', 'RemindersController');
 
-Route::resource('projects/create', 'ProjectDetailsController');
-
 Route::resource('projects', 'ProjectController');
 
 Route::resource('register', 'RegisterController');

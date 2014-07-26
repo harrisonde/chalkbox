@@ -3,11 +3,11 @@
 @section('body')
 
 	<h1>Create</h1>
-	
+
 	{{-- Validation. ------------------------}}
-	
-		@if(isset($flash_message_error ))
 		
+		@if(isset($flash_message_error))
+			
 			<ul class="errors">
 	
 			    @foreach($flash_message_error as $message)
@@ -36,7 +36,7 @@
 	
 	@endif
 			
-	{{-- Sign In Form. ------------------------}}
+	{{-- Create Project Form. ------------------------}}
 	
 	{{ Form::open(array('url' => '/projects')) }}
 		
@@ -66,7 +66,7 @@
 
 		{{ Form::label('Status: ',  Input::Old('date_end')) }}
 		
-		{{ Form::select('panda_colour', array(
+		{{ Form::select('status', array(
         	'Open'      => 'Open',
 			'In Progress'     => 'In Progress',
 			'Close'     => 'Close',

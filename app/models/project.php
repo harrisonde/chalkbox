@@ -62,13 +62,21 @@ class Project extends Eloquent {
         {
 	        # Magic: Eloquent
 	        $project->save();
+	     
+	        # Retuen a message
+	        //$success = array('flash_message_success', array('Project created.') );
+			$success = array('flash_message_success ' => 'Project created.', 'project_id' => $project->id);
+			
+			return $success;
 		}
 		
 		# Fail
 		catch (Exception $e)
 		{
-			$error = array('flash_message_error', array('Oops... that is not working. Please try again.') );
-			return $error;
+		
+			$error = array('flash_message_error' => 'Oops. Try again.');
+			
+			return $error;		
 		}
 	
 	}

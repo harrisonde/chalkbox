@@ -95,15 +95,24 @@ class ProjectController extends \BaseController {
 			
 			# create new project
 			$project = $project->create_project(Input::all());
-			
-			echo 'running store method';
-			
-			print_r($project);
+			 		
 			# Flash the from input sice we return a view, no redirect
-			//Input::flash(); // might not need flash if not returning any inout - chack this! 
-			
-			// neeed to know if error or success!!!!
-			//return View::make('projects')->with('flash_message_error', $messageArray);
+			Input::flash(); // might not need flash if not returning any input - check this! 
+		
+			# return to projects
+			if(isset($project['flash_message_error']))
+			{
+				 return View::make('projects')->with('flash_message_error', $project);
+			}
+			# project details view
+			else
+			{
+				#get project id
+				$project_id = $project['project_id'];
+				
+				# retuen with message and PK
+				return Redirect::to('projects/'. $project_id)->with('flash_message_success', $project);	
+			}
 		
 		}
 	

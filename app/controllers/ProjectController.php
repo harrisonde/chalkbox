@@ -52,8 +52,6 @@ class ProjectController extends \BaseController {
 	public function store()
 	{
 		
-		 echo 'store a new project ... to come';
-		 
 		// validate data
 		# input(s) to validate
 		$rules = array( 
@@ -92,7 +90,20 @@ class ProjectController extends \BaseController {
 		elseif( $validator->passes() ) 
 		{	
 			
-			echo 'Sweet I will add you new project and redirect to projects.';
+			# Instantiating an object of the Project class
+			$project = new Project();
+			
+			# create new project
+			$project = $project->create_project(Input::all());
+			
+			echo 'running store method';
+			
+			print_r($project);
+			# Flash the from input sice we return a view, no redirect
+			//Input::flash(); // might not need flash if not returning any inout - chack this! 
+			
+			// neeed to know if error or success!!!!
+			//return View::make('projects')->with('flash_message_error', $messageArray);
 		
 		}
 	

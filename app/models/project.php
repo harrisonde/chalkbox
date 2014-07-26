@@ -18,8 +18,60 @@ class Project extends Eloquent {
 	
 	
 		
-	//Create
+	/**
+	 * Create aprojects in database related.
+	 * @pram Array
+	 *
+	 * @return Response
+	 */
+    public function create_project($projectDetail)
+    {
+    	
+		# Instantiate the projet model	
+    	$project = new Project();
+       	 
+        # Build seed data
+        // set project name
+        $project->name = $projectDetail['name'];
+        
+        // set project description
+        $project->description = $projectDetail['description'];
+        
+        // set project status
+        $project->status = $projectDetail['status'];
+        
+        // set project start date
+        $project->date_start = $projectDetail['date_start'];
+        
+         // set project end date
+        $project->date_end = $projectDetail['date_end'];
+        
+        // Total time in seconds
+        $project->time_elapsed_total = 00;
+        
+        // Elapsed start time in seconds
+        $project->time_elapsed_start = 00;
+        
+        // Tracking time?
+        $project->time_elapsed_track = false;
+        
+        // Get use id to link this project
+        $project->user_id = Auth::id();
+        
+        try
+        {
+	        # Magic: Eloquent
+	        $project->save();
+		}
 		
+		# Fail
+		catch (Exception $e)
+		{
+			$error = array('flash_message_error', array('Oops... that is not working. Please try again.') );
+			return $error;
+		}
+	
+	}
 	
 	/**
 	 * Get all projects in database related to the current user.

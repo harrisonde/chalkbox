@@ -174,8 +174,15 @@ class ProjectController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
-		echo 'edit a project';
+		
+		# instantiate 
+		$project = new Project();
+		
+		# query
+		$project = $project->get_project_detail($id);
+		
+		#return
+		return View::make('project_edit')->with('query', $project);
 	}
 
 
@@ -187,11 +194,84 @@ class ProjectController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
-		 echo 'update';
+		 
+		 $project_stamp = $this->stampIt(Input::all(), $id);
+		 
+		 
+		 # fail
+		if($project_stamp['stamped'] == false){
+			
+			# return back with message
+			return Redirect::back()->withErrors( $project_stamp['validation'] );	
+		}
+		# pass
+		else
+		{
+			Session::flash('flash_message_success', 'Project Updated!');
+			
+			return Redirect::to('projects/'. $id);
+			
+		}
+		
 	}
-
-
+	/**
+	 * Helper method to store a project in the database ... will need to adjust for use with "store" and "update"
+	 *
+	 * @param  array $inputAll
+	 * 
+	 * @return array Boolean, Validation Message(s) 
+	 */
+	private function stampIt($inputAll, $id)
+	{
+		// validate data
+		# input(s) to validate
+		$rules = array( 
+			'name'        => 'required|min:1',
+			'status'      => 'required|min:1', # might want to be more strict
+			);
+		
+		# Validation message
+		$message = array( 
+			'name'       => 'Please specify a name for your project.',
+			'status'     => 'The project status must be included',
+			);
+		
+		# run validation
+		$validator = Validator::make($inputAll, $rules, $message);
+		
+		if ( $validator->fails() )
+		{
+			
+			# Validator returns worng format for our flash_message_error method
+			$messageObj =  $validator->messages()->toArray(); #named array
+			$messageArray = array(); # numberd array
+			# iterate named array and push to numberd array
+			foreach($messageObj as $key => $value)
+			{
+		
+				array_push($messageArray, $value[0]);
+			}
+			
+			# return the response	
+			return array( 'stamped' => false, 'validation' => $messageArray);
+					
+		} 
+		elseif( $validator->passes() ) 
+		{	
+			#save
+			# Instantiating an object of the Project class
+			$project = new Project();
+			
+			# query and save model
+			$project = $project->update_project($inputAll, $id);
+			
+						
+			# return the response
+			$messageArray = array('Updated.');
+			return array( 'stamped' => true, 'validation' => $messageArray); 		
+		}
+	
+	}
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -203,6 +283,7 @@ class ProjectController extends \BaseController {
 		//
 		 echo 'destroy';
 	}
-
+	
+	
 
 }

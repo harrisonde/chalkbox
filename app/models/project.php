@@ -86,7 +86,8 @@ class Project extends Eloquent {
 	 *
 	 * @return projects
 	 */
-	public function get_projects(){
+	public function get_projects()
+	{
 		
 		$user_id = Auth::id(); #string
 		
@@ -101,7 +102,8 @@ class Project extends Eloquent {
 	 * @pram string project ID
 	 * @return array project detail
 	 */
-	public function get_project_detail($id){
+	public function get_project_detail($id)
+	{
 		
 		# eloquent query for project
 		$projectDetail = Project::find($id);
@@ -110,7 +112,37 @@ class Project extends Eloquent {
 		return $projectDetail['attributes'];
 	}
 	
-	//Update
+	/**
+	 * Update specific project in database.
+	 *
+	 * @pram array project colums
+	 * @pram int project id
+	 * @return array Response
+	 */
+	public function update_project($projectDetail, $id){
+	
+        # Get a project to update
+        $project = Project::find($id);
+		
+		# Update the name
+		$project->name = $projectDetail['name'];
+		
+		// set project description
+        $project->description = $projectDetail['description'];
+        
+        // set project status
+        $project->status = $projectDetail['status'];
+        
+        // set project start date
+        $project->date_start = $projectDetail['date_start'];
+        
+         // set project end date
+        $project->date_end = $projectDetail['date_end'];
+			
+		# Updating the retrieved model
+		$project->save();	
+			
+	}	
 	//Delete
 
 }

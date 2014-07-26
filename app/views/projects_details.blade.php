@@ -1,44 +1,45 @@
 @extends('_master')
 
 @section('body')
+
 	
 	<h1><a href="/projects">Projects</a> / {{ $query['name'] }}</h1>
 	
 	{{-- Validation. ------------------------}}
-	@if( isset($flash_message_error) )
 		
-		<ul class="errors">
-	  
-	        @foreach($flash_message_error as $error)
-	
-	        <li>{{ $error }}</li>
-	
+	@if(sizeof($errors) > 0)
+		
+			<ul class="errors">
+			
+			@foreach ($errors->all('<li>:message</li>') as $message)
+			
+				{{ $message }}
+			
 			@endforeach
-	    </ul>
-	
-	@endif	
+			
+			</ul>
+		
+	@endif
+	    
+    {{-- Flash Messages. ------------------------}}
     
-    {{-- Messages. ------------------------}}
-       
-    @if(isset($flash_message_success ))
+    <?php $value = Session::get('flash_message_success'); ?>
+		
+	<?php if(sizeof($value) > 0){ ?>
 		
 		<ul class="success">
-
-		    @foreach($flash_message_success as $message)
-	
-	        <li>{{ $message }}</li>
-	
-			@endforeach
 		
-		</ul>
+			<?php { echo($value); } ?>
+		
+		</ul>	
 	
-	@endif
+	<?php }  ?>
+
 	
 	{{-- Description. ------------------------}}
-	
 	<div class="description">
 	
-		{{ $query['description'] }} <span class="edit">{{link_to('projects/', 'Edit')}}</div>
+		{{ $query['description'] }} <span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></div>
 		
 	</div>	
 			

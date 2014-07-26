@@ -59,17 +59,12 @@ class ProjectController extends \BaseController {
 		$rules = array( 
 			'name'        => 'required|min:1',
 			'status'      => 'required|min:1', # might want to be more strict
-			'date_start'  => 'required|min:1',
-			'date_end'    => 'required|min:1',
-
 			);
 		
 		# Validation message
 		$message = array( 
 			'name'       => 'Please specify a name for your project.',
 			'status'     => 'The project status must be included',
-			'date_start' => 'You have to have a start date!',
-			'date_end'   => 'Please choose the end date, thank you!',
 			);
 		
 		# run validation
@@ -88,7 +83,10 @@ class ProjectController extends \BaseController {
 				array_push($messageArray, $value[0]);
 			}
 			
-			return View::make('project_create')->with('flash_message_error', $messageArray);
+			# Flash the from input sice we return a view, no redirect
+			Input::flash();
+			
+			return View::make('project_create')->with('flash_message_error', $messageArray)->withInput(Input::All());
 					
 		} 
 		elseif( $validator->passes() ) 

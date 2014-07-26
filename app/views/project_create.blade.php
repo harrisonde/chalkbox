@@ -44,9 +44,9 @@
 		
 		<div class="formElement name">
 		
-		{{ Form::label('Project Name:', Input::Old('name')) }}
+		{{ Form::label('Project Name:') }}
 		
-		{{ Form::text('name') }}	
+		{{ Form::text('name', Input::Old('name')) }}	
 		
 		</div>
 		
@@ -54,9 +54,9 @@
 		
 	    <div class="formElement description">
 
-		{{ Form::label('Description: (Optional)', Input::Old('description')) }}
+		{{ Form::label('Description: (Optional)') }}
 		
-		{{ Form::text('description') }}
+		{{ Form::text('description', Input::Old('description')) }}
 		
 	    </div>
 	    
@@ -64,7 +64,7 @@
 		
 	    <div class="formElement status">
 
-		{{ Form::label('Status: ',  Input::Old('date_end')) }}
+		{{ Form::label('Status: ') }}
 		
 		{{ Form::select('status', array(
         	'Open'      => 'Open',
@@ -81,9 +81,9 @@
 		
 	    <div class="formElement date_start">
 
-		{{ Form::label('Start Date: (Optional)', Input::Old('date_start')) }}
+		{{ Form::label('Start Date: (Optional)') }}
 		
-		{{ Form::text('date_start') }}
+		{{ Form::text('date_start', Input::Old('date_start')) }}
 		
 	    </div>
 	    
@@ -91,9 +91,9 @@
 		
 	    <div class="formElement date_end">
 
-		{{ Form::label('End Date: (Optional)', Input::Old('date_end')) }}
+		{{ Form::label('End Date: (Optional)') }}
 		
-		{{ Form::text('date_end') }}
+		{{ Form::text('date_end', Input::Old('date_end')) }}
 		
 	    </div>
 	    

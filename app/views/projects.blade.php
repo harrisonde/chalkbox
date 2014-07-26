@@ -35,18 +35,26 @@
 	@endif
 	
 	{{-- Create Project. ------------------------}}		
+		
+		<div class="create">
+		
+			{{link_to('projects/create', '+ New Project')}}	
 	
-	{{link_to('projects/create', '+ New Project')}}	
+		</div>
 	
 	{{-- Project  List. ------------------------}}
 	
 	@if (isset($query))
+		<div class="projectList">
 		
-		@foreach($query as $node) 
+			<ul>
+			@foreach($query as $node) 
+			
+			<li><a href="/projects/{{ $node['id'] }}">{{ $node['name'] }}</a></li>
+			
+			@endforeach
+			</ul>
+		</div>
 		
-			<a href="/projects/{{ $node['id'] }}">{{ $node['name'] }}</a>
-		
-		@endforeach
-	
 	@endif
 @stop 	

@@ -108,6 +108,4 @@
 	
 	{{ Form::close() }}
 	
-	{{link_to('password', 'Forgotten password and other sign-in problems')}}
-	
 @stop 

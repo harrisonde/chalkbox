@@ -12,7 +12,7 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 * [x]Authentication - Password Remider
 
 ###Project
-* [ ]Create project
+* [x]Create project
 
 * [ ]Update project
 

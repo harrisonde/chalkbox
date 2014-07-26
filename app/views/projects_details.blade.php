@@ -33,34 +33,19 @@
 		</ul>
 	
 	@endif
-
 	
-	{{-- Search Form. ------------------------}}
+	{{-- Description. ------------------------}}
+	
+	<div class="description">
+	
+		{{ $query['description'] }} <span class="edit">{{link_to('projects/', 'Edit')}}</div>
 		
-	{{ Form::open( array('url' => 'search')) }}
-	
-		{{ Form::text('search', Input::old('search'),  array('placeholder'=>'Project Name')) }}
-	
-		{{ Form::submit('Search') }}
-	
-	{{ Form::close() }}
-	
-	<?php 
-		# uncomment to display query
-		//print_r($query) 
-	?>
-	
+	</div>	
 			
-	{{-- Search Results. ------------------------}}
+	need to add timer here... 
 	
-	<h3>Project Name: {{ $query['name'] }}</h3>
+	extras - notes and whatever. So ya.
 	
-	<h3>Last Update: {{ $query['updated_at'] }}</h3>
-	
-	<h3>Project Time: {{ $query['time_elapsed_total'] }}</h3>
-	
-	<h3>Project Created: {{ $query['created_at'] }}</h3>
-
 @stop 
 
 

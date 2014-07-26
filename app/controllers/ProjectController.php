@@ -92,7 +92,7 @@ class ProjectController extends \BaseController {
 		elseif( $validator->passes() ) 
 		{	
 			
-			echo 'pass';
+			echo 'Sweet I will add you new project and redirect to projects.';
 		
 		}
 	

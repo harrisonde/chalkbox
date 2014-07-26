@@ -66,10 +66,30 @@ class UsersTableSeeder extends Seeder{
     	$project = new Project();
         
         # Build seed data
+        // set project name
         $project->name = 'Chalkbox Welcome';
+        
+        // set project description
+        $project->description = 'Get to know Chalkbox.';
+        
+        // set project status
+        $project->status = 'Open';
+        // set project start date
+        $project->date_start = '1982-03-16';
+        
+         // set project end date
+        $project->date_end = '0-0-0';
+        
+        // Total time in seconds
         $project->time_elapsed_total = 00;
+        
+        // Elapsed start time in seconds
         $project->time_elapsed_start = 00;
+        
+        // Tracking time?
         $project->time_elapsed_track = false;
+        
+        // Get use id to link this project
         $project->user_id = $user['id'];
         
         # Magic: Eloquent

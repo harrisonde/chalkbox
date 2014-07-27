@@ -101,7 +101,7 @@
 		
 		<div class="formElement submit">
 
-		{{ Form::submit('Create Project') }}
+		{{ Form::submit('Update Project') }}
 		
 		</div>
 	

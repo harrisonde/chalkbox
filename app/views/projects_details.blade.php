@@ -42,10 +42,28 @@
 		{{ $query['description'] }} <span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></div>
 		
 	</div>	
-			
-	need to add timer here... 
 	
-	extras - notes and whatever. So ya.
+	<div class="timer">
+		
+		{{-- Create Time Form. ------------------------}}
+		
+		{{ Form::open(array('url' => '/projects')) }}
+		
+			{{-- Submit Button. ------------------------}}
+			
+			<div class="formElement submit">
+			
+			{{ Form::label('Time:') }}
+					
+			{{ Form::submit('Start Timer') }}
+			
+			</div>
+	
+		{{ Form::close() }}
+		
+	</div>		
+	
+	<h4>extras - notes and whatever. So ya.</h4>
 	
 @stop 
 

@@ -5,32 +5,32 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 ##Features
 ###User
-* [x]Allow registration 
+* [x] Allow registration 
 
-* [x]Welcome email after registration
+* [x] Welcome email after registration
 
-* [x]Authentication - sign-in
+* [x] Authentication - sign-in
 
-* [x]Authentication - sign-out
+* [x] Authentication - sign-out
 
-* [x]Authentication - Password Remider
+* [x] Authentication - Password Remider
 
 ###Project
-* [x]Create project
+* [x] Create project
 
-* [x]Update project
+* [x] Update project
 
-* [ ]Delete project 
+* [ ] Delete project 
 
-* [x]Display all projects
+* [x] Display all projects
 
-* [x]Display projects detail
+* [x] Display projects detail
 
-* [x]Search for projects
+* [x] Search for projects
 
-* [x]Add time (toggle timer button)
+* [x] Add time (toggle timer button)
 
-* [x]Update time (toggle timer button)
+* [x] Update time (toggle timer button)
 
 ###Validation
  * [x]Error messages
@@ -43,31 +43,31 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 * [x] Create Seeder(s)
 
-* [x]Project start date
+* [x] Project start date
 
-* [x]Project end date
+* [x] Project end date
 
-* [x]Project status
+* [x] Project status
 
-* [x]Project Description
+* [x] Project Description
 
-* [ ]Project Notes
+* [ ] Project Notes
 
-* [ ]Project Total Project Hours
+* [ ] Project Total Project Hours
 
-* [ ]Share Proejct timeline
+* [ ] Share Proejct timeline
 
-* [ ]User Groups (Roles) 
+* [ ] User Groups (Roles) 
 
-* [ ]RESTful API 
+* [ ] RESTful API 
 
-* [ ]Graphs
+* [ ] Graphs
 
-* [ ]Email
+* [ ] Email
 
-* [ ]Export
+* [ ] Export
 
-* [ ]RSS Feed
+* [ ] RSS Feed
 
 ##Routes
 Chalkbox listens at the following routes and will "catch" fhe following HTTP verbs:

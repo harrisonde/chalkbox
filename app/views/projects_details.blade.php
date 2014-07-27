@@ -43,6 +43,12 @@
 		
 	</div>	
 	
+	<div class="workingHours">
+	
+	{{ StopwatchFacade::fetch($query['id']); }}
+	
+	</div>
+	
 	<div class="timer">
 		
 		{{-- Create Time Form. ------------------------}}

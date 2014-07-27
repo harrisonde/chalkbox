@@ -24,9 +24,10 @@ class Timer extends Eloquent {
 	
 	# Methods... 
 	/**
-	* 	
+	* Set the currect server time as timer start data in database 
 	* 
-	*
+	* @pram projectID
+	* @response Boolean True/False
 	*/
 	public function start($projectID){
 		
@@ -34,18 +35,109 @@ class Timer extends Eloquent {
 		# Instantiating an object of the Timer class and query
 		$timer = Timer::find($projectID);
 		
-		# set time
+		# set time options
 		$timer->time_elapsed_start = date('Y-m-d H:i:s');
+		$timer->track = true;
 		
 		# save it
 		$timer->save();
 		
-		return;
+		#try and save 
+		try{
+			
+			$timer->save();	
+			
+			return true;
+			
+		}
+		#fail
+		catch (Exception $e) 
+		{
+			return false;
+		}
+		
+	}
+
+	/**
+	* Set the total seconds bewteen two datas and store in database. 
+	* 
+	* @pram projectID
+	* @response Boolean True/False
+	*/
+	public function stop($projectID){
+	
+		# Instantiating an object of the Timer class and query
+		$timer = Timer::find($projectID);
+		
+		# Time var(s)
+		$time_current = date('Y-m-d H:i:s'); #array
+		$time_store_start = $timer['time_elapsed_start']; #string
+		$time_store_total = $timer['time_elapsed_total']; #string
+		$time_total = (strtotime($time_current) - strtotime($time_start)) + $time_store_total;
+		
+		# set		
+		$timer->track = false;
+		$timer->time_elapsed_end = $time_current;
+		$timer->time_elapsed_total = $time_total;
+		
+		#try and save 
+		try{		
+			
+			# save
+			$timer->save();
+			
+			return true;
+		}
+		#fail
+		catch (Exception $e) 
+		{
+			return false;
+		}
+		
 	}
 	
-	public function stop(){
+	/**
+	* Get total seconds be project id 
+	* 
+	* @pram projectID
+	# @pram string Format
+	*
+	* @response string 
+	*/
+	public function fetch($projectID, $format = NULL){
+		
+		$timer = new Timer();
+		
+		$timer = Timer::Find($projectID);
+		
+		$time_seconds = $timer->time_elapsed_total;
+		
+		switch($format)
+		{
+			case NULL:
+			case 'time':
+				
+				$dtF = new DateTime("@0");
+				
+				$dtT = new DateTime("@$time_seconds");
+				
+				return $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+				
+			break;
+			
+			case 'hours':
+				
+				$dtF = new DateTime("@0");
+				
+				$dtT = new DateTime("@$time_seconds");
+				
+				return $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+				
+			break;
+			
 	
-		echo 'stop the stopwatch';
+		}
+		
 	}
 	
 	# Test method to make sure facade is working 
@@ -53,6 +145,6 @@ class Timer extends Eloquent {
 	
 		echo 'a stopwatch to keep time, homie.';
 	}
-
+	
 
 }

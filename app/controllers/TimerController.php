@@ -60,11 +60,30 @@ class TimerController extends \BaseController {
 	 */
 	public function store()
 	{	
+		
 		# start a stopwatch
-		StopwatchFacade::start(Input::get('id'));
+		$stopWatch = StopwatchFacade::start(Input::get('id'));
 		
+		# stopwatch will return boolean
+		switch($stopWatch)
+		{
+			case false:
+				
+				 $error = array('flash_message_error' => 'Something went wrong - please try again, later.');
+				 
+				 return Redirect::back()->withErrors($error);
+				
+			break;
+			case true:
+				
+				#Flash message
+				Session::flash('flash_message_success', 'Timer Started!');;
+	
+				return Redirect::back();
+				
+			break;
+		}
 		
-		# return to project_detail view, we'd like to let the user stop said timer
 	}
 
 

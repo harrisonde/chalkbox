@@ -26,11 +26,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * Add a user to the database, thow error if not unique
 	 * @pram named array $userdata['username'], $userdata['email']
 	 * 
+	 * @response boolean true/false
 	 */
 	public function register($userdata){
-		# here we will try and insert the user if the username and email are not duplicated
-		# we do this to stop mulit-registration 
-		# really need to filter this opposed to a second query. 
 		
 		# parse user name from email
 		$username = explode('@', $userdata['email']);
@@ -48,18 +46,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		try {    
 		    # Eloquent, do yo thang!
 			$new_user->save();
+			
 		}
 		# Fail
 		catch (Exception $e) {
+		
 		 	# bounce back to register with an error.  
-		 	return Redirect::to('/register')->with('flash_message', 'Sign up failed; please try again.')->withInput();
+		 	return false;
 		}
 		
-		# Log the user in
-		Auth::login($user);
-
-		# go to projects page
-        return Redirect::to('/pojects')->with('flash_message', 'Welcome to Foobooks!');
-	
+		# All is well in the world
+		return true;
 	}
 }

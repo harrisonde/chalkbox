@@ -65,12 +65,9 @@ class RegisterController extends \BaseController {
 		
 		if ( $validator->fails() )
 		{
-			
-			# Flash the from input sice we return a view, no redirect
-			Input::flash();
 
 			# return to view with error messages        
-        	return View::make('register')->with('flash_message_error', $validator->messages() );
+        	return View::make('register')->withErrors( $validator->messages() );
 		
 		} 
 		elseif( $validator->passes() ) 
@@ -81,25 +78,40 @@ class RegisterController extends \BaseController {
 			# add new user to db
 			$user_new = $user_new->register( Input::all() );
 			
-			# email @prams
-			$name = 'emails/auth/register'; # (string) email template
-			$data = array('email' => Input::get('email'), ); #data that you want to make available to your email, same as passing data to a view.
-			
-			# Add email to background queue so the registration page will not hang
-			Mail::queue($name, $data, function($message) 
+			switch($user_new)
 			{
-		    	$message->to( Input::get('email'), Input::get('email') ) # using email for simplicity sake.
-		    	->subject('Welcome!');
-			});
+				# send welcome email, login, navigate to /projects
+				case true:
+					# email @prams
+					# (string) email template
+					$name = 'emails/auth/register';
+					#data that you want to make available to your email, same as passing data to a view.
+					$data = array('email' => Input::get('email'), ); 					
+					# Add email to background queue so the registration page will not hang
+					Mail::queue($name, $data, function($message) 
+					{
+				    	$message->to( Input::get('email'), Input::get('email') ) # using email for simplicity sake.
+				    	->subject('Welcome!');
+					});
+					
+					# Log the user in
+					Auth::login($user_new);
+		
+					#Flash message
+					Session::flash('flash_message_success', 'Thank you for registering!');
+					
+					# redirect to signin view, prefill email.
+					return Redirect::to('/projects');
+					
+				break;
+				case false:
+					
+					# return to view with error messages        
+					return View::make('register')->withErrors(['Processing nightmare... Please try again.']);
+				
+				break;
+			}
 			
-			# Flash the from input sice we return a view, no redirect
-			Input::flash();
-			
-			# success message
-			$custom_success_message = array( 'Thank you for registering!');
-			
-			# redirect to signin view
-			return View::make('signin')->with('flash_message_success', $custom_success_message);
 		}
 	}
 

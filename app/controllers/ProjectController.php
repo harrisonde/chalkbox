@@ -204,6 +204,7 @@ class ProjectController extends \BaseController {
 		# pass
 		else
 		{
+			# Flash message
 			Session::flash('flash_message_success', 'Project Updated!');
 			
 			return Redirect::to('projects/'. $id);

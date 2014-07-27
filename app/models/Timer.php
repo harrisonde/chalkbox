@@ -16,13 +16,24 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
 class Timer extends Eloquent {
-
+	
 
 	# Properties...
 	public $timers; # Array
 	
-	# Methods... CRUDy
+	# Identifying relationships amongst tables via relationship methods
+	public function timer()
+	{
+		
+		# Timer belogs to Project
+		# Returns the Eloquent relationship:
+		return $this->belongsToMany('Project');
 	
+	}
+	
+	# Methods... 
+	
+	# Test method to make sure facade is working 
 	public function what(){
 	
 		echo 'a waste of 2 hours';

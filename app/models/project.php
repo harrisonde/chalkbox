@@ -11,12 +11,21 @@ class Project extends Eloquent {
 	*	The Project class allows for CRUDy modification of the Projects table.
 	*/
 	
+	
+	# Identifying relationships amongst tables via relationship methods
+	public function Project()
+	{
+		# Returns the Eloquent relationship hasMany:
+		return $this->hasMany('Timer');
+		# Timer belogs to Project
+		
+	
+	}
+	
 	# Properties...
 	public $projects; # Array
 	
 	# Methods...
-	
-	
 		
 	/**
 	 * Create aprojects in database related.

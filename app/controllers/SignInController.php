@@ -51,7 +51,10 @@ class SignInController extends \BaseController {
 		if(Auth::attempt(Input::only('email', 'password'))) 
 		{
 						
-			return Redirect::to('projects')->with('flash_message_success', array('Welcome'));
+			#Flash message
+			Session::flash('flash_message_success', 'Welcome Back.');
+			
+			return Redirect::to('projects');
 		} 
 		
 		else 
@@ -62,7 +65,7 @@ class SignInController extends \BaseController {
 
 			$custom_error_message = array( 'Incorrect username or password.');
 			
-			return View::make('signin')->with('flash_message_error', $custom_error_message)->withInput(Input::only('email'));
+			return View::make('signin')->withErrors($custom_error_message)->withInput(Input::only('email'));
 	    
 	    }
 	

@@ -29,7 +29,8 @@ class Timer extends Eloquent {
 	* @pram projectID
 	* @response Boolean True/False
 	*/
-	public function start($projectID){
+	public function start($projectID)
+	{
 		
 		#save
 		# Instantiating an object of the Timer class and query
@@ -64,7 +65,8 @@ class Timer extends Eloquent {
 	* @pram projectID
 	* @response Boolean True/False
 	*/
-	public function stop($projectID){
+	public function stop($projectID)
+	{
 	
 		# Instantiating an object of the Timer class and query
 		$timer = Timer::find($projectID);
@@ -73,7 +75,7 @@ class Timer extends Eloquent {
 		$time_current = date('Y-m-d H:i:s'); #array
 		$time_store_start = $timer['time_elapsed_start']; #string
 		$time_store_total = $timer['time_elapsed_total']; #string
-		$time_total = (strtotime($time_current) - strtotime($time_start)) + $time_store_total;
+		$time_total = (strtotime($time_current) - strtotime($time_store_start)) + $time_store_total;
 		
 		# set		
 		$timer->track = false;
@@ -97,14 +99,15 @@ class Timer extends Eloquent {
 	}
 	
 	/**
-	* Get total seconds be project id 
+	* Get total seconds by project id 
 	* 
 	* @pram projectID
 	# @pram string Format
 	*
 	* @response string 
 	*/
-	public function fetch($projectID, $format = NULL){
+	public function fetch($projectID, $format = NULL)
+	{
 		
 		$timer = new Timer();
 		
@@ -140,11 +143,46 @@ class Timer extends Eloquent {
 		
 	}
 	
+	/**
+	* Get status of a timer by project id 
+	* 
+	* @pram projectID
+	*
+	* @response string 
+	*/
+	public function status($projectID)
+	{
+		
+		$timer = new Timer();
+		
+		$timer = Timer::Find($projectID);
+		
+		$time_status= $timer->track;
+	
+		switch($time_status)
+		{
+			case 0:
+				
+				return 'stopped';
+				
+			break;
+			
+			case 1:
+				
+				return 'started';
+				
+			break;
+		}
+	
+	}	
+	
 	# Test method to make sure facade is working 
-	public function what(){
+	public function what()
+	{
 	
 		echo 'a stopwatch to keep time, homie.';
 	}
+	
 	
 
 }

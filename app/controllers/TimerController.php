@@ -120,8 +120,28 @@ class TimerController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
-		echo'update';
+		# start a stopwatch
+		$stopWatch = StopwatchFacade::stop($id);
+		
+		# stopwatch will return boolean
+		switch($stopWatch)
+		{
+			case false:
+				
+				 $error = array('flash_message_error' => 'Something went wrong - please try again, later.');
+				 
+				 return Redirect::back()->withErrors($error);
+				
+			break;
+			case true:
+				
+				#Flash message
+				Session::flash('flash_message_success', 'Timer Stopped!');;
+	
+				return Redirect::back();
+				
+			break;
+		}
 	}
 
 

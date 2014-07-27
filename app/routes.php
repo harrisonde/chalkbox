@@ -37,3 +37,9 @@ Route::resource('signout', 'SignOutController');
 App::missing(function($exception){
      return Response::make("Something went wrong! Said day. So sorry.", 404);
 }); */
+
+Route::get('/stopwatcha', function()
+{
+	StopwatchFacade::what();
+});
+

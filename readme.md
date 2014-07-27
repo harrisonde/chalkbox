@@ -38,6 +38,9 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
  * [x]Success messages
 
 #Extra (Future) Features
+
+* [x] Create Custom Facade for Timer (Stopwatch)
+
 * [x]Project start date
 
 * [x]Project end date

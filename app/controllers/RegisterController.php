@@ -1,5 +1,6 @@
 <?php
 
+
 class RegisterController extends \BaseController {
 
 	
@@ -76,9 +77,9 @@ class RegisterController extends \BaseController {
 			$user_new = new User(); 
 		
 			# add new user to db
-			$user_new = $user_new->register( Input::all() );
-			
-			switch($user_new)
+			$model_response = $user_new->register( Input::all() );
+	
+			switch($model_response)
 			{
 				# send welcome email, login, navigate to /projects
 				case true:
@@ -93,12 +94,19 @@ class RegisterController extends \BaseController {
 				    	$message->to( Input::get('email'), Input::get('email') ) # using email for simplicity sake.
 				    	->subject('Welcome!');
 					});
+					#get user email and look up id
+					$query_for_id = $user_new::where('email', '=', Input::get('email'))->get();
 					
-					# Log the user in
-					Auth::login($user_new);
-		
+					# Manually Logging In Users
+					$query_for_id->filter(function($query_for_id)
+					{
+						
+						Auth::loginUsingId( $query_for_id->id);
+					
+					});
+					
 					#Flash message
-					Session::flash('flash_message_success', 'Thank you for registering!');
+					Session::flash('flash_message_success', 'Welcome to Chalkbox.');
 					
 					# redirect to signin view, prefill email.
 					return Redirect::to('/projects');
@@ -107,7 +115,7 @@ class RegisterController extends \BaseController {
 				case false:
 					
 					# return to view with error messages        
-					return View::make('register')->withErrors(['Processing nightmare... Please try again.']);
+					return View::make('register')->withErrors(['Oops. Please try again.']);
 				
 				break;
 			}

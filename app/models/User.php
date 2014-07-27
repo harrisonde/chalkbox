@@ -46,7 +46,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		try {    
 		    # Eloquent, do yo thang!
 			$new_user->save();
-			
 		}
 		# Fail
 		catch (Exception $e) {

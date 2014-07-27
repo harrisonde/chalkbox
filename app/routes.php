@@ -30,6 +30,8 @@ Route::resource('signin', 'SignInController');
 
 Route::resource('signout', 'SignOutController');
 
+Route::resource('timer', 'TimerController');
+
 /*
 * Laravel will let use display a good old 404, let's use that little guy. 
 */
@@ -41,5 +43,13 @@ App::missing(function($exception){
 Route::get('/stopwatcha', function()
 {
 	StopwatchFacade::what();
+	
+	$date = date('Y-m-d H:i:s');
+	
+	$timeFirst  = strtotime('2011-05-12 18:20:20');
+	$timeSecond = strtotime('2011-05-13 18:20:20');
+	$differenceInSeconds = $timeSecond - $timeFirst;
+	
+	echo $differenceInSeconds;
 });
 

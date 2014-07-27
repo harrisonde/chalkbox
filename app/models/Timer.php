@@ -23,11 +23,35 @@ class Timer extends Eloquent {
 	
 	
 	# Methods... 
+	/**
+	* 	
+	* 
+	*
+	*/
+	public function start($projectID){
+		
+		#save
+		# Instantiating an object of the Timer class and query
+		$timer = Timer::find($projectID);
+		
+		# set time
+		$timer->time_elapsed_start = date('Y-m-d H:i:s');
+		
+		# save it
+		$timer->save();
+		
+		return;
+	}
+	
+	public function stop(){
+	
+		echo 'stop the stopwatch';
+	}
 	
 	# Test method to make sure facade is working 
 	public function what(){
 	
-		echo 'a waste of 2 hours';
+		echo 'a stopwatch to keep time, homie.';
 	}
 
 

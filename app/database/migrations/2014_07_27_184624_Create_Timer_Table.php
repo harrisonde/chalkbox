@@ -30,10 +30,10 @@ class CreateTimerTable extends Migration {
 			$table->bigInteger('time_elapsed_total');
 			
 			// This creates a column where project time is stored in seconds.
-			$table->bigInteger('time_elapsed_start');
+			$table->dateTime('time_elapsed_start');
 			
 			// This creates a column where project time is stored in seconds.
-			$table->bigInteger('time_elapsed_end');
+			$table->dateTime('time_elapsed_end');
         
 
 			#FK

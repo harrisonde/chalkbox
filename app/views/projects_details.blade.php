@@ -47,8 +47,12 @@
 		
 		{{-- Create Time Form. ------------------------}}
 		
-		{{ Form::open(array('url' => '/projects')) }}
-		
+		{{ Form::open(array('url' => '/timer')) }}
+			
+			{{-- Project ID ------------------------}}
+			
+			{{ Form::hidden('id', $query['id'] )  }}
+			
 			{{-- Submit Button. ------------------------}}
 			
 			<div class="formElement submit">

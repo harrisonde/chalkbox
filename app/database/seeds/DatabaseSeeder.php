@@ -80,21 +80,27 @@ class UsersTableSeeder extends Seeder{
          // set project end date
         $project->date_end = '0-0-0';
         
-        // Total time in seconds
-        $project->time_elapsed_total = 00;
-        
-        // Elapsed start time in seconds
-        $project->time_elapsed_start = 00;
-        
-        // Tracking time?
-        $project->time_elapsed_track = false;
-        
         // Get use id to link this project
         $project->user_id = $user['id'];
         
         # Magic: Eloquent
         $project->save();
         
+        $timer = new Timer();
+        
+        # no, tracking time is not started
+        $timer->track = false;
+        
+        # time is kept in seconds
+        $timer->time_elapsed_total = 00;
+        $timer->time_elapsed_start = 00;
+        $timer->time_elapsed_end = 00;
+        
+        #keep track of the project pk as fk
+        $timer->project_id = $project['id'];
+        
+         # Magic: Eloquent
+        $timer->save();
          # Return string to CLI
         $this->command->info('Project table seeded for '.$user['username'].' with Chalkbox Welcome.');
 

@@ -37,18 +37,6 @@ class CreateProjects extends Migration {
 			// This creates a table where the date is stored
 			$table->date('date_end');
 			
-			// This creates a column where project time is stored in seconds.
-			// We use bitit as to allow for a user to track time into millions of years.
-			$table->bigInteger('time_elapsed_total');
-			
-			// This creates a column where project time is stored in seconds.
-			// We use bitit as to allow for a user to track time into millions of years.
-			$table->bigInteger('time_elapsed_start');
-			
-			// This generates one column that stores a boolean to keep track of time elapsed
-			// We do this to track time server side.
-			$table->boolean('time_elapsed_track'); 
-			
 			// This maps the project to a user
 			$table->integer('user_id'); #foreign key
 		

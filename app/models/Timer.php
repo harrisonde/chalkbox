@@ -21,15 +21,6 @@ class Timer extends Eloquent {
 	# Properties...
 	public $timers; # Array
 	
-	# Identifying relationships amongst tables via relationship methods
-	public function timer()
-	{
-		
-		# Timer belogs to Project
-		# Returns the Eloquent relationship:
-		return $this->belongsToMany('Project');
-	
-	}
 	
 	# Methods... 
 	

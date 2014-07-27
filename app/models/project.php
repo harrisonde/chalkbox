@@ -11,17 +11,6 @@ class Project extends Eloquent {
 	*	The Project class allows for CRUDy modification of the Projects table.
 	*/
 	
-	
-	# Identifying relationships amongst tables via relationship methods
-	public function Project()
-	{
-		# Returns the Eloquent relationship hasMany:
-		return $this->hasMany('Timer');
-		# Timer belogs to Project
-		
-	
-	}
-	
 	# Properties...
 	public $projects; # Array
 	
@@ -71,6 +60,16 @@ class Project extends Eloquent {
         {
 	        # Magic: Eloquent
 	        $project->save();
+	        
+	        $timer = new Timer;
+	        
+	        $timer->track = false;
+	        
+	        $timer->time = 00;
+	        
+	        $timer->project()->associate($project);
+	        
+	        $timer->save();
 	     
 	        # Retuen a message
 	        //$success = array('flash_message_success', array('Project created.') );

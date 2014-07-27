@@ -44,15 +44,6 @@ class Project extends Eloquent {
          // set project end date
         $project->date_end = $projectDetail['date_end'];
         
-        // Total time in seconds
-        $project->time_elapsed_total = 00;
-        
-        // Elapsed start time in seconds
-        $project->time_elapsed_start = 00;
-        
-        // Tracking time?
-        $project->time_elapsed_track = false;
-        
         // Get use id to link this project
         $project->user_id = Auth::id();
         
@@ -61,31 +52,54 @@ class Project extends Eloquent {
 	        # Magic: Eloquent
 	        $project->save();
 	        
-	        $timer = new Timer;
-	        
+	        #Timer
+	        $timer = new Timer();
+        
+	        # no, tracking time is not started
 	        $timer->track = false;
 	        
-	        $timer->time = 00;
+	        # time is kept in seconds
+	        $timer->time_elapsed_total = 00;
+	       
+	        $timer->time_elapsed_start = 00;
+	       
+	        $timer->time_elapsed_end = 00;
 	        
-	        $timer->project()->associate($project);
+	        #keep track of the project pk as fk
+	        $timer->project_id = $project['id'];
 	        
-	        $timer->save();
-	     
-	        # Retuen a message
-	        //$success = array('flash_message_success', array('Project created.') );
-			$success = array('flash_message_success ' => 'Project created.', 'project_id' => $project->id);
+	         try
+			 {
+	         	# Magic: Eloquent
+			 	$timer->save();
+			 	
+			 	# Retuen a message
+		        //$success = array('flash_message_success', array('Project created.') );
+				$success = array('flash_message_success ' => 'Project created.', 'project_id' => $project->id);
+				
+				return $success;
+	        
+	         }
+	         # Fail
+			 catch (Exception $e)
+			 { 
+				 
+		 		$error = array('flash_message_error' => 'Something went wrong - please try again, later.');
 			
-			return $success;
+		 		return $error;	    
+		     
+		     } 
+	  
 		}
-		
 		# Fail
 		catch (Exception $e)
-		{ 
+	    { 
+			 
+	 		$error = array('flash_message_error' => 'Something went wrong - please try again, later.');
 		
-			$error = array('flash_message_error' => 'Something went wrong - please try again, later.');
-			
-			return $error;		
-		}
+	 		return $error;	    
+	     
+	    } 
 	
 	}
 	

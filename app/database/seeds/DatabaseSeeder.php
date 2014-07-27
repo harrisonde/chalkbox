@@ -93,7 +93,9 @@ class UsersTableSeeder extends Seeder{
         
         # time is kept in seconds
         $timer->time_elapsed_total = 00;
+       
         $timer->time_elapsed_start = 00;
+       
         $timer->time_elapsed_end = 00;
         
         #keep track of the project pk as fk
@@ -101,6 +103,7 @@ class UsersTableSeeder extends Seeder{
         
          # Magic: Eloquent
         $timer->save();
+        
          # Return string to CLI
         $this->command->info('Project table seeded for '.$user['username'].' with Chalkbox Welcome.');
 

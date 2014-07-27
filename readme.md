@@ -28,9 +28,9 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 * [x]Search for projects
 
-* [ ]Add time
+* [x]Add time (toggle timer button)
 
-* [ ]Update time
+* [x]Update time (toggle timer button)
 
 ###Validation
  * [x]Error messages
@@ -65,7 +65,9 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 
 * [ ]Email
 
-* Export
+* [ ]Export
+
+* [ ]RSS Feed
 
 ##Routes
 Chalkbox listens at the following routes and will "catch" fhe following HTTP verbs:

@@ -2,7 +2,7 @@
 
 @section('body')
 	
-	<h1><a href="/projects">Projects</a> / <a href="/projects/{{$query['id']}}">{{ $query['name'] }}</a> / Edit</h1>
+	<h1><a href="/projects">Projects</a> / <a href="/projects/{{$query['id']}}">{{ $query['name'] }}</a> / Edit / Settings</h1>
 
 	
 	{{-- Validation. ------------------------}}
@@ -109,7 +109,7 @@
 	
 	<div class="control_panel">
 		
-		<a class="" href="/project/{{$query['id']}}/sttings">Settings</a>
+		<a class="" href="/settings/{{$query['id']}}">Settings</a>
 		
 	</div>
 	

@@ -20,6 +20,8 @@ Route::resource('password', 'RemindersController');
 
 Route::resource('password/reset', 'RemindersController');
 
+Route::get('projects/{id}/edit/settings', 'ProjectController@settings');
+
 Route::resource('projects', 'ProjectController');
 
 Route::resource('register', 'RegisterController');
@@ -39,17 +41,3 @@ Route::resource('timer', 'TimerController');
 App::missing(function($exception){
      return Response::make("Something went wrong! Said day. So sorry.", 404);
 }); */
-
-Route::get('/stopwatcha', function()
-{
-	StopwatchFacade::what();
-	
-	$date = date('Y-m-d H:i:s');
-	
-	$timeFirst  = strtotime('2011-05-12 18:20:20');
-	$timeSecond = strtotime('2011-05-13 18:20:20');
-	$differenceInSeconds = $timeSecond - $timeFirst;
-	
-	echo $differenceInSeconds;
-});
-

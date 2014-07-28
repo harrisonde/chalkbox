@@ -294,8 +294,34 @@ class ProjectController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
-		 echo 'destroy';
+		# Project
+		# instantiate 
+		$project = new Project();
+		
+		# query
+		$project = $project::find($id);
+		
+		# delete
+		$project->delete();
+		
+		#timer
+		# instantiate 
+		$timer = new Timer();
+		
+		# query
+		$timer = $timer::find($id);
+		
+		# delete
+		$timer->delete();
+		
+		# Get the projects
+		$project = $project->get_projects();
+		
+		#Flash message
+		Session::flash('flash_message_success', 'Project deleted.');
+				
+		#return
+		return View::make('projects')->with('query', $project);
 	}
 	
 	

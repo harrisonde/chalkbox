@@ -28,11 +28,6 @@ class ProjectController extends \BaseController {
 		$this->beforeFilter('csrf', array('on' => 'post')); # prevent cross site request forgery
     }
 	
-	
-	public function boom()
-	{
-		echo 'city';
-	}
 	/**
 	 * Display a listing of the projects.
 	 *
@@ -174,7 +169,7 @@ class ProjectController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id, $view = 'default')
+	public function edit($id)
 	{
 		
 		# instantiate 
@@ -183,12 +178,26 @@ class ProjectController extends \BaseController {
 		# query
 		$project = $project->get_project_detail($id);
 		
-		echo $view;
-		
 		#return
 		return View::make('project_edit')->with('query', $project);
 	}
-
+	/**
+	 * Show a form to edit a project.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function editSetting($id)
+	{
+		# instantiate 
+		$project = new Project();
+		
+		# query
+		$project = $project->get_project_detail($id);
+		
+		#return
+		return View::make('project_settings')->with('query', $project);
+	}
 
 	/**
 	 * Update the specified resource in storage.

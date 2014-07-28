@@ -20,7 +20,7 @@ Route::resource('password', 'RemindersController');
 
 Route::resource('password/reset', 'RemindersController');
 
-Route::get('projects/{id}/edit/settings', 'ProjectController@settings');
+Route::get('projects/{id}/edit/settings', 'ProjectController@editSetting');
 
 Route::resource('projects', 'ProjectController');
 

@@ -38,17 +38,7 @@
 	{{-- Create Project Form. ------------------------}}
 	
 	{{ Form::open(array('url' => '/projects/'.$query['id'], 'method' => 'put') ) }}
-		
-		{{-- Name field. ------------------------}}
-		
-		<div class="formElement name">
-		
-		{{ Form::label('Project Name:') }}
-		
-		<input type="text" name="name" value="<?php echo($query['name']) ?>" />	
-		
-		</div>
-		
+				
 		{{-- Description field. ------------------------}}
 		
 	    <div class="formElement description">
@@ -109,7 +99,7 @@
 	
 	<div class="control_panel">
 		
-		<a class="" href="/project/{{$query['id']}}/sttings">Settings</a>
+		<a class="" href="/projects/{{$query['id']}}/edit/settings">Settings</a>
 		
 	</div>
 	

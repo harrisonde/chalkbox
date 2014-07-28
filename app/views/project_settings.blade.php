@@ -35,7 +35,7 @@
 	
 	<?php }  ?>
 						
-	{{-- Create Project Form. ------------------------}}
+	{{-- Create Settings Form. ------------------------}}
 	
 	{{ Form::open(array('url' => '/projects/'.$query['id'], 'method' => 'put') ) }}
 		
@@ -48,69 +48,46 @@
 		<input type="text" name="name" value="<?php echo($query['name']) ?>" />	
 		
 		</div>
-		
-		{{-- Description field. ------------------------}}
-		
-	    <div class="formElement description">
-
-		{{ Form::label('Description: (Optional)') }}
-		
-		<input type="text" name="description" value="<?php echo($query['description']) ?>" />		
-		
-	    </div>
-	    
-	     {{-- Status field. ------------------------}}
-		
-	    <div class="formElement status">
-
-		{{ Form::label('Status: ') }}
-		
-		{{ Form::select('status', array(
-        	'Open'         => 'Open',
-			'In Progress'  => 'In Progress',
-			'Close'        => 'Close',
-			'Resolved'     => 'Resolved',
-			'Reopened'     => 'Reopened',
-			), $query['status']) 
-		}}
-		
-	    </div>
-	    
-	    {{-- Date (Start) field. ------------------------}}
-		
-	    <div class="formElement date_start">
-
-		{{ Form::label('Start Date: (Optional)') }}
-		
-		<input type="text" name="date_start" value="<?php echo($query['date_start']) ?>" />
-		
-	    </div>
-	    
-	     {{-- Date (End) field. ------------------------}}
-		
-	    <div class="formElement date_end">
-
-		{{ Form::label('End Date: (Optional)') }}
-		
-		<input type="text" name="date_end" value="<?php echo($query['date_end']) ?>" />
-		
-	    </div>
-	    
+			    
 		
 		{{-- Submit Button. ------------------------}}
 		
 		<div class="formElement submit">
 
-		{{ Form::submit('Update Project') }}
+		{{ Form::submit('Rename this project') }}
 		
 		</div>
 	
 	{{ Form::close() }}
 	
-	<div class="control_panel">
+	{{-- Create Delete Form. ------------------------}}
+	
+	<h4> Danger Zone </h4>
+	
+	{{ Form::open(array('url' => '/projects/'.$query['id'], 'method' => 'delete') ) }}
 		
-		<a class="" href="/settings/{{$query['id']}}">Settings</a>
+		{{-- Name field. ------------------------}}
 		
-	</div>
+		<div class="formElement name">
+		
+		{{ Form::label('Delete this project') }}
+		
+		<span class="helper">(Once you delete, there is no going back!)</span>
+		
+		<input type="hidden" name="name" value="<?php echo($query['name']) ?>" />	
+		
+		</div>
+			    
+		
+		{{-- Submit Button. ------------------------}}
+		
+		<div class="formElement submit">
+
+		{{ Form::submit('Delete this project') }}
+		
+		</div>
+	
+	{{ Form::close() }}
+	
 	
 @stop 

@@ -33,9 +33,9 @@ Chalkbox makes tracking time really simple. Manage your projects like a creative
 * [x] Update time (toggle timer button)
 
 ###Validation
- * [x]Error messages
+ * [x] Error messages
  
- * [x]Success messages
+ * [x] Success messages
 
 #Extra (Future) Features
 

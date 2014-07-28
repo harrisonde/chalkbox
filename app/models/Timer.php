@@ -113,18 +113,34 @@ class Timer extends Eloquent {
 		
 		$timer = Timer::Find($projectID);
 		
+		# time magic 
 		$time_seconds = $timer->time_elapsed_total;
+		$dtF = new DateTime("@0");
+		$dtT = new DateTime("@$time_seconds");
 		
+		# pick format
 		switch($format)
 		{
 			case NULL:
 			case 'time':
-				
-				$dtF = new DateTime("@0");
-				
-				$dtT = new DateTime("@$time_seconds");
-				
-				return $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+				//3603
+				# time < 1 hour
+				if( (int) $time_seconds < 60)
+				{
+					return $dtF->diff($dtT)->format('%s seconds'); 
+				}
+				else if( (int) $time_seconds < 3600)
+				{
+					return $dtF->diff($dtT)->format('%i minutes and %s seconds'); 
+				}
+				else if( (int) $time_seconds < 86400)
+				{
+					return $dtF->diff($dtT)->format('%h hours, %i minutes and %s seconds'); 
+				}
+				else if( (int) $time_seconds >= 86400)
+				{
+					return $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+				}
 				
 			break;
 			

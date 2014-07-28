@@ -101,6 +101,10 @@ class RegisterController extends \BaseController {
 					$query_for_id->filter(function($query_for_id)
 					{
 						
+						# Seed the users first project 
+						$this->ProjectTableSeed($query_for_id->id);
+						
+						# Auto-login
 						Auth::loginUsingId( $query_for_id->id);
 					
 					});
@@ -170,6 +174,57 @@ class RegisterController extends \BaseController {
 	{
 		//
 	}
+	
+	/**
+	 * Run the database seeds adding project for a default user.
+	 *
+	 * @return string
+	 */
+    public function ProjectTableSeed($user)
+    {
 
+    	# Instantiate the projet model	
+    	$project = new Project();
+        
+        # Build seed data
+        // set project name
+        $project->name = 'Chalkbox Welcome';
+        
+        // set project description
+        $project->description = 'Get to know Chalkbox.';
+        
+        // set project status
+        $project->status = 'Open';
+        // set project start date
+        $project->date_start = '1982-03-16';
+        
+         // set project end date
+        $project->date_end = '0-0-0';
+        
+        // Get use id to link this project
+        $project->user_id = $user;
+        
+        # Magic: Eloquent
+        $project->save();
+        
+        $timer = new Timer();
+        
+        # no, tracking time is not started
+        $timer->track = false;
+        
+        # time is kept in seconds
+        $timer->time_elapsed_total = 00;
+       
+        $timer->time_elapsed_start = 00;
+       
+        $timer->time_elapsed_end = 00;
+        
+        #keep track of the project pk as fk
+        $timer->project_id = $project['id'];
+        
+         # Magic: Eloquent
+        $timer->save();
+
+    }
 
 }

@@ -72,6 +72,8 @@
 
 		{{ Form::label('Start Date: (Optional)') }}
 		
+		<span class="helper">(YYYY-MM-DD)</span>
+		
 		<input type="text" name="date_start" value="<?php echo($query['date_start']) ?>" />
 		
 	    </div>
@@ -81,6 +83,8 @@
 	    <div class="formElement date_end">
 
 		{{ Form::label('End Date: (Optional)') }}
+		
+		<span class="helper">(YYYY-MM-DD)</span>
 		
 		<input type="text" name="date_end" value="<?php echo($query['date_end']) ?>" />
 		

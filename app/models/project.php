@@ -141,7 +141,8 @@ class Project extends Eloquent {
 	 * @pram int project id
 	 * @return array Response
 	 */
-	public function update_project($projectDetail, $id){
+	public function update_project($projectDetail, $id)
+	{
 	
         # Get a project to update
         $project = Project::find($id);

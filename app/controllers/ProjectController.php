@@ -45,7 +45,6 @@ class ProjectController extends \BaseController {
 		return View::make('projects')->with('query', $project);
 	}
 
-
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -55,7 +54,6 @@ class ProjectController extends \BaseController {
 	{
 		return View::make('project_create');
 	}
-
 
 	/**
 	 * The method will store projects.
@@ -70,6 +68,8 @@ class ProjectController extends \BaseController {
 		$rules = array( 
 			'name'        => 'required|min:1',
 			'status'      => 'required|min:1', # might want to be more strict
+			'date_start'  => 'date',
+			'date_end'    => 'date',
 			);
 		
 		# Validation message
@@ -94,6 +94,9 @@ class ProjectController extends \BaseController {
 				array_push($messageArray, $value[0]);
 			}
 			
+			# Flash the from input sice we return a view, no redirect
+			Input::flash();
+			
 			return View::make('project_create')->withErrors($messageArray)->withInput(Input::All());
 					
 		} 
@@ -109,7 +112,7 @@ class ProjectController extends \BaseController {
 			# return to projects
 			if(isset($project['flash_message_error']))
 			{
-				 return View::make('projects')->withErrors($project);
+				 return View::make('projects')->withErrors($project)->withInput(Input::All());
 			}
 			# project details view
 			else
@@ -128,7 +131,6 @@ class ProjectController extends \BaseController {
 	
 		
 	}
-
 
 	/**
 	 * Display the specified project detail, if no project detail found, route back to project list.
@@ -323,7 +325,5 @@ class ProjectController extends \BaseController {
 		#return
 		return View::make('projects')->with('query', $project);
 	}
-	
-	
 
 }

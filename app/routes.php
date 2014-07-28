@@ -22,6 +22,8 @@ Route::resource('password/reset', 'RemindersController');
 
 Route::get('projects/{id}/edit/settings', 'ProjectController@editSetting');
 
+Route::post('projects/{id}/edit/name', 'ProjectController@editSettingName');
+
 Route::resource('projects', 'ProjectController');
 
 Route::resource('register', 'RegisterController');

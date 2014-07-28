@@ -200,7 +200,45 @@ class ProjectController extends \BaseController {
 		#return
 		return View::make('project_settings')->with('query', $project);
 	}
+	/**
+	 * Update the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function editSettingName($id)
+	{
+		# Project
+		# instantiate 
+		$project = new Project();
+		
+		# query
+		$project = $project->find(Input::get('id'));
+				
+		$project->name = Input::get('name');
+		
+		#try and save 
+		try{
+			
+			$project->update();	
+			
+			# Flash message
+			Session::flash('flash_message_success', 'Project name updated!');
+			
+			return Redirect::to('projects/'. Input::get('id') );
+		}
+		#fail
+		catch (Exception $e) 
+		{
+			# return back with message
+			return Redirect::back()->withErrors( $project_stamp['validation'] );
+		}
+		
+	
+		
 
+	
+	}
 	/**
 	 * Update the specified resource in storage.
 	 *

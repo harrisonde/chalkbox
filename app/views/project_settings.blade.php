@@ -36,14 +36,17 @@
 	<?php }  ?>
 						
 	{{-- Create Settings Form. ------------------------}}
+
 	
-	{{ Form::open(array('url' => '/projects/'.$query['id'], 'method' => 'put') ) }}
-		
+	{{ Form::open(array('action' => 'ProjectController@editSettingName')) }}	
+	
 		{{-- Name field. ------------------------}}
 		
 		<div class="formElement name">
 		
 		{{ Form::label('Project Name:') }}
+		
+		<input type="hidden" name="id" value="<?php echo($query['id']) ?>" />	
 		
 		<input type="text" name="name" value="<?php echo($query['name']) ?>" />	
 		

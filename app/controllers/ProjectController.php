@@ -280,14 +280,14 @@ class ProjectController extends \BaseController {
 		// validate data
 		# input(s) to validate
 		$rules = array( 
-			'name'        => 'required|min:1',
-			'status'      => 'required|min:1', # might want to be more strict
+    			'status'      => 'required|min:1', # might want to be more strict
+    			'date_start'  => 'date',
+				'date_end'    => 'date',
 			);
 		
 		# Validation message
 		$message = array( 
-			'name'       => 'Please specify a name for your project.',
-			'status'     => 'The project status must be included',
+				'status'     => 'The project status must be included',
 			);
 		
 		# run validation

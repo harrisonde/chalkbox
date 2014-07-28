@@ -147,9 +147,6 @@ class Project extends Eloquent {
         # Get a project to update
         $project = Project::find($id);
 		
-		# Update the name
-		$project->name = $projectDetail['name'];
-		
 		// set project description
         $project->description = $projectDetail['description'];
         

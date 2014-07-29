@@ -91,4 +91,31 @@ footer{
 	
 	@include span-columns(12);
 	
+	*{
+		
+		display: inline;
+		
+	}
+
+	.center{
+		@include span-columns(6);
+		text-align: center;
+		
+		img{
+			
+			height: auto;
+			max-width: 39px;
+			
+			}
+
+	}
+	.left{
+		@include span-columns(3);
+
+	}
+	.right{
+		@include span-columns(3);
+		text-align: right;
+	}
+	
 }

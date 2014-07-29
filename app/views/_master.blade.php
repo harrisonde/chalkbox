@@ -104,25 +104,37 @@
 	
 	<footer>
 		
-		<ul>
-
-			<li>© 2014 Chalkbox</li>
-			
-			<li><a href="https://www.facebook.com/harrison.destefano">Creator</a></li>
-			
-		</ul>
+		<div class="left">
 		
-		<img src="/images/chalkbox@2x.png" alt="chalkbox@2x" width="55" height="55">
+			<ul>
 		
-		<ul>
+				<li>© 2014 Chalkbox</li>
+				
+				<li><a href="https://www.facebook.com/harrison.destefano">Creator</a></li>
+				
+			</ul>
 
-			 <li>{{link_to('register', 'Register')}}</li>
-	    
-	         <li>{{link_to('signin', 'Sign In')}}</li>
-
-		</ul>
+		</div>
 		
+		<div class="center">
+		
+			<img src="/images/chalkbox@2x.png" alt="chalkbox@2x" width="55" height="55">
+		</div>
+		
+		<div class="right">
+		
+			<ul>
+	
+				 <li>{{link_to('register', 'Register')}}</li>
+		    
+		         <li>{{link_to('signin', 'Sign In')}}</li>
+	
+			</ul>
+		
+		</div>
+	
 	</footer>
+
 </body>
 
 </html>

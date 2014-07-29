@@ -124,6 +124,34 @@ footer {
   width: 100%; }
   footer:last-child {
     margin-right: 0; }
+  footer * {
+    display: inline; }
+  footer .center {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    text-align: center; }
+    footer .center:last-child {
+      margin-right: 0; }
+    footer .center img {
+      height: auto;
+      max-width: 39px; }
+  footer .left {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    footer .left:last-child {
+      margin-right: 0; }
+  footer .right {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    text-align: right; }
+    footer .right:last-child {
+      margin-right: 0; }
 
 header #nav-open-btn {
   display: none; }

@@ -1,7 +1,7 @@
 #Chalkbox
 ![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox.png "Chalkbox")
 ##Description of Chalkbox
-Chalkbox makes tracking time really simple. Manage your projects like a creative - not an accountant. 
+Chalkbox makes tracking time really simple. Manage your projects like a web artisan - not an accountant. 
 
 ##Features
 ###User

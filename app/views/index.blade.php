@@ -4,6 +4,6 @@
 
 	<h1>Chalkbox</h1>
 
-	<h2>Manage your projects like a creative - not an accountant</h2>
+	<h2>Manage your projects like a web artisan - not an accountant.</h2>
 
 @stop 

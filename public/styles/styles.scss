@@ -1,0 +1,41 @@
+// SASS Directory structure
+//|___________________________________________________________________
+//|-- modules/              # Common modules
+//| The modules directory is reserved for Sass code that doesn't cause Sass to actually output CSS. Things like mixin declarations, functions, and variables.
+//|   
+//|   ...
+//|___________________________________________________________________
+//|-- partials/             # Partials
+//| The partials directory is where the meat of the CSS is constructed.
+//|
+//|   ...
+//|   _structure.scss       # where the core system strucutre is developed
+//|___________________________________________________________________
+//|-- vendor/               # CSS or Sass from other projects
+//| The vendor directory is for third-party CSS. This is handy when using prepackaged components developed by other people (or for your own components that are maintained in another project). jQuery UI and a color picker are examples of CSS that you might want to place in the vendor directory. As a general rule I make it a point not to modify files in my vendor directory.
+//|   ...
+//|___________________________________________________________________
+//| -- style.scss            # primary Sass file
+//| The main Sass file will be very clean using the aforemitioned directory structure. Thus said Sass files will be called with @import.
+//|
+	
+	/*  1.| development globals 
+	---------------------------- */
+	$visual-grid: true;
+		
+	/* 1. | Import(s)
+	---------------------------- */
+	@import url("vendor/normalize.3.0.1.css");
+	@import "bourbon/bourbon";
+	@import "neat/neat";
+	@import "partials/_structure.scss";
+	@import "vendor/_base.scss";
+	@import "vendor/_buttons.scss";
+	@import "vendor/_flashes.scss";
+	@import "vendor/_forms.scss";
+	@import "vendor/_grid-settings.scss";
+	@import "vendor/_lists.scss";
+	@import "vendor/_tables.scss";
+	@import "vendor/_typography.scss";
+	@import "vendor/_variables.scss";
+	@import "vendor/_color.scss";

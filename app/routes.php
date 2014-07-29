@@ -34,6 +34,11 @@ Route::resource('signin', 'SignInController');
 
 Route::resource('signout', 'SignOutController');
 
+Route::get('system_default_styles', function()
+{
+	return View::make('_styles');
+});
+
 Route::resource('timer', 'TimerController');
 
 /*

@@ -129,10 +129,38 @@
 		<div class="right">
 		
 			<ul>
+				
+				{{-- Anchors. ------------------------}} 
 	
-				 <li>{{link_to('register', 'Register')}}</li>
-		    
-		         <li>{{link_to('signin', 'Sign In')}}</li>
+				 @if(Auth::check())
+	    
+	    	
+	    		   
+	    	
+	    	{{-- Anchors. ------------------------}}
+			
+			<ul>
+			
+			   <li>{{link_to('projects', 'Projects')}}</li>
+			
+			   <li>{{link_to('signout', 'Sign Out')}}</li>
+			
+			</ul>
+			
+			
+			@else
+			
+			{{-- Anchors. ------------------------}}
+			
+			<ul>
+			
+				<li>{{link_to('register', 'Register')}}</li>
+			
+				<li>{{link_to('signin', 'Sign In')}}</li>
+			
+			</ul>
+			
+			@endif
 	
 			</ul>
 		

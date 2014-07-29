@@ -9,7 +9,9 @@
 //| The partials directory is where the meat of the CSS is constructed.
 //|
 //|   ...
+//|   _presentation/scss    # element appearance - background color...
 //|   _structure.scss       # where the core system strucutre is developed
+//|	  _visibility.scss      # hide and show for devices
 //|___________________________________________________________________
 //|-- vendor/               # CSS or Sass from other projects
 //| The vendor directory is for third-party CSS. This is handy when using prepackaged components developed by other people (or for your own components that are maintained in another project). jQuery UI and a color picker are examples of CSS that you might want to place in the vendor directory. As a general rule I make it a point not to modify files in my vendor directory.
@@ -28,7 +30,9 @@
 	@import url("vendor/normalize.3.0.1.css");
 	@import "bourbon/bourbon";
 	@import "neat/neat";
+	@import "partials/_presentation.scss";
 	@import "partials/_structure.scss";
+	@import "partials/_visibility.scss";
 	@import "vendor/_base.scss";
 	@import "vendor/_buttons.scss";
 	@import "vendor/_flashes.scss";

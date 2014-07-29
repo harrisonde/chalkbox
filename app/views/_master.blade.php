@@ -17,8 +17,10 @@
 			
 	{{-- Navigation. ------------------------}}	
 	
-	<header class="navigation">	
-	
+	<header class="navigation" role="navigation">	
+		
+		<a id="nav-open-btn" href="#nav">Chalkbox Navigation</a>
+		
 		<div class="brand">
 		
 			 {{-- Logo. --}}

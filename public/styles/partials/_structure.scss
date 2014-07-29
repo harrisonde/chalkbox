@@ -1,82 +1,84 @@
 #chalkbox{
 	@include outer-container;
 	
-	header{
-		@include span-columns(12);
-		
-		*{
-			display: inline;
-			vertical-align: middle;
-		}
-		
-		div{
-			margin-top: .7rem;
-		}
-		
-		.brand{ 
-			
-			@include span-columns(1);
-			text-align: center;
+}		
 
-			img{
-			
-			height: auto;
-			max-width: 39px;
-			
-			}
-		
-		}
-		
-		input[type="text"]{
-			
-			margin-bottom: 0;
-			
-		}
-		
-		
-		.project-search{
-		
-			@include span-columns(3);
-			
-		}
-		
-		ul{
-			
-			li{
-				
-				padding-right: 1.9rem;
-							
-			}
-	
-		}		
-	
-		.user-info{
-			
-			@include span-columns(4);
-			text-align: right;
-			
-			ul li{
-				
-				padding-right:0;			
-			
-			}
-
-		}
-		
-		.user-private{
-		
-			@include span-columns(4);
-				
-		}
-		
-		.user-public{
-			
-			@include span-columns(8);
-			
-		}
+header{
+	@include span-columns(12);
+	padding: 0 0 8px 0;
+	*{
+		display: inline;
+		vertical-align: middle;
 	}
 	
-}
+	div{
+		margin-top: .7rem;
+	}
+	
+	.brand{ 
+		
+		@include span-columns(1);
+		text-align: center;
+	
+		img{
+		
+		height: auto;
+		max-width: 39px;
+		
+		}
+	
+	}
+	
+	input[type="text"]{
+		
+		margin-bottom: 0;
+		
+	}
+	
+	
+	.project-search{
+	
+		@include span-columns(3);
+		
+	}
+	
+	ul{
+		
+		li{
+			
+			padding-right: 1.9rem;
+						
+		}
+	
+	}		
+	
+	.user-info{
+		
+		@include span-columns(4);
+		text-align: right;
+		
+		ul li{
+			
+			padding-right:.4rem;			
+		
+		}
+	
+	}
+	
+	.user-private{
+	
+		@include span-columns(4);
+			
+	}
+	
+	.user-public{
+		
+		@include span-columns(8);
+		
+	}
+	}
+	
+
 
 #chalk{
 

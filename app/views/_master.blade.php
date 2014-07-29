@@ -117,8 +117,13 @@
 		</div>
 		
 		<div class="center">
+			
+			<a href=" {{url('/', $parameters = array(), $secure = null) }}" class="logo">
+			
+				<img src="/images/chalkbox@2x.png" alt="chalkbox@2x" width="55" height="55">
 		
-			<img src="/images/chalkbox@2x.png" alt="chalkbox@2x" width="55" height="55">
+			</a>
+		
 		</div>
 		
 		<div class="right">

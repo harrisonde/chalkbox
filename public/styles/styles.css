@@ -82,7 +82,7 @@ header {
     header .project-search:last-child {
       margin-right: 0; }
   header ul li {
-    padding-right: 1.9rem; }
+    padding: 0 1.9rem 0 0; }
   header .user-info {
     float: left;
     display: block;
@@ -144,6 +144,8 @@ footer {
     width: 23.23176%; }
     footer .left:last-child {
       margin-right: 0; }
+    footer .left ul li {
+      padding: 0 1.9rem 0 0; }
   footer .right {
     float: left;
     display: block;
@@ -152,6 +154,8 @@ footer {
     text-align: right; }
     footer .right:last-child {
       margin-right: 0; }
+    footer .right ul li {
+      padding: 0 1.9rem 0 0; }
 
 header #nav-open-btn {
   display: none; }

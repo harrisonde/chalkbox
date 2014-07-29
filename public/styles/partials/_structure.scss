@@ -46,7 +46,7 @@ header{
 		
 		li{
 			
-			padding-right: 1.9rem;
+			padding:$ListItem-Padding;
 						
 		}
 	
@@ -111,11 +111,25 @@ footer{
 	}
 	.left{
 		@include span-columns(3);
+		
+		ul {
+			
+			li{
+				padding:$ListItem-Padding;
+			}
+		}
 
 	}
 	.right{
 		@include span-columns(3);
 		text-align: right;
+		
+		ul {
+			
+			li{
+				padding:$ListItem-Padding;
+			}
+		}
 	}
 	
 }

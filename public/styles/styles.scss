@@ -11,6 +11,7 @@
 //|   ...
 //|   _presentation/scss    # element appearance - background color...
 //|   _structure.scss       # where the core system strucutre is developed
+//|   _variables.scss       # store of information we want to reuse  
 //|	  _visibility.scss      # hide and show for devices
 //|___________________________________________________________________
 //|-- vendor/               # CSS or Sass from other projects
@@ -30,6 +31,7 @@
 	@import url("vendor/normalize.3.0.1.css");
 	@import "bourbon/bourbon";
 	@import "neat/neat";
+	@import "partials/_variables.scss";
 	@import "partials/_presentation.scss";
 	@import "partials/_structure.scss";
 	@import "partials/_visibility.scss";

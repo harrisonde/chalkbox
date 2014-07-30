@@ -8,8 +8,11 @@ form{
 	
 	@include linear-gradient($color-gray, $color-gray-light);
 	border: 1px solid $color-gray-drak;
+	@include border-top-radius(5px);
+	@include border-bottom-radius(5px);
+	@include border-left-radius(5px);
+	@include border-right-radius(5px);
 	box-shadow: 0 2px 4px darken($color-gray, 3);
-	padding: 3%;
 }
 
 footer{

@@ -4,6 +4,7 @@
 	@include border-bottom-radius(1px);
 	@include border-left-radius(1px);
 	@include border-right-radius(1px);
+	border: 1px solid #EBB8B8;
 	box-shadow: 0 2px 4px darken($color-gray, 3);
 	padding: 1%;
 }
@@ -14,6 +15,7 @@
 	@include border-bottom-radius(1px);
 	@include border-left-radius(1px);
 	@include border-right-radius(1px);
+	border: 1px solid #CCE1C4;
 	box-shadow: 0 2px 4px darken($color-gray, 3);
 	padding: 1%;
 }

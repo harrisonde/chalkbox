@@ -38,6 +38,7 @@ body:before {
   border-bottom-left-radius: 1px;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  border: 1px solid #EBB8B8;
   box-shadow: 0 2px 4px #f1f1f1;
   padding: 1%; }
 
@@ -51,6 +52,7 @@ body:before {
   border-bottom-left-radius: 1px;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  border: 1px solid #CCE1C4;
   box-shadow: 0 2px 4px #f1f1f1;
   padding: 1%; }
 

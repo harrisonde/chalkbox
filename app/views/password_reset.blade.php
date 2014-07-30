@@ -2,44 +2,53 @@
 
 @section('body')
 
-	<h1>Password Reset.</h1>
+	{{-- Page Description. ------------------------}}
+	
+	<div class="chalk-lines-center">
+	
+		<h1>Password Reset.</h1>
 
-	{{-- Password  Form. ------------------------}}
+	</div>
 	
-	<form>
-	
-	    <input type="hidden" name="token" value="<?php if(isset($token)){echo($token);} ?>">
+	<div class="chalk-lines-center">
+		{{-- Password  Form. ------------------------}}
 		
-		<div class="formElement email">
-	    	
-	    	{{ Form::label('email:') }}
-	    	
-	    	<input type="email" name="email">
+		<form>
 		
-		</div>
-		
-		<div class="formElement password">
-		
-			{{ Form::label('password:') }}
+		    <input type="hidden" name="token" value="<?php if(isset($token)){echo($token);} ?>">
 			
-			<input type="password" name="password">
-	
-		</div>
-		
-		<div class="formElement password">		
+			<div class="formElement email">
+		    	
+		    	{{ Form::label('email:') }}
+		    	
+		    	<input type="email" name="email">
 			
-			{{ Form::label('Password Confirmation:') }}
+			</div>
 			
-			<input type="password" name="password_confirmation">
+			<div class="formElement password">
+			
+				{{ Form::label('password:') }}
+				
+				<input type="password" name="password">
 		
-		</div>
-	
-		<div class="formElement password">
+			</div>
+			
+			<div class="formElement password">		
+				
+				{{ Form::label('Password Confirmation:') }}
+				
+				<input type="password" name="password_confirmation">
+			
+			</div>
 		
-	    	<input type="submit" value="Reset Password">
-	
-		</div>
-	
-	</form>
+			<div class="formElement password">
+			
+		    	<input type="submit" value="Reset Password">
+		
+			</div>
+		
+		</form>
 
+	</div>
+	
 @stop

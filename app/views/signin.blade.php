@@ -20,7 +20,7 @@
 		
 		<div class="formElement email">
 		
-		{{ Form::label('email', 'Email: (email@somewhere.com)', Input::Old('email')) }}
+		{{ Form::label('email', 'Email:', Input::Old('email')) }}
 		
 		{{ Form::text('email') }}	
 		

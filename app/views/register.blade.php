@@ -6,7 +6,7 @@
 	
 	<div class="chalk-lines-center">
 	
-		<h1>Really Simple Time Tracking</h1>
+		<h1>Register</h1>
 	
 	</div>
 	
@@ -15,18 +15,14 @@
 		{{-- Registration Form. ------------------------}}
 		
 		{{ Form::open() }}
-			
-			{{-- Action Description. ------------------------}}
-			
-			<h2>Register</h2>
-				
+						
 			{{-- Email field. ------------------------}}
 			
 			<div class="formElement email">
 			
 			{{ Form::label('email:') }}
 			
-			{{ Form::text('email', Input::Old('email'),  array('placeholder'=>'email@me.com')) }}
+			{{ Form::text('email', Input::Old('email')) }}
 			
 			</div>
 			
@@ -37,7 +33,7 @@
 			
 			{{ Form::label('password', 'Password:') }}
 			
-			{{ Form::password('password', array('placeholder'=>'********')) }}
+			{{ Form::password('password') }}
 			
 			</div>
 			

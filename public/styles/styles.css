@@ -38,6 +38,7 @@ body:before {
   border-bottom-left-radius: 1px;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  box-shadow: 0 2px 4px #f1f1f1;
   padding: 1%; }
 
 .success {
@@ -50,6 +51,7 @@ body:before {
   border-bottom-left-radius: 1px;
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
+  box-shadow: 0 2px 4px #f1f1f1;
   padding: 1%; }
 
 header {

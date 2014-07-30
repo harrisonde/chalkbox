@@ -1,20 +1,20 @@
 .errors{
-	
 	background-color: $color-error;
 	@include border-top-radius(1px);
 	@include border-bottom-radius(1px);
 	@include border-left-radius(1px);
 	@include border-right-radius(1px);
+	box-shadow: 0 2px 4px darken($color-gray, 3);
 	padding: 1%;
 }
 
 .success{
-	
 	background-color: $color-success;
 	@include border-top-radius(1px);
 	@include border-bottom-radius(1px);
 	@include border-left-radius(1px);
 	@include border-right-radius(1px);
+	box-shadow: 0 2px 4px darken($color-gray, 3);
 	padding: 1%;
 }
 

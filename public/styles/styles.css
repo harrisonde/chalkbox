@@ -28,6 +28,30 @@ body:before {
   pointer-events: none;
   z-index: -1; }
 
+.errors {
+  background-color: #f2dede;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  padding: 1%; }
+
+.success {
+  background-color: #dff0d8;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  padding: 1%; }
+
 header {
   background-color: #F9F9F9;
   background-image: -webkit-linear-gradient(#F9F9F9, #F6F6F6);

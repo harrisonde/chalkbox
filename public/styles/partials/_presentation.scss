@@ -1,3 +1,23 @@
+.errors{
+	
+	background-color: $color-error;
+	@include border-top-radius(1px);
+	@include border-bottom-radius(1px);
+	@include border-left-radius(1px);
+	@include border-right-radius(1px);
+	padding: 1%;
+}
+
+.success{
+	
+	background-color: $color-success;
+	@include border-top-radius(1px);
+	@include border-bottom-radius(1px);
+	@include border-left-radius(1px);
+	@include border-right-radius(1px);
+	padding: 1%;
+}
+
 header{
 	
 	@include linear-gradient($color-gray, $color-gray-light);

@@ -3,38 +3,7 @@
 @section('body')
 	
 	<h2>Search Results.</h2>
-	
-	{{-- Validation. ------------------------}}
 		
-	@if(sizeof($errors) > 0)
-		
-			<ul class="errors">
-			
-			@foreach ($errors->all('<li>:message</li>') as $message)
-			
-				{{ $message }}
-			
-			@endforeach
-			
-			</ul>
-		
-	@endif
-	    
-    {{-- Flash Messages. ------------------------}}
-    
-    <?php $value = Session::get('flash_message_success'); ?>
-		
-	<?php if(sizeof($value) > 0){ ?>
-		
-		<ul class="success">
-		
-			<?php { echo($value); } ?>
-		
-		</ul>	
-	
-	<?php }  ?>
-
-	
 	{{-- Search Form. ------------------------}}
 	
 	{{ Form::open( array('url' => 'search')) }}

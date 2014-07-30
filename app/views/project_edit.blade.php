@@ -4,37 +4,7 @@
 	
 	<h1><a href="/projects">Projects</a> / <a href="/projects/{{$query['id']}}">{{ $query['name'] }}</a> / Edit</h1>
 
-	
-	{{-- Validation. ------------------------}}
-		
-	@if(sizeof($errors) > 0)
-		
-			<ul class="errors">
-			
-			@foreach ($errors->all('<li>:message</li>') as $message)
-			
-				{{ $message }}
-			
-			@endforeach
-			
-			</ul>
-		
-	@endif
-	    
-    {{-- Flash Messages. ------------------------}}
-    
-    <?php $value = Session::get('flash_message_success'); ?>
-		
-	<?php if(sizeof($value) > 0){ ?>
-		
-		<ul class="success">
-		
-			<?php { echo('$value'); } ?>
-		
-		</ul>	
-	
-	<?php }  ?>
-						
+							
 	{{-- Create Project Form. ------------------------}}
 	
 	{{ Form::open(array('url' => '/projects/'.$query['id'], 'method' => 'put') ) }}

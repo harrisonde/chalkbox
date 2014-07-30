@@ -34,10 +34,93 @@ header {
   background-image: linear-gradient(#F9F9F9, #F6F6F6);
   border-bottom: 1px solid #e5e5e5; }
 
+form {
+  background-color: #F9F9F9;
+  background-image: -webkit-linear-gradient(#F9F9F9, #F6F6F6);
+  background-image: linear-gradient(#F9F9F9, #F6F6F6);
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 4px #f1f1f1;
+  padding: 3%; }
+
 footer {
   border-top: 1px solid #e5e5e5;
   margin-top: 1rem;
   padding-top: 3rem; }
+
+/** 
+	Table of Contents - Structure
+	----------------------
+	1. Chalklines ( Responsive Containers )
+	2. Chalk 
+	3. Chalkbox
+	4. Header
+		1. All Children
+		2. Brand
+			1. Img
+		3. Div
+		4. Input
+		5. Project
+		6. Ul
+			1. Li
+		7. User Info
+		8. User Public
+		9. User Private
+	5. Footer
+		1. All Childern
+		2. Center
+		3. Left
+		4. Right
+	6. Form
+**/
+.chalk-lines-center {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%; }
+  .chalk-lines-center:last-child {
+    margin-right: 0; }
+
+.chalk-lines-25 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  .chalk-lines-25:last-child {
+    margin-right: 0; }
+
+.chalk-lines-50 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .chalk-lines-50:last-child {
+    margin-right: 0; }
+
+.chalk-lines-75 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%; }
+  .chalk-lines-75:last-child {
+    margin-right: 0; }
+
+.chalk-lines-100 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .chalk-lines-100:last-child {
+    margin-right: 0; }
+
+#chalk {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  padding: 1% 1% 1% 1%; }
+  #chalk:last-child {
+    margin-right: 0; }
 
 #chalkbox {
   max-width: 68em;
@@ -59,8 +142,6 @@ header {
   header * {
     display: inline;
     vertical-align: middle; }
-  header div {
-    margin-top: 0.7rem; }
   header .brand {
     float: left;
     display: block;
@@ -72,6 +153,8 @@ header {
     header .brand img {
       height: auto;
       max-width: 39px; }
+  header div {
+    margin-top: 0.7rem; }
   header input[type="text"] {
     margin-bottom: 0; }
   header .project-search {
@@ -115,15 +198,6 @@ header {
     header .uri-public:last-child {
       margin-right: 0; }
 
-#chalk {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%;
-  padding: 1% 1% 1% 1%; }
-  #chalk:last-child {
-    margin-right: 0; }
-
 footer {
   float: left;
   display: block;
@@ -163,6 +237,9 @@ footer {
       margin-right: 0; }
     footer .right ul li {
       padding: 0 1.9rem 0 0; }
+
+form {
+  padding: 3%; }
 
 header #nav-open-btn {
   display: none; }

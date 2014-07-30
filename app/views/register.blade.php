@@ -2,41 +2,57 @@
 
 @section('body')
 
-	<h1>Really Simple. Really Fast.</h1>
+	{{-- Page Description. ------------------------}}
 	
-	{{-- Registration Form. ------------------------}}
+	<div class="chalk-lines-center">
 	
-	{{ Form::open() }}
+		<h1>Really Simple Time Tracking</h1>
+	
+	</div>
+	
+	<div class="chalk-lines-center">
+		
+		{{-- Registration Form. ------------------------}}
+		
+		{{ Form::open() }}
 			
-		{{-- Email field. ------------------------}}
-		
-		<div class="formElement email">
-		
-		{{ Form::label('email:') }}
-		
-		{{ Form::text('email', Input::Old('email') ) }}
-		
-		</div>
-		
-		
-		{{-- Password field. ------------------------}}
-		
-		<div class="formElement password">
-		
-		{{ Form::label('password', 'Password:') }}
-		
-		{{ Form::password('password') }}
-		
-		</div>
-		
-		{{-- Submit Button. ------------------------}}
-		
-		<div class="formElement submit">
-		
-		{{ Form::submit('Register') }}
-		
-		</div>
-		
-	{{ Form::close() }}
+			{{-- Action Description. ------------------------}}
+			
+			<h2>Register</h2>
+				
+			{{-- Email field. ------------------------}}
+			
+			<div class="formElement email">
+			
+			{{ Form::label('email:') }}
+			
+			{{ Form::text('email', Input::Old('email') ) }}
+			
+			</div>
+			
+			
+			{{-- Password field. ------------------------}}
+			
+			<div class="formElement password">
+			
+			{{ Form::label('password', 'Password:') }}
+			
+			{{ Form::password('password') }}
+			
+			</div>
+			
+			{{-- Submit Button. ------------------------}}
+			
+			<div class="formElement submit">
+			
+			{{ Form::submit('Register') }}
+			
+			</div>
+			
+		{{ Form::close() }}
 
+	</div>
+	
+	
+	
 @stop 

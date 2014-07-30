@@ -1,12 +1,20 @@
 header{
 	
-	@include linear-gradient(#F9F9F9, #F6F6F6);
+	@include linear-gradient($color-gray, $color-gray-light);
 	border-bottom: 1px solid #e5e5e5;
+}
+
+form{
+	
+	@include linear-gradient($color-gray, $color-gray-light);
+	border: 1px solid $color-gray-drak;
+	box-shadow: 0 2px 4px darken($color-gray, 3);
+	padding: 3%;
 }
 
 footer{
 	
-	border-top: 1px solid #e5e5e5;
+	border-top: 1px solid $color-gray-drak;
 	margin-top: 1rem;
 	padding-top: 3rem;
 }

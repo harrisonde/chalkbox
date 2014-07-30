@@ -1,18 +1,82 @@
+
+/** 
+	Table of Contents - Structure
+	----------------------
+	1. Chalklines ( Responsive Containers )
+	2. Chalk 
+	3. Chalkbox
+	4. Header
+		1. All Children
+		2. Brand
+			1. Img
+		3. Div
+		4. Input
+		5. Project
+		6. Ul
+			1. Li
+		7. User Info
+		8. User Public
+		9. User Private
+	5. Footer
+		1. All Childern
+		2. Center
+		3. Left
+		4. Right
+	6. Form
+**/
+
+.chalk-lines-center{
+	
+	@include span-columns(6);
+	@include shift(3);
+	
+}
+
+.chalk-lines-25{
+	
+	@include span-columns(3);
+
+}
+
+.chalk-lines-50{
+	
+	@include span-columns(6);
+
+}
+
+.chalk-lines-75{
+
+	@include span-columns(9);
+
+}
+
+.chalk-lines-100{
+	
+	@include span-columns(12);
+}
+
+
+#chalk{
+
+	@include span-columns(12);
+	padding: 1% 1% 1% 1%;
+
+}
+
 #chalkbox{
+	
 	@include outer-container;
 	
 }		
 
 header{
+	
 	@include span-columns(12);
 	padding: 0 0 8px 0;
+	
 	*{
 		display: inline;
 		vertical-align: middle;
-	}
-	
-	div{
-		margin-top: .7rem;
 	}
 	
 	.brand{ 
@@ -28,6 +92,13 @@ header{
 		}
 	
 	}
+	
+	div{
+		
+		margin-top: .7rem;
+	
+	}
+	
 	
 	input[type="text"]{
 		
@@ -81,16 +152,7 @@ header{
 		@include span-columns(11);
 	}
 
-}
-	
-
-
-#chalk{
-
-	@include span-columns(12);
-	
-	padding: 1% 1% 1% 1%;
-}
+}	
 
 footer{
 	
@@ -137,4 +199,9 @@ footer{
 		}
 	}
 	
+}
+
+form{
+	
+	padding: 3%;
 }

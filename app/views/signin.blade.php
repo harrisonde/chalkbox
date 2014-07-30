@@ -42,12 +42,12 @@
 
 		{{ Form::submit('Sign in') }}
 		
-		</div>
-		
 		{{-- Reset Password Link. ------------------------}}
 		
 		{{link_to('password', 'Forgot password')}}
 		
+		
+		</div>
 	
 	{{ Form::close() }}
 	

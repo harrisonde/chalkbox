@@ -43,8 +43,6 @@
 							{{-- Submit Button. ------------------------}}
 							
 							<div class="formElement submit">
-							
-							{{ Form::label('Time:') }}
 									
 							{{ Form::submit('Stop Timer', ['class' => 'danger']) }}
 							

@@ -4,37 +4,6 @@
 
 	<h1>Really Simple. Really Fast.</h1>
 	
-	{{-- Validation. ------------------------}}
-		
-	@if(sizeof($errors) > 0)
-		
-			<ul class="errors">
-			
-			@foreach ($errors->all('<li>:message</li>') as $message)
-			
-				{{ $message }}
-			
-			@endforeach
-			
-			</ul>
-		
-	@endif
-	    
-    {{-- Flash Messages. ------------------------}}
-    
-    <?php $value = Session::get('flash_message_success'); ?>
-		
-	<?php if(sizeof($value) > 0){ ?>
-		
-		<ul class="success">
-		
-			<?php { echo($value); } ?>
-		
-		</ul>	
-	
-	<?php }  ?>
-
-	
 	{{-- Registration Form. ------------------------}}
 	
 	{{ Form::open() }}
@@ -67,6 +36,7 @@
 		{{ Form::submit('Register') }}
 		
 		</div>
+		
 	{{ Form::close() }}
 
 @stop 

@@ -107,6 +107,13 @@ header {
     width: 65.88078%; }
     header .user-public:last-child {
       margin-right: 0; }
+  header .uri-public {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 91.4702%; }
+    header .uri-public:last-child {
+      margin-right: 0; }
 
 #chalk {
   float: left;

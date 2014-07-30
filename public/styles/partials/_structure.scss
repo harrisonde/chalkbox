@@ -76,7 +76,12 @@ header{
 		@include span-columns(8);
 		
 	}
+	.uri-public{
+		
+		@include span-columns(11);
 	}
+
+}
 	
 
 

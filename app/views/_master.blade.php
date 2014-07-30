@@ -98,6 +98,38 @@
 
 	<div id="chalk">
 		
+		{{-- Validation. ------------------------}}
+		
+		@if(sizeof($errors) > 0)
+			
+				<ul class="errors">
+				
+				@foreach ($errors->all('<li>:message</li>') as $message)
+				
+					{{ $message }}
+				
+				@endforeach
+				
+				</ul>
+			
+		@endif
+		    
+	    {{-- Flash Messages. ------------------------}}
+	    
+	    <?php $value = Session::get('flash_message_success'); ?>
+			
+		<?php if(sizeof($value) > 0){ ?>
+			
+			<ul class="success">
+			
+				<?php { echo($value); } ?>
+			
+			</ul>	
+		
+		<?php }  ?>
+
+		 {{-- Body. ------------------------}}
+		 
 		@yield('body')
 
 	</div>
@@ -134,7 +166,7 @@
 	
 				 @if(Auth::check())
 	    
-	    	
+				 
 	    		   
 	    	
 	    	{{-- Anchors. ------------------------}}

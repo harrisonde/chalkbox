@@ -1,4 +1,20 @@
 
+//buttons
+
+
+#chalk .action{
+	background-color:$color-green;
+	&:hover {
+		background-color:darken($color-green, 16.3);
+	}
+}
+#chalk .danger{
+	background-color:$color-red;
+	&:hover {
+		background-color:darken($color-red, 11);
+	}
+}
+// Validation
 .errors{
 	background-color: $color-error;
 	@include border-top-radius(1px);
@@ -25,12 +41,22 @@
 	text-shadow: 1px 1px #E3FED8;
 }
 
+//structure elements
 header{
 	
 	@include linear-gradient($color-gray, $color-gray-light);
 	border-bottom: 1px solid #e5e5e5;
 }
 
+footer{
+	
+	border-top: 1px solid $color-gray-drak;
+	margin-top: 1rem;
+	padding-top: 3rem;
+}
+
+
+// Forms
 form{
 	
 	@include linear-gradient($color-gray, $color-gray-light);
@@ -46,12 +72,4 @@ header form{
 	border: none;
 	padding: 0;
 	
-}
-
-
-footer{
-	
-	border-top: 1px solid $color-gray-drak;
-	margin-top: 1rem;
-	padding-top: 3rem;
 }

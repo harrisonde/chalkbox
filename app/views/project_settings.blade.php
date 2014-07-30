@@ -56,7 +56,7 @@
 		
 		<div class="formElement submit">
 
-		{{ Form::submit('Delete this project') }}
+		{{ Form::submit('Delete this project', ['class' => 'danger']) }}
 		
 		</div>
 	

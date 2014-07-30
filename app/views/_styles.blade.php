@@ -76,6 +76,8 @@
     <p><input type="button" value="Input type button"></p>
     <p><input type="reset" value="Input type reset"></p>
     <p><input type="submit" value="Input type submit"></p>
+	<p><input class="action" type="submit" value="Action"></p>
+    <p><input class="danger" type="submit" value="Danger"></p>
     <p><input type="submit" value="Input type submit disabled" disabled></p>
     <p><button type="button">Button type button</button></p>
     <p><button type="reset">Button type reset</button></p>

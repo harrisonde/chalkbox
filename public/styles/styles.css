@@ -40,7 +40,9 @@ body:before {
   border-bottom-right-radius: 1px;
   border: 1px solid #EBB8B8;
   box-shadow: 0 2px 4px #f1f1f1;
-  padding: 1%; }
+  color: #DF6C62;
+  padding: 1%;
+  text-shadow: 1px 1px #FDEEEE; }
 
 .success {
   background-color: #dff0d8;
@@ -54,7 +56,9 @@ body:before {
   border-bottom-right-radius: 1px;
   border: 1px solid #CCE1C4;
   box-shadow: 0 2px 4px #f1f1f1;
-  padding: 1%; }
+  color: #9EAD98;
+  padding: 1%;
+  text-shadow: 1px 1px #E3FED8; }
 
 header {
   background-color: #F9F9F9;

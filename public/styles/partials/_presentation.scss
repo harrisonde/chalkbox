@@ -6,7 +6,9 @@
 	@include border-right-radius(1px);
 	border: 1px solid #EBB8B8;
 	box-shadow: 0 2px 4px darken($color-gray, 3);
+	color: #DF6C62;
 	padding: 1%;
+	text-shadow: 1px 1px #FDEEEE;	
 }
 
 .success{
@@ -17,7 +19,9 @@
 	@include border-right-radius(1px);
 	border: 1px solid #CCE1C4;
 	box-shadow: 0 2px 4px darken($color-gray, 3);
+	color: #9EAD98;
 	padding: 1%;
+	text-shadow: 1px 1px #E3FED8;
 }
 
 header{

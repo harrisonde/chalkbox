@@ -35,6 +35,13 @@ form{
 	box-shadow: 0 2px 4px darken($color-gray, 3);
 }
 
+header form{
+	border: none;
+	padding: 0;
+	
+}
+
+
 footer{
 	
 	border-top: 1px solid $color-gray-drak;

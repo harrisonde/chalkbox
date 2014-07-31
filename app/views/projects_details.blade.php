@@ -24,7 +24,9 @@
 	
 				{{ $query['description'] }} <span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></span>
 		
-		</div>		
+		</div>	
+	
+	</div>		
 	
 	<div class="chalk-lines-75">
 	
@@ -98,7 +100,7 @@
 	
 	<div class="chalk-lines-25">
 		
-		<div class="pannel">
+		<div class="panel">
 		
 			<ul>
 			
@@ -110,10 +112,9 @@
 				
 			</ul>	
 		
-		</div>	
+		</div>
 	
 	</div>
-
 	
 @stop 
 

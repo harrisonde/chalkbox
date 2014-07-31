@@ -76,7 +76,7 @@
 	
 	<div class="chalk-lines-25">
 		
-		<div class="pannel">
+		<div class="panel">
 		
 			<ul>
 			

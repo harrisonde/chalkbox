@@ -65,7 +65,6 @@ footer{
 
 // Forms
 form{
-	
 	@include linear-gradient($color-gray, $color-gray-light);
 	border: 1px solid $color-gray-drak;
 	@include border-top-radius(5px);
@@ -75,6 +74,11 @@ form{
 	box-shadow: 0 2px 4px darken($color-gray, 3);
 }
 
+form.clean{
+	background-color: #fff;
+	background-image:none;
+	box-shadow: none;
+}
 header form{
 	border: none;
 	padding: 0;

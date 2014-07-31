@@ -13,6 +13,26 @@
 		<div class="container">
 			
 			<ul>
+			
+				
+			
+			<?php $timer_status = StopwatchFacade::status($query['id']); ?> 
+			
+			<?php	switch($timer_status) {
+				
+					case 'started': ?>
+		
+						<li class="clock started">Timing</li>
+				
+			<?php	break;
+					
+					default: ?>
+				
+					<li class="clock stopped">Timer Stopped</li>
+				
+			<?php	break;
+			
+				} ?>
 				
 				<li class="time"> {{ StopwatchFacade::fetch($query['id']); }} </li>
 				
@@ -45,7 +65,7 @@
 					
 					{{-- Create Time Form. ------------------------}}
 						
-						{{ Form::open(array('url' => '/timer/'.$query['id'], 'method' => 'put') ) }}
+						{{ Form::open(array('url' => '/timer/'.$query['id'], 'method' => 'put', 'class'=>'clean') ) }}
 							
 							{{-- Project ID ------------------------}}
 							
@@ -71,7 +91,7 @@
 			
 				{{-- Create Time Form. ------------------------}}
 				
-				{{ Form::open(array('url' => '/timer')) }}
+				{{ Form::open(array('url' => '/timer', 'class'=>'clean')) }}
 					
 					{{-- Project ID ------------------------}}
 					

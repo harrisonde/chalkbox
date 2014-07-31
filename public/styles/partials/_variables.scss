@@ -18,5 +18,16 @@ $color-warning: #fcf8e3;
 $ListItem-Padding: 0 1.9rem 0 0;
 $ListItem-LastItem-Padding: 0 1rem 0 0;
 
+// Media measure
+$desktop_measure: 1000px;
+$tablet_measure: 768px;
+$mobile_measure: 480px;
 
+//Breakpoints
+$desktop: new-breakpoint(max-width $desktop_measure 12);
+$tablet: new-breakpoint(max-width $tablet_measure 4);
+$mobile: new-breakpoint(max-width $mobile_measure 4);	
 
+// Padding
+$pad-some: 1.5%;
+$pad-tone: 2%; 

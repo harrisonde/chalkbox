@@ -79,7 +79,7 @@
 			
 			<div class="formElement submit">
 	
-			{{ Form::submit('Create Project') }}
+			{{ Form::submit('+ Create Project', ['class' => 'action'] ) }}
 			
 			<a href="/projects">Cancel</a>
 			</div>

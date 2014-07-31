@@ -59,6 +59,7 @@
 .chalk-lines-100{
 	
 	@include span-columns(12);
+	padding-bottom: 1.3em;
 }
 
 #chalk{
@@ -75,7 +76,7 @@
 }		
 
 .epic{
-	padding: $pad-some;
+	padding: $pad-bit;
 	
 	ul{ 
 		li{

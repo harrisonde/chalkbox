@@ -8,7 +8,15 @@
 	
 		<h1><a href="/projects">Projects</a> / {{ $query['name'] }}</h1>
 	
-		{{-- Project Shorts. ------------------------}}
+		{{-- Description. ------------------------}}
+		
+		<div class="description">
+	
+				<h3>{{ $query['description'] }} </h3><span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></span>
+		
+		</div>	
+		
+		{{-- Project epic. ------------------------}}
 		
 		<div class="epic">
 			
@@ -36,14 +44,6 @@
 				
 			</ul>
 		</div>
-		
-		{{-- Description. ------------------------}}
-		
-		<div class="description">
-	
-				<h3>{{ $query['description'] }} </h3><span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></span>
-		
-		</div>	
 	
 	</div>		
 	

@@ -108,7 +108,7 @@ form {
   box-shadow: 0 2px 4px #f1f1f1; }
 
 form.clean {
-  background-color: #fff;
+  background-color: transparent;
   background-image: none;
   box-shadow: none; }
 
@@ -162,8 +162,8 @@ header form {
     .chalk-lines-25 {
       float: left;
       display: block;
-      margin-right: 7.42297%;
-      width: 314.84594%; }
+      margin-right: 2.35765%;
+      width: 100%; }
       .chalk-lines-25:last-child {
         margin-right: 0; } }
 
@@ -186,8 +186,8 @@ header form {
     .chalk-lines-75 {
       float: left;
       display: block;
-      margin-right: 7.42297%;
-      width: 314.84594%; }
+      margin-right: 2.35765%;
+      width: 100%; }
       .chalk-lines-75:last-child {
         margin-right: 0; } }
 
@@ -195,7 +195,8 @@ header form {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 1.3em; }
   .chalk-lines-100:last-child {
     margin-right: 0; }
 
@@ -218,7 +219,7 @@ header form {
     clear: both; }
 
 .epic {
-  padding: 1.5%; }
+  padding: 0.5%; }
   .epic ul li {
     display: inline;
     padding: 0 1.9rem 0 0; }

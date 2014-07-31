@@ -25,9 +25,10 @@ $mobile_measure: 480px;
 
 //Breakpoints
 $desktop: new-breakpoint(max-width $desktop_measure 12);
-$tablet: new-breakpoint(max-width $tablet_measure 4);
-$mobile: new-breakpoint(max-width $mobile_measure 4);	
+$tablet: new-breakpoint(max-width $tablet_measure 12);
+$mobile: new-breakpoint(max-width $mobile_measure 12);	
 
 // Padding
+$pad-bit: .5%;
 $pad-some: 1.5%;
 $pad-tone: 2%; 

@@ -10,39 +10,38 @@
 	
 		{{-- Project Shorts. ------------------------}}
 		
-		<div class="container">
+		<div class="epic">
 			
 			<ul>
 			
+				<?php $timer_status = StopwatchFacade::status($query['id']); ?> 
 				
-			
-			<?php $timer_status = StopwatchFacade::status($query['id']); ?> 
-			
-			<?php	switch($timer_status) {
-				
-					case 'started': ?>
-		
-						<li class="clock started">Timing</li>
-				
-			<?php	break;
+				<?php	switch($timer_status) {
 					
-					default: ?>
-				
-					<li class="clock stopped">Timer Stopped</li>
-				
-			<?php	break;
+						case 'started': ?>
 			
-				} ?>
+				<li class="clock started">Timing</li>
+					
+				<?php	break;
+						
+						default: ?>
+					
+				<li class="clock stopped">Timer Stopped</li>
+					
+				<?php	break;
+				
+					} ?>
 				
 				<li class="time"> {{ StopwatchFacade::fetch($query['id']); }} </li>
 				
 			</ul>
 		</div>
+		
 		{{-- Description. ------------------------}}
 		
 		<div class="description">
 	
-				{{ $query['description'] }} <span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></span>
+				<h3>{{ $query['description'] }} </h3><span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></span>
 		
 		</div>	
 	

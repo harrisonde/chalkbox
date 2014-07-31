@@ -73,10 +73,22 @@
 	@include outer-container;
 	
 }		
-.container{
-	
-}
 
+.epic{
+	padding: $pad-some;
+	
+	ul{ 
+		li{
+			display: inline;
+			padding:$ListItem-Padding;		
+		}
+	}
+}
+.description{
+	*{
+		display: inline;
+	}
+} 
 header{
 	
 	@include span-columns(12);

@@ -38,8 +38,7 @@ body:before {
   #chalk .danger:hover {
     background-color: #9a2c2c; }
 
-#chalk .container {
-  border: 1px solid #e5e5e5;
+.epic {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -47,7 +46,8 @@ body:before {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px; }
+  border-bottom-right-radius: 5px;
+  border: 1px solid #e5e5e5; }
 
 .errors {
   background-color: #f2dede;
@@ -217,6 +217,14 @@ header form {
     display: table;
     clear: both; }
 
+.epic {
+  padding: 1.5%; }
+  .epic ul li {
+    display: inline;
+    padding: 0 1.9rem 0 0; }
+
+.description * {
+  display: inline; }
 
 header {
   float: left;

@@ -38,6 +38,17 @@ body:before {
   #chalk .danger:hover {
     background-color: #9a2c2c; }
 
+#chalk .container {
+  border: 1px solid #e5e5e5;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
+
 .errors {
   background-color: #f2dede;
   border-top-left-radius: 1px;

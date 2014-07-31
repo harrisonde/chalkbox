@@ -8,16 +8,25 @@
 	
 		<h1><a href="/projects">Projects</a> / {{ $query['name'] }}</h1>
 	
+		{{-- Project Shorts. ------------------------}}
 		
+		<div class="container">
+			
+			<ul>
+				
+				<li class="time"> {{ StopwatchFacade::fetch($query['id']); }} </li>
+				
+			</ul>
+		</div>
 		{{-- Description. ------------------------}}
 		
 		<div class="description">
 	
-		{{ $query['description'] }} <span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></div>
+				{{ $query['description'] }} <span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></span>
 		
 		</div>		
 	
-	<div class="chalk-lines-50">
+	<div class="chalk-lines-75">
 	
 		
 		{{-- Pick Proper Timer Form. ------------------------}}
@@ -87,31 +96,21 @@
 	
 	</div>
 	
-	<div class="chalk-lines-50">
-	
-		<h1> Project Feed </h1>
+	<div class="chalk-lines-25">
 		
-		<div class="workingHours">
+		<div class="pannel">
 		
-			<h2>Project Time: {{ StopwatchFacade::fetch($query['id']); }}</h2>
+			<ul>
+			
+				<li class="active"><a href="/projects/{{ $query['id'] }}">Project</a></li>
+				
+				<li><a href="/projects/{{ $query['id'] }}/edit">Edit</a></li>
+				
+				<li><a class="" href="/projects/{{$query['id']}}/edit/settings">Settings</a></li>
+				
+			</ul>	
 		
-		</div>
-		
-		<ul>
-			
-			<li>Something</li>
-			
-			<li>Else about</li>
-			
-			<li>some sort of</li>
-			
-			<li>action(s) the user has</li>
-			
-			<li> taken on any number of</li>
-			
-			<li> the projects they own</li>
-			
-		</ul>	
+		</div>	
 	
 	</div>
 

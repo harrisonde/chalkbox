@@ -14,6 +14,13 @@
 		background-color:darken($color-red, 11);
 	}
 }
+#chalk .container{
+	border: 1px solid $color-gray-drak;
+	@include border-top-radius(5px);
+	@include border-bottom-radius(5px);
+	@include border-left-radius(5px);
+	@include border-right-radius(5px);
+}
 // Validation
 .errors{
 	background-color: $color-error;

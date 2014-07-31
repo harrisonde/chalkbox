@@ -13,7 +13,6 @@
 </head>
 
 <body id="chalkbox"> 
-	
 			
 	{{-- Navigation. ------------------------}}	
 	
@@ -88,9 +87,6 @@
 			</div>
 			
 	    @endif
-	    
-		
-	
 		
 	</header>
 			

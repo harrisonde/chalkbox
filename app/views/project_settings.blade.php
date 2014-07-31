@@ -74,4 +74,22 @@
 
 	</div>
 	
+	<div class="chalk-lines-25">
+		
+		<div class="pannel">
+		
+			<ul>
+			
+				<li><a href="/projects/{{ $query['id'] }}">Project</a></li>
+				
+				<li><a href="/projects/{{ $query['id'] }}/edit">Edit</a></li>
+				
+				<li class="active"><a class="" href="/projects/{{$query['id']}}/edit/settings">Settings</a></li>
+				
+			</ul>	
+		
+		</div>
+	
+	</div>
+	
 @stop 

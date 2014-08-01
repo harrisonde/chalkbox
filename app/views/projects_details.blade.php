@@ -42,9 +42,13 @@
 				
 				<li class="time"> {{ StopwatchFacade::fetch($query['id']); }} </li>
 				
+				
+				<li class="actions"> {{ sizeof( $actions ); }} </li>
+				
+				
 			</ul>
 		</div>
-	
+				
 	</div>		
 	
 	<div class="chalk-lines-75">

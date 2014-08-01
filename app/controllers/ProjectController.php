@@ -146,6 +146,12 @@ class ProjectController extends \BaseController {
 		# Get the projects
 		$project = $projects->get_project_detail($id);
 		
+		# Instantiating new object
+		$actions = new Action();
+		
+		# get actions
+		$actions = $actions->getAction( ['project_id'=> $id, 'actions' => 'all']  );
+		
 		// check id and return view
 		switch(sizeof($project))
 		{
@@ -158,7 +164,7 @@ class ProjectController extends \BaseController {
 			default:
 				
 				// Passing Data To View	
-				return View::make('projects_details')->with('query', $project);
+				return View::make('projects_details')->with(['query' => $project, 'actions' => $actions]);
 			
 			break;
 		}

@@ -86,6 +86,20 @@ class UsersTableSeeder extends Seeder{
         # Magic: Eloquent
         $project->save();
         
+        #create action
+        $action = new Action();
+        
+        # set actions details
+        $action->type = 'created';
+        $action->description = 'Created new project, Chalkbox Welcome.';
+        $action->project_id = $project['id'];
+        $action->user_id = $user['id'];
+		
+		# Magic: Eloquent
+		$action->save();
+        
+        
+        
         $timer = new Timer();
         
         # no, tracking time is not started

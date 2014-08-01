@@ -73,10 +73,23 @@ class Project extends Eloquent {
 	         	# Magic: Eloquent
 			 	$timer->save();
 			 	
-			 	# Retuen a message
-		        //$success = array('flash_message_success', array('Project created.') );
-				$success = array('flash_message_success ' => 'Project created.', 'project_id' => $project->id);
-				
+				 	# Action
+				 	$action = new Action();
+				 	//type			 	
+				 	$action->type = 'created';
+					//description 
+					$action->description = 'Created new project, '. $projectDetail['name'] .'.';
+					//projec id 
+					$action->project_id = $project->id;
+					//user id
+					$action->user_id = $project->user_id;
+					# Magic: Eloquent
+				 	$action->save();
+				 	
+				 	# Retuen a message
+			        //$success = array('flash_message_success', array('Project created.') );
+					$success = array('flash_message_success ' => 'Project created.', 'project_id' => $project->id);
+					
 				return $success;
 	        
 	         }
@@ -156,12 +169,35 @@ class Project extends Eloquent {
         // set project start date
         $project->date_start = $projectDetail['date_start'];
         
-         // set project end date
+        // set project end date
         $project->date_end = $projectDetail['date_end'];
+		
+		# Action
+	 	$action = new Action();
+	 	//type			 	
+	 	$action->type = 'Updated';
+		//description 
+		$action->description = 'Updated project, '. $project['name'] .'.';
+		//projec id 
+		$action->project_id = $project->id;
+		//user id
+		$action->user_id = $project->user_id;
+
+		
+		try{	
 			
-		# Updating the retrieved model
-		$project->save();	
+			# Updating the retrieved model
+			$project->save();	
 			
+			# Magic: Eloquent
+			$action->save();
+			
+		}
+		
+		catch(Exception $e){
+						
+		 	return $error;	 
+		}	
 	}	
 	//Delete
 

@@ -44,7 +44,23 @@ Route::resource('timer', 'TimerController');
 /*
 * Laravel will let use display a good old 404, let's use that little guy. 
 */
-/*
+
 App::missing(function($exception){
+     
      return Response::make("Something went wrong! Said day. So sorry.", 404);
-}); */
+
+});
+
+Route::get('/getAction', function()
+{
+
+	#Get action(s) from the actions table by Project
+	
+	$action = new Action();
+	
+	$action = $action->getAction( ['project_id'=> '3', 'actions' => 3]  );
+	
+	print_r($action);
+	
+});
+

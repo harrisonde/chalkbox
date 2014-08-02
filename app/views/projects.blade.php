@@ -6,29 +6,43 @@
 	
 		<h1>Projects</h1>		
 		
-		{{-- Create Project. ------------------------}}		
+			{{-- Create Project. ------------------------}}		
 			
-			<div class="create">
+			<div class="epic">
 				
-				<button onClick="window.location.href='/projects/create'">+ New Project </button>
+				<span class="projects">
+					@if (isset($query))
+						
+						{{ sizeof($query) }} project(s)
+						
+					@endif
+				</span>
 				
-			</div>
+				<div class="create">
+					
+					<button onClick="window.location.href='/projects/create'">+ New Project </button>
+					
+				</div>
 		
-		{{-- Project  List. ------------------------}}
+			
+			
+			{{-- Project  List. ------------------------}}
 		
-		@if (isset($query))
-			<div class="projectList">
-			
-				<ul>
-				@foreach($query as $node) 
+			@if (isset($query))
+				<div class="projectList">
 				
-				<li><a href="/projects/{{ $node['id'] }}">{{ $node['name'] }}</a></li>
+					<ul>
+					@foreach($query as $node) 
+					
+					<li><a href="/projects/{{ $node['id'] }}">{{ $node['name'] }}</a></li>
+					
+					@endforeach
+					</ul>
 				
-				@endforeach
-				</ul>
-			
+				</div>
+		
 			</div>
-	
+			
 		</div>
 		
 	@endif

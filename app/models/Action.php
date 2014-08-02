@@ -128,5 +128,50 @@ class Action extends Eloquent{
 		
 		# return 
 		return $return_actions;			
+	}
+	/**
+	* Get actions from the actions table by user id and number of actions
+	* 
+	* @param array User ID, Number of Actions
+	* @ return array Project Name, Action Detail, Carbon Time
+	*/
+	public function getAllActionsUser($request)
+	{	
+		# Lazy Eager Loading
+		$action = Action::all();
+		
+		# Actions to be returned
+		$return_actions = array(); # array
+		
+		# iterate count
+		$counter = 0;
+		
+		# Actions 
+		$actions = array(); # array
+		
+		# iterate Action collection until number of actions is met of EOL
+		foreach($action as $action_detail)
+		{
+			# push matches
+			if($counter < $request['actions'] && $request['user_id'] == $action_detail['user_id'] ){
+				
+				# action detail
+				$action_desc = $action_detail['description']; #string
+				
+				# action date
+				$action_date = $action_detail['created_at']; #string
+
+				#project name
+				$project_name = Project::find($action_detail['project_id'])['name']; #string
+				
+				# add item to action array
+				array_push($return_actions, ['project' => $project_name, 'detail' => $action_desc, 'date'=>$action_date]);
+				
+				$counter = $counter + 1;
+			}
+		}
+		
+		# return 
+		return $return_actions;	
 	}	
 }

@@ -1,7 +1,5 @@
 
 //buttons
-
-
 #chalk .action{
 	background-color:$color-green;
 	&:hover {
@@ -21,6 +19,26 @@
 	@include border-left-radius(5px);
 	@include border-right-radius(5px);
 	border: 1px solid $color-gray-drak;
+	.create{
+		
+	}
+	.project-count{
+		
+	}
+	.user-project-list{
+		ul{
+			li{
+				border-bottom: 1px solid $color-gray-drak;
+			}
+			li:last-child{
+				border-bottom: 0 none;
+			}
+		}
+	}
+	.tab{
+		@include linear-gradient($color-gray, $color-gray-light);
+		border-bottom: 1px solid $color-gray-drak;
+	}
 }
 // Validation
 .errors{

@@ -48,6 +48,15 @@ body:before {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border: 1px solid #e5e5e5; }
+  .epic .user-project-list ul li {
+    border-bottom: 1px solid #e5e5e5; }
+  .epic .user-project-list ul li:last-child {
+    border-bottom: 0 none; }
+  .epic .tab {
+    background-color: #F9F9F9;
+    background-image: -webkit-linear-gradient(#F9F9F9, #F6F6F6);
+    background-image: linear-gradient(#F9F9F9, #F6F6F6);
+    border-bottom: 1px solid #e5e5e5; }
 
 .errors {
   background-color: #f2dede;
@@ -122,7 +131,14 @@ header form {
 	1. Chalklines ( Responsive Containers )
 	2. Chalk 
 	3. Chalkbox
-	4. Header
+	4. Epic
+		1. Create
+		2. Project-count
+		3. User-project-list
+			1. Ul
+				2. Li
+		4. Tab
+	5. Header
 		1. All Children
 		2. Brand
 			1. Img
@@ -134,12 +150,12 @@ header form {
 		7. User Info
 		8. User Public
 		9. User Private
-	5. Footer
+	6. Footer
 		1. All Childern
 		2. Center
 		3. Left
 		4. Right
-	6. Form
+	7. Form
 **/
 .chalk-lines-center {
   float: left;
@@ -220,6 +236,21 @@ header form {
 
 .epic {
   padding: 0.5%; }
+  .epic .create {
+    float: right; }
+  .epic .project-count {
+    float: left;
+    padding-left: 2%;
+    padding-top: 2%; }
+  .epic .user-project-list ul li {
+    display: block;
+    padding: 0.5%;
+    padding-left: 9px; }
+  .epic .tab {
+    width: 100%;
+    display: block;
+    height: 44px;
+    padding: 0.5%; }
   .epic ul li {
     display: inline;
     padding: 0 1.9rem 0 0; }

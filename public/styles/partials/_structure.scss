@@ -4,7 +4,14 @@
 	1. Chalklines ( Responsive Containers )
 	2. Chalk 
 	3. Chalkbox
-	4. Header
+	4. Epic
+		1. Create
+		2. Project-count
+		3. User-project-list
+			1. Ul
+				2. Li
+		4. Tab
+	5. Header
 		1. All Children
 		2. Brand
 			1. Img
@@ -16,12 +23,12 @@
 		7. User Info
 		8. User Public
 		9. User Private
-	5. Footer
+	6. Footer
 		1. All Childern
 		2. Center
 		3. Left
 		4. Right
-	6. Form
+	7. Form
 **/
 
 .chalk-lines-center{
@@ -78,6 +85,29 @@
 .epic{
 	padding: $pad-bit;
 	
+	.create{
+		float: right;
+	}
+	.project-count{
+		float: left;
+		padding-left: 2%;
+		padding-top: 2%;
+	}
+	.user-project-list{
+		ul{
+			li{
+				display: block;
+				padding: $pad-bit;
+				padding-left: 9px;
+			}
+		}
+	}
+	.tab{
+		width: 100%;
+		display: block;
+		height: 44px;
+		padding: $pad-bit;
+	}
 	ul{ 
 		li{
 			display: inline;

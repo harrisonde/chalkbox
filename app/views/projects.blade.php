@@ -10,26 +10,28 @@
 			
 			<div class="epic">
 				
-				<span class="projects">
-					@if (isset($query))
-						
-						{{ sizeof($query) }} project(s)
-						
-					@endif
-				</span>
+				<div class="tab">
 				
-				<div class="create">
+					<span class="project-count">
+						@if (isset($query))
+							
+							{{ sizeof($query) }} project(s)
+							
+						@endif
+					</span>
 					
-					<button onClick="window.location.href='/projects/create'">+ New Project </button>
-					
-				</div>
+					<div class="create">
+						
+						<button onClick="window.location.href='/projects/create'">+ New Project </button>
+						
+					</div>
 		
-			
+				</div>
 			
 			{{-- Project  List. ------------------------}}
 		
 			@if (isset($query))
-				<div class="projectList">
+				<div class="user-project-list">
 				
 					<ul>
 					@foreach($query as $node) 
@@ -49,23 +51,17 @@
 
 	<div class="chalk-lines-50">
 	
-		<h1> Project Feed </h1>
-		
+		<h1> News Feed </h1>
+
 		<ul>
 			
-			<li>Something</li>
-			
-			<li>Else about</li>
-			
-			<li>some sort of</li>
-			
-			<li>action(s) the user has</li>
-			
-			<li> taken on any number of</li>
-			
-			<li> the projects they own</li>
-			
-		</ul>	
+			@foreach($actions as $action)
 	
+			<li>{{ $action['detail'] }}</li>
+			
+			@endforeach	
+	
+		</ul>
+		
 	</div>
 @stop 	

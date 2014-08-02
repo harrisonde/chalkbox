@@ -43,7 +43,19 @@
 				<li class="time"> {{ StopwatchFacade::fetch($query['id']); }} </li>
 				
 				
-				<li class="actions"> {{ sizeof( $actions ); }} </li>
+				<li class="actions"> 
+				
+					@if( sizeof( $actions ) > 1 )
+					
+						{{ sizeof( $actions ); }}  updates
+						
+					@else
+					
+						{{ sizeof( $actions ); }} update
+						
+					@endif
+				
+				</li>
 				
 				
 			</ul>

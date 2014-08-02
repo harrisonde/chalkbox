@@ -150,7 +150,7 @@ class ProjectController extends \BaseController {
 		$actions = new Action();
 		
 		# get actions
-		$actions = $actions->getAction( ['project_id'=> $id, 'actions' => 'all']  );
+		$actions = $actions->getAllActions( ['project_id'=> $id]  );
 		
 		// check id and return view
 		switch(sizeof($project))

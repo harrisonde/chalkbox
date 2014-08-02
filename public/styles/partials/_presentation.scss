@@ -103,3 +103,12 @@ header form{
 	padding: 0;
 	
 }
+
+ul.news-feed{	
+	li{
+		border-bottom: 1px solid $color-gray-drak;
+	}
+	li:last-child{
+		border-bottom: 0 none;
+	}
+}

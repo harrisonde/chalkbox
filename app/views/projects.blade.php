@@ -4,11 +4,9 @@
 
 	<div class="chalk-lines-50">
 	
-		<h1>Projects</h1>		
+		{{-- Create Project. ------------------------}}		
 		
-			{{-- Create Project. ------------------------}}		
-			
-			<div class="epic">
+		<div class="epic">
 				
 				<div class="tab">
 				
@@ -45,7 +43,7 @@
 		
 			</div>
 			
-		</div>
+	</div>
 		
 	@endif
 
@@ -53,7 +51,7 @@
 	
 		<h1> News Feed </h1>
 
-		<ul>
+		<ul class="news-feed">
 			
 			@foreach($actions as $action)
 	

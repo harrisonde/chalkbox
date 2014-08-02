@@ -125,6 +125,11 @@ header form {
   border: none;
   padding: 0; }
 
+ul.news-feed li {
+  border-bottom: 1px solid #e5e5e5; }
+ul.news-feed li:last-child {
+  border-bottom: 0 none; }
+
 /** 
 	Table of Contents - Structure
 	----------------------

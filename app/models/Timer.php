@@ -40,13 +40,25 @@ class Timer extends Eloquent {
 		$timer->time_elapsed_start = date('Y-m-d H:i:s');
 		$timer->track = true;
 		
-		# save it
-		$timer->save();
+		# Action
+	 	$action = new Action();
+	 	//type			 	
+	 	$action->type = 'Updated';
+		//description 
+		$action->description = 'Stopwatch started';
+		//project id 
+		$action->project_id = $projectID;
+		//user id
+		$action->user_id = Auth::id();
 		
 		#try and save 
 		try{
 			
+			# Magic: Eloquent
 			$timer->save();	
+					
+			$action->save();
+
 			
 			return true;
 			
@@ -77,16 +89,25 @@ class Timer extends Eloquent {
 		$time_store_total = $timer['time_elapsed_total']; #string
 		$time_total = (strtotime($time_current) - strtotime($time_store_start)) + $time_store_total;
 		
-		# set		
+		# set Timer		
 		$timer->track = false;
 		$timer->time_elapsed_end = $time_current;
 		$timer->time_elapsed_total = $time_total;
+		
+		# set Action
+	 	$action = new Action();		 	
+	 	$action->type = 'Updated'; 
+		$action->description = 'Stopwatch stopped';
+		$action->project_id = $projectID;
+		$action->user_id = Auth::id();
 		
 		#try and save 
 		try{		
 			
 			# save
 			$timer->save();
+			
+			$action->save();
 			
 			return true;
 		}
@@ -191,14 +212,5 @@ class Timer extends Eloquent {
 		}
 	
 	}	
-	
-	# Test method to make sure facade is working 
-	public function what()
-	{
-	
-		echo 'a stopwatch to keep time, homie.';
-	}
-	
-	
 
 }

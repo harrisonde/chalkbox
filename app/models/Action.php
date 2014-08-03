@@ -138,7 +138,7 @@ class Action extends Eloquent{
 	public function getAllActionsUser($request)
 	{	
 		# Lazy Eager Loading
-		$action = Action::all();
+		$action = Action::all()->sortByDesc('created_at');
 		
 		# Actions to be returned
 		$return_actions = array(); # array

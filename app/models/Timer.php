@@ -36,24 +36,20 @@ class Timer extends Eloquent {
 		# Instantiating an object of the Timer class and query
 		$timer = Timer::find($projectID);
 		
-		# set time options
+		# set Time options
 		$timer->time_elapsed_start = date('Y-m-d H:i:s');
 		$timer->track = true;
 		
-		#project name
+		# get Project name
 		$projectID = 1;
 		$project = Project::where('id', '=', $projectID)->get()->toArray();
 		
 		
-		# Action
-	 	$action = new Action();
-	 	//type			 	
+		# create Action
+	 	$action = new Action();		 	
 	 	$action->type = 'Updated';
-		//description 
 		$action->description = $project[0]['name'] . ', Stopwatch started';
-		//project id 
 		$action->project_id = $projectID;
-		//user id
 		$action->user_id = Auth::id();
 		
 		#try and save 
@@ -61,10 +57,8 @@ class Timer extends Eloquent {
 			
 			# Magic: Eloquent
 			$timer->save();	
-					
 			$action->save();
 
-			
 			return true;
 			
 		}
@@ -94,6 +88,10 @@ class Timer extends Eloquent {
 		$time_store_total = $timer['time_elapsed_total']; #string
 		$time_total = (strtotime($time_current) - strtotime($time_store_start)) + $time_store_total;
 		
+		# get Project name
+		$projectID = 1;
+		$project = Project::where('id', '=', $projectID)->get()->toArray();
+		
 		# set Timer		
 		$timer->track = false;
 		$timer->time_elapsed_end = $time_current;
@@ -102,7 +100,7 @@ class Timer extends Eloquent {
 		# set Action
 	 	$action = new Action();		 	
 	 	$action->type = 'Updated'; 
-		$action->description = 'Stopwatch stopped';
+		$action->description = $project[0]['name'] . 'Stopwatch stopped';
 		$action->project_id = $projectID;
 		$action->user_id = Auth::id();
 		

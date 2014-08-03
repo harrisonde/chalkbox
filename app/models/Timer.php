@@ -41,15 +41,16 @@ class Timer extends Eloquent {
 		$timer->track = true;
 		
 		#project name
-		$project = new Project();
-		$project = $project::where('project_id', '=', $projectID)->get();
+		$projectID = 1;
+		$project = Project::where('id', '=', $projectID)->get()->toArray();
+		
 		
 		# Action
 	 	$action = new Action();
 	 	//type			 	
 	 	$action->type = 'Updated';
 		//description 
-		$action->description = 'Stopwatch started';
+		$action->description = $project[0]['name'] . ', Stopwatch started';
 		//project id 
 		$action->project_id = $projectID;
 		//user id

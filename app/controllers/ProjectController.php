@@ -192,6 +192,20 @@ class ProjectController extends \BaseController {
 		# query
 		$project = $project->get_project_detail($id);
 		
+		# start date *do not return 0000-00-00 dates
+		if($project['date_start'] == '0000-00-00')
+		{
+			$project['date_start'] = '';
+		}
+		
+		# end date *do not return 0000-00-00 dates
+		if($project['date_end'] == '0000-00-00')
+		{
+			$project['date_end'] = '';
+		}
+		
+		
+		
 		#return
 		return View::make('project_edit')->with('query', $project);
 	}

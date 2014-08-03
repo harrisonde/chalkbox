@@ -369,11 +369,18 @@ class ProjectController extends \BaseController {
 		# Get the projects
 		$project = $project->get_projects();
 		
+		# Instantiating an object of the Action class
+		$action = new Action();
+		
+		# Get the actions
+		$action = $action->getAllActionsUser(['user_id' => Auth::id(), 'actions' => '17']);
+		
 		#Flash message
 		Session::flash('flash_message_success', 'Project deleted.');
 				
 		#return
-		return View::make('projects')->with('query', $project);
+		return View::make('projects')->with(['query' => $project, 'actions' => $action]);
+
 	}
 
 }

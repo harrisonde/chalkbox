@@ -126,7 +126,7 @@ class Project extends Eloquent {
 		
 		$user_id = Auth::id(); #string
 		
-		$projects = Project::where('user_id', '=', $user_id)->get();
+		$projects = Project::where('user_id', '=', $user_id)->get()->sortBy('name');
 		
 		return $projects;
 	}

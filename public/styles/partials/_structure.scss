@@ -49,7 +49,9 @@
 .chalk-lines-50{
 	
 	@include span-columns(6);
-
+	@include media($tablet) {
+		 @include span-columns(12);
+	}
 }
 
 .chalk-lines-75{

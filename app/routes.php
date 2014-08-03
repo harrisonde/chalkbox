@@ -47,6 +47,6 @@ Route::resource('timer', 'TimerController');
 
 App::missing(function($exception){
      
-     return Response::make("Something went wrong! Said day. So sorry.", 404);
+     return Response::make("Something went wrong! Sad day :(    <br/> So sorry.", 404);
 
-});
+});		

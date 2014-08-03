@@ -14,8 +14,8 @@ class Action extends Eloquent{
 	public function postAction($action)
 	{
 	
-		# Instantiate the model
-		$action = new Action();
+		 # Instantiate the model
+		 $action = new Action();
 		
 		 # Build seed data
 		 //type 

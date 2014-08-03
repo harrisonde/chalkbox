@@ -40,6 +40,10 @@ class Timer extends Eloquent {
 		$timer->time_elapsed_start = date('Y-m-d H:i:s');
 		$timer->track = true;
 		
+		#project name
+		$project = new Project();
+		$project = $project::where('project_id', '=', $projectID)->get();
+		
 		# Action
 	 	$action = new Action();
 	 	//type			 	

@@ -100,7 +100,7 @@ class Timer extends Eloquent {
 		# set Action
 	 	$action = new Action();		 	
 	 	$action->type = 'Updated'; 
-		$action->description = $project[0]['name'] . 'Stopwatch stopped';
+		$action->description = $project[0]['name'] . ', Stopwatch stopped';
 		$action->project_id = $projectID;
 		$action->user_id = Auth::id();
 		

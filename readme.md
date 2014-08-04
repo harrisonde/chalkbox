@@ -61,7 +61,7 @@ Chalkbox makes tracking time really simple. Manage your projects like a web arti
 
 * [x] RESTful API (notes)
 
-* [x] Expand RESTful API (include project)
+* [ ] Expand RESTful API (include project)
 
 * [ ] Graphs
 

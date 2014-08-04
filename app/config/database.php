@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => gethostname(),
 			'path'      => 'tunnel.pagodabox.com:3306',
 			'database'  => 'chalkbox',
 			'username'  => 'sparkle',

@@ -79,6 +79,11 @@ header {
     font-size: 0.8rem;
     font-weight: bold; }
 
+.helper {
+  font-size: 0.8em;
+  color: #e5e5e5;
+  font-weight: 600; }
+
 footer {
   border-top: 1px solid #e5e5e5;
   margin-top: 1rem;
@@ -366,6 +371,9 @@ header {
 [class*="icon-"] {
   padding-right: 15px;
   padding-left: 13px; }
+
+.helper {
+  padding-left: 12px; }
 
 .news-feed li {
   padding-top: 3%;

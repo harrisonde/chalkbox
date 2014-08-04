@@ -65,7 +65,7 @@
 				
 				</li>
 				
-				<li><span class="icon-project"></span> {{ StopwatchFacade::fetch($query['id']); }} </li>
+				<li><span class="icon-project"></span> {{ StopwatchFacade::fetch($query['id']); }} <span class="helper">Time Total</span></li>
 				
 			</ul>
 			

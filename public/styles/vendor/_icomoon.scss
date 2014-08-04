@@ -32,13 +32,13 @@
 .icon-bullhorn:before {
 	content: "\e601";
 }
-.icon-notebook:before {
+.icon-notebook:before, .icon-project:before{
 	content: "\e600";
 }
-.icon-clock:before {
+.icon-clock:before, .icon-time:before {
 	content: "\e602";
 }
-.icon-clock2:before {
+.icon-clock2:before, .icon-time-stop:before  {
 	content: "\e603";
 }
 .icon-feed:before {

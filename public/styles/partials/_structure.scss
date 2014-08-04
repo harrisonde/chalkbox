@@ -23,12 +23,15 @@
 		7. User Info
 		8. User Public
 		9. User Private
-	6. Footer
+	6. News-feed
+		1. ul
+	7. Icon	
+	8. Footer
 		1. All Childern
 		2. Center
 		3. Left
 		4. Right
-	7. Form
+	9. Form
 **/
 
 .chalk-lines-center{
@@ -206,7 +209,21 @@ header{
 	}
 
 }	
+[class*="icon-"]{
+	
+	padding-right: 15px;
+	padding-left: 13px;		
+}
 
+.news-feed{
+		
+	li{
+		
+		padding-top: 3%;
+		padding-bottom: 3%;
+	}
+
+}
 footer{
 	
 	@include span-columns(12);

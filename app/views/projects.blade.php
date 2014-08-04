@@ -55,7 +55,7 @@
 			
 			@foreach($actions as $action)
 	
-			<li>{{ $action['detail'] }}</li>
+			<li><span class="icon-{{ $action['type'] }}"></span>{{ $action['detail'] }}</li>
 			
 			@endforeach	
 	

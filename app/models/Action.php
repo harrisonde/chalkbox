@@ -133,7 +133,7 @@ class Action extends Eloquent{
 	* Get actions from the actions table by user id and number of actions
 	* 
 	* @param array User ID, Number of Actions
-	* @ return array Project Name, Action Detail, Carbon Time
+	* @ return array Project Name, Action Detail, Action Type (what model set said action),  Carbon Time
 	*/
 	public function getAllActionsUser($request)
 	{	
@@ -160,12 +160,17 @@ class Action extends Eloquent{
 				
 				# action date
 				$action_date = $action_detail['created_at']; #string
+				
+				# action type aka what model set the action
+				$action_model = $action_detail['model']; #string
 
 				#project name
 				$project_name = Project::find($action_detail['project_id'])['name']; #string
 				
+				
+				
 				# add item to action array
-				array_push($return_actions, ['project' => $project_name, 'detail' => $action_desc, 'date'=>$action_date]);
+				array_push($return_actions, ['project' => $project_name, 'detail' => $action_desc, 'date'=>$action_date, 'type' => $action_model]);
 				
 				$counter = $counter + 1;
 			}

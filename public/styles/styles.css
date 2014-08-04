@@ -135,12 +135,15 @@ ul.news-feed li:last-child {
 		7. User Info
 		8. User Public
 		9. User Private
-	6. Footer
+	6. News-feed
+		1. ul
+	7. Icon	
+	8. Footer
 		1. All Childern
 		2. Center
 		3. Left
 		4. Right
-	7. Form
+	9. Form
 **/
 .chalk-lines-center {
   float: left;
@@ -317,6 +320,14 @@ header {
     width: 91.4702%; }
     header .uri-public:last-child {
       margin-right: 0; }
+
+[class*="icon-"] {
+  padding-right: 15px;
+  padding-left: 13px; }
+
+.news-feed li {
+  padding-top: 3%;
+  padding-bottom: 3%; }
 
 footer {
   float: left;
@@ -772,13 +783,13 @@ cite {
 .icon-bullhorn:before {
   content: "\e601"; }
 
-.icon-notebook:before {
+.icon-notebook:before, .icon-project:before {
   content: "\e600"; }
 
-.icon-clock:before {
+.icon-clock:before, .icon-time:before {
   content: "\e602"; }
 
-.icon-clock2:before {
+.icon-clock2:before, .icon-time-stop:before {
   content: "\e603"; }
 
 .icon-feed:before {

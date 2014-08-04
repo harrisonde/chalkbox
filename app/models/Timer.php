@@ -41,13 +41,15 @@ class Timer extends Eloquent {
 		$timer->track = true;
 		
 		# get Project name
-		$projectID = 1;
 		$project = Project::where('id', '=', $projectID)->get()->toArray();
 		
 		
 		# create Action
 	 	$action = new Action();		 	
 	 	$action->type = 'Updated';
+	 	
+	 	
+		
 		$action->description = $project[0]['name'] . ', Stopwatch started';
 		$action->model = 'time';
 		$action->project_id = $projectID;
@@ -90,7 +92,6 @@ class Timer extends Eloquent {
 		$time_total = (strtotime($time_current) - strtotime($time_store_start)) + $time_store_total;
 		
 		# get Project name
-		$projectID = 1;
 		$project = Project::where('id', '=', $projectID)->get()->toArray();
 		
 		# set Timer		
@@ -102,7 +103,7 @@ class Timer extends Eloquent {
 	 	$action = new Action();		 	
 	 	$action->type = 'Updated'; 
 		$action->description = $project[0]['name'] . ', Stopwatch stopped';
-		$action->model = 'project';
+		$action->model = 'time-stop';
 		$action->project_id = $projectID;
 		$action->user_id = Auth::id();
 		

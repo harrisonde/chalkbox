@@ -780,7 +780,7 @@ cite {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-bullhorn:before {
+.icon-bullhorn:before, .icon-update:before {
   content: "\e601"; }
 
 .icon-notebook:before, .icon-project:before {

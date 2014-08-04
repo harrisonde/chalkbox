@@ -28,23 +28,22 @@
 					
 						case 'started': ?>
 			
-				<li class="clock started">Timing</li>
+				<li><span class="icon-time"></span>Timing</li>
 					
 				<?php	break;
 						
 						default: ?>
 					
-				<li class="clock stopped">Timer Stopped</li>
+				<li><span class="icon-time-stop"></span>Timer Stopped</li>
 					
 				<?php	break;
 				
-					} ?>
-				
-				<li class="time"> {{ StopwatchFacade::fetch($query['id']); }} </li>
-				
+					} ?>				
 				
 				<li class="actions"> 
 				
+					<span class="icon-update"></span>
+					
 					@if( sizeof( $actions ) > 1 )
 					
 						{{ sizeof( $actions ); }}  updates
@@ -57,6 +56,7 @@
 				
 				</li>
 				
+				<li><span class="icon-project"></span> {{ StopwatchFacade::fetch($query['id']); }} </li>
 				
 			</ul>
 		</div>

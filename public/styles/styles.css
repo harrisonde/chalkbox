@@ -748,3 +748,38 @@ cite {
   font-style: italic; }
   cite:before {
     content: '\2014 \00A0'; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('vendor/icomoon/fonts/icomoon.eot?bfz153');
+  src: url('vendor/icomoon/fonts/icomoon.eot?#iefixbfz153') format('embedded-opentype'), url('vendor/icomoon/fonts/icomoon.woff?bfz153') format('woff'), url('vendor/icomoon/fonts/icomoon.ttf?bfz153') format('truetype'), url('vendor/icomoon/fonts/icomoon.svg?bfz153#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: #e5e5e5;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-bullhorn:before {
+  content: "\e601"; }
+
+.icon-notebook:before {
+  content: "\e600"; }
+
+.icon-clock:before {
+  content: "\e602"; }
+
+.icon-clock2:before {
+  content: "\e603"; }
+
+.icon-feed:before {
+  content: "\e604"; }

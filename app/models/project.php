@@ -79,6 +79,8 @@ class Project extends Eloquent {
 				 	$action->type = 'created';
 					//description 
 					$action->description = 'Created new project, '. $projectDetail['name'] .'.';
+					// model
+					$action->model = 'project';
 					//projec id 
 					$action->project_id = $project->id;
 					//user id
@@ -178,6 +180,8 @@ class Project extends Eloquent {
 	 	$action->type = 'Updated';
 		//description 
 		$action->description = 'Updated project, '. $project['name'] .'.';
+		// model
+		$action->model = 'project';
 		//projec id 
 		$action->project_id = $project->id;
 		//user id

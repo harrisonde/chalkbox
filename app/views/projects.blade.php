@@ -34,7 +34,7 @@
 					<ul>
 					@foreach($query as $node) 
 					
-					<li><a href="/projects/{{ $node['id'] }}">{{ $node['name'] }}</a></li>
+					<li><span class="icon-notebook"></span><a href="/projects/{{ $node['id'] }}">{{ $node['name'] }}</a></li>
 					
 					@endforeach
 					</ul>

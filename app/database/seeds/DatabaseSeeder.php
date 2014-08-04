@@ -92,8 +92,10 @@ class UsersTableSeeder extends Seeder{
         # set actions details
         $action->type = 'created';
         $action->description = 'Created new project, Chalkbox Welcome.';
+        $action->model = "project";
         $action->project_id = $project['id'];
         $action->user_id = $user['id'];
+   
 		
 		# Magic: Eloquent
 		$action->save();

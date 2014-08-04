@@ -26,6 +26,8 @@ class CreateActionsTable extends Migration {
 			$table->string('type');
 			// Column to track detail, human readable message 
 			$table->string('description');
+			// Column to track what model called the action
+			$table->string('model');
 
 			#FK
 			$table->integer('project_id');

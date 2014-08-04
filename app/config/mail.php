@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'chalkbox.local@gmail.com', 'name' => 'chalkbox.local'),
+	'from' => array('address' => 'chalkbox@gmail.com', 'name' => 'chalkbox'),
 
 	/*
 	|--------------------------------------------------------------------------

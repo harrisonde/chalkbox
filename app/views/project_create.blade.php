@@ -60,6 +60,8 @@
 	
 			{{ Form::label('Start Date: (Optional)') }}
 			
+			<span class="helper">(YYYY-MM-DD)</span>
+			
 			{{ Form::text('date_start', Input::Old('date_start')) }}
 			
 		    </div>
@@ -69,6 +71,8 @@
 		    <div class="formElement date_end">
 	
 			{{ Form::label('End Date: (Optional)') }}
+			
+			<span class="helper">(YYYY-MM-DD)</span>
 			
 			{{ Form::text('date_end', Input::Old('date_end')) }}
 			

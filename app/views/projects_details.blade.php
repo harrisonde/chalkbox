@@ -11,8 +11,17 @@
 		{{-- Description. ------------------------}}
 		
 		<div class="description">
-	
-				<h3>{{ $query['description'] }} </h3><span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></span>
+			
+				@if(strlen($query['description']) == 0)
+				
+					<span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Add a project description</a></span>
+					
+				@else
+					
+					<h4>{{ $query['description'] }} </h4><span class="edit"> <a href="/projects/{{ $query['id'] }}/edit">Edit</a></span>
+					
+				@endif
+				
 		
 		</div>	
 		
@@ -59,6 +68,7 @@
 				<li><span class="icon-project"></span> {{ StopwatchFacade::fetch($query['id']); }} </li>
 				
 			</ul>
+			
 		</div>
 				
 	</div>		

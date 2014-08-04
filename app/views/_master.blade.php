@@ -9,6 +9,10 @@
 	<title>Chalkbox</title>
 	
 	<link rel="stylesheet" href="/styles/styles.css" type="text/css">
+	
+	<script src="<?php echo URL::asset('/script/vendor/jquery/jQuery-10.1.2.js'); ?>" type="text/javascript"></script> 
+	
+	<script src="<?php echo URL::asset('/script/chalkbox.js'); ?>" type="text/javascript"></script> 
 
 </head>
 
@@ -197,6 +201,15 @@
 		</div>
 	
 	</footer>
+
+	<!-- clide side scripts -->
+	<script>
+		// load
+		$(document).ready( function(){
+			// do not clobber 
+			CHALKBOX.init();
+		});
+	</script>
 
 </body>
 

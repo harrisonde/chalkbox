@@ -158,6 +158,11 @@ class ProjectController extends \BaseController {
 		# get actions
 		$actions = $actions->getAllActions( ['project_id'=> $id]  );
 		
+		#get notes
+		$notes = new Note();
+		
+		$notes = $notes->getAllNotes( ['project_id'=> $id] );
+		
 		// check id and return view
 		switch(sizeof($project))
 		{
@@ -170,7 +175,7 @@ class ProjectController extends \BaseController {
 			default:
 				
 				// Passing Data To View	
-				return View::make('projects_details')->with(['query' => $project, 'actions' => $actions]);
+				return View::make('projects_details')->with(['query' => $project, 'actions' => $actions, 'notes'=>$notes]);
 			
 			break;
 		}
@@ -203,9 +208,7 @@ class ProjectController extends \BaseController {
 		{
 			$project['date_end'] = '';
 		}
-		
-		
-		
+	
 		#return
 		return View::make('project_edit')->with('query', $project);
 	}
@@ -259,11 +262,6 @@ class ProjectController extends \BaseController {
 			# return back with message
 			return Redirect::back()->withErrors( $project_stamp['validation'] );
 		}
-		
-	
-		
-
-	
 	}
 	/**
 	 * Update the specified resource in storage.

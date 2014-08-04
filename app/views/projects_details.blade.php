@@ -137,6 +137,87 @@
 			}
 		?>
 	
+				
+
+			<ul class="accordion-tabs-minimal">
+		        <li class="tab-header-and-content">
+		            <a href="#" class="tab-link is-active">Notes</a>
+					
+					
+		
+		            <div class="tab-content">
+		            	@if(isset($notes))
+		            		
+		            		<p>
+		            		
+		            		@foreach($notes as $note)
+		            			
+		            			<a onclick="CHALKBOX.communicate.get({{$note['id']}}); return false;" href="#">{{ $note['title'] }}</a><br/>
+		            		
+		            		@endforeach
+		            		
+		            		</p>
+		            	@else
+		            		
+		            		<p>No notes attached to project.</p>
+		            		
+		            	@endif
+		                
+		            </div>
+		        </li>
+		
+		        <li class="tab-header-and-content">
+		            
+		            <a href="#" class="tab-link">+ New Note</a>
+		
+		            <div class="tab-content">
+		            
+		            	{{-- Create Note Form. ------------------------}}
+				
+						{{ Form::open(array('url' => '/note', 'class'=>'bare')) }}
+							
+							{{-- Project ID ------------------------}}
+							
+							{{ Form::hidden('id', $query['id'] )  }}
+							
+							{{ Form::hidden('project_title', $query['name'] )  }}
+							
+							<div class="formElement title">
+			
+							{{ Form::label('Title:') }}
+							
+							{{ Form::text('title', Input::Old('title')) }}
+							
+							</div>
+							
+							<div class="formElement content">
+			
+							{{ Form::label('Content:') }}
+							
+							{{ Form::textarea('content', Input::Old('content')) }}
+							
+							</div>
+							
+							{{-- Submit Button. ------------------------}}
+							
+							<div class="formElement submit">
+									
+								{{ Form::submit('+ New Note') }} 						
+							
+							</div>
+							
+						{{ Form::close() }}
+
+		            </div>
+		        </li>
+		
+		 </ul>
+
+
+
+
+
+
 	</div>
 	
 	<div class="chalk-lines-25">

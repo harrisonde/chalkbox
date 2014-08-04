@@ -333,6 +333,12 @@ form{
 	
 	padding: $pad-some;
 }
+form + form{
+	margin-top: 3.5%;
+}
+.accordion-tabs-minimal{
+	margin-top: 3.5%;
+}
 .errors{
 	margin-bottom: 1.5%;
 }

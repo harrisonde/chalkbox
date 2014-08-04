@@ -41,6 +41,7 @@ Route::get('system_default_styles', function()
 
 Route::resource('timer', 'TimerController');
 
+Route::resource('note', 'NoteController');
 /*
 * Laravel will let use display a good old 404, let's use that little guy. 
 */

@@ -55,10 +55,10 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'path'      => '8889',
+			'path'      => 'tunnel.pagodabox.com:3306',
 			'database'  => 'chalkbox',
-			'username'  => 'root',
-			'password'  => 'root',
+			'username'  => 'sparkle',
+			'password'  => 'fohFEni8',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

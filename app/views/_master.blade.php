@@ -100,6 +100,8 @@
 			
 				<ul class="errors">
 				
+				Please correct the error(s) below:
+				
 				@foreach ($errors->all('<li>:message</li>') as $message)
 				
 					{{ $message }}

@@ -140,6 +140,13 @@ header{
 		
 		@include span-columns(1);
 		text-align: center;
+		
+		@include media($mobile) {
+		 
+		 @include span-columns(12);
+		
+		}
+
 	
 		img{
 		
@@ -168,6 +175,12 @@ header{
 	
 		@include span-columns(3);
 		
+		@include media($mobile) {
+		 
+			display: none;
+		
+		}
+		
 	}
 	
 	ul{
@@ -185,6 +198,12 @@ header{
 		@include span-columns(4);
 		text-align: right;
 		
+		@include media($mobile) {
+		 
+		 @include span-columns(12);
+		
+		}
+		
 		ul li{
 			
 			padding:$ListItem-LastItem-Padding;			
@@ -196,12 +215,27 @@ header{
 	.user-private{
 	
 		@include span-columns(4);
+		
+		@include media($mobile) {
+		 
+		 @include span-columns(12);
+		 
+		 text-align: center;
+		
+		}
 			
 	}
 	
 	.user-public{
 		
 		@include span-columns(8);
+		
+		@include media($mobile) {
+		 
+			 @include span-columns(12);
+		
+			 text-align: center;
+		}
 		
 	}
 	.uri-public{
@@ -239,6 +273,12 @@ footer{
 		@include span-columns(6);
 		text-align: center;
 		
+		@include media($mobile) {
+		 
+		 @include span-columns(12);
+		 padding-top: 3%;
+		}
+		
 		img{
 			
 			height: auto;
@@ -249,6 +289,12 @@ footer{
 	}
 	.left{
 		@include span-columns(3);
+		
+		@include media($mobile) {
+		 
+		 @include span-columns(12);
+		 text-align: center;
+		}
 		
 		ul {
 			
@@ -261,7 +307,12 @@ footer{
 	.right{
 		@include span-columns(3);
 		text-align: right;
-		
+		@include media($mobile) {
+		 
+		 @include span-columns(12);
+		 text-align: center;
+		}
+
 		ul {
 			
 			li{

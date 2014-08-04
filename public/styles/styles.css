@@ -273,6 +273,14 @@ header {
     text-align: center; }
     header .brand:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px)  {
+      header .brand {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%; }
+        header .brand:last-child {
+          margin-right: 0; } }
     header .brand img {
       height: auto;
       max-width: 39px; }
@@ -287,6 +295,9 @@ header {
     width: 23.23176%; }
     header .project-search:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px)  {
+      header .project-search {
+        display: none; } }
   header ul li {
     padding: 0 1.9rem 0 0; }
   header .user-info {
@@ -297,6 +308,14 @@ header {
     text-align: right; }
     header .user-info:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px)  {
+      header .user-info {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%; }
+        header .user-info:last-child {
+          margin-right: 0; } }
     header .user-info ul li {
       padding: 0 1rem 0 0; }
   header .user-private {
@@ -306,6 +325,15 @@ header {
     width: 31.76157%; }
     header .user-private:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px)  {
+      header .user-private {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%;
+        text-align: center; }
+        header .user-private:last-child {
+          margin-right: 0; } }
   header .user-public {
     float: left;
     display: block;
@@ -313,6 +341,15 @@ header {
     width: 65.88078%; }
     header .user-public:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px)  {
+      header .user-public {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%;
+        text-align: center; }
+        header .user-public:last-child {
+          margin-right: 0; } }
   header .uri-public {
     float: left;
     display: block;
@@ -346,6 +383,15 @@ footer {
     text-align: center; }
     footer .center:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px)  {
+      footer .center {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%;
+        padding-top: 3%; }
+        footer .center:last-child {
+          margin-right: 0; } }
     footer .center img {
       height: auto;
       max-width: 39px; }
@@ -356,6 +402,15 @@ footer {
     width: 23.23176%; }
     footer .left:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px)  {
+      footer .left {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%;
+        text-align: center; }
+        footer .left:last-child {
+          margin-right: 0; } }
     footer .left ul li {
       padding: 0 1.9rem 0 0; }
   footer .right {
@@ -366,6 +421,15 @@ footer {
     text-align: right; }
     footer .right:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px)  {
+      footer .right {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%;
+        text-align: center; }
+        footer .right:last-child {
+          margin-right: 0; } }
     footer .right ul li {
       padding: 0 1.9rem 0 0; }
 

@@ -348,6 +348,7 @@ class ProjectController extends \BaseController {
 						
 			# return the response
 			$messageArray = array('Updated.');
+			
 			return array( 'stamped' => true, 'validation' => $messageArray); 		
 		}
 	
@@ -358,35 +359,42 @@ class ProjectController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
+	// Need to move this into the model 
 	public function destroy($id)
 	{
+		
 		# Project
 		# instantiate 
 		$project = new Project();
-		
-		# query
 		$project = $project::find($id);
+		$project->delete();	
 		
-		# delete
-		$project->delete();
+		# Action
+		# Instantiating an object of the Action class
+		$action = new Action();		 	
+	 	$action->type = 'Destroy';
+		$action->description = 'Deleted project, '. $project['name'] .'.';
+		$action->model = 'project';
+		$action->project_id = $project['id'];
+		$action->user_id = $project['user_id'];
 		
-		#timer
+		# Eloquent magic
+		$action->save();
+		
+		# Timer
 		# instantiate 
 		$timer = new Timer();
-		
-		# query
 		$timer = $timer::find($id);
 		
-		# delete
+		# Eloquent Magic - delete
 		$timer->delete();
 		
+		# Project
 		# Get the projects
 		$project = $project->get_projects();
 		
-		# Instantiating an object of the Action class
-		$action = new Action();
 		
-		# Get the actions
+		# Actions
 		$action = $action->getAllActionsUser(['user_id' => Auth::id(), 'actions' => '17']);
 		
 		#Flash message

@@ -201,13 +201,13 @@ header{
 		@include media($mobile) {
 		 
 		 @include span-columns(12);
-		
+		 text-align: center;
 		}
 		
 		ul li{
 			
 			padding:$ListItem-LastItem-Padding;			
-		
+			
 		}
 		
 		img{

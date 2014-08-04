@@ -447,6 +447,9 @@ form {
 .warning {
   margin-bottom: 1.5%; }
 
+.success {
+  margin-bottom: 1.5%; }
+
 header #nav-open-btn {
   display: none; }
 

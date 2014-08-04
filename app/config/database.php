@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => $_SERVER['DB1_HOST'],
+			'host'      => 'tunnel.pagodabox.com',
 			'path'      => 'tunnel.pagodabox.com',
 			'database'  => 'chalkbox',
 			'username'  => 'sparkle',

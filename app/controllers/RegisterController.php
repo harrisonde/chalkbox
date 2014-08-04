@@ -87,12 +87,11 @@ class RegisterController extends \BaseController {
 					# (string) email template
 					$name = 'emails/auth/register';
 					#data that you want to make available to your email, same as passing data to a view.
-					$data = array('email' => Input::get('email'), ); 					
+					$data = array('email' => Input::get('email') ); 					
 					# Add email to background queue so the registration page will not hang
 					Mail::queue($name, $data, function($message) 
 					{
-				    	$message->to( Input::get('email'), Input::get('email') ) # using email for simplicity sake.
-				    	->subject('Welcome!');
+				    	$message->to( Input::get('email'), Input::get('email') )->subject('Welcome!');
 					});
 					#get user email and look up id
 					$query_for_id = $user_new::where('email', '=', Input::get('email'))->get();

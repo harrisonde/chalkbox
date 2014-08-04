@@ -73,6 +73,11 @@ header{
 	
 	@include linear-gradient($color-gray, $color-gray-light);
 	border-bottom: 1px solid #e5e5e5;
+	
+	.user-info{
+		font-size: .8rem;
+		font-weight: bold;
+	}
 }
 
 footer{

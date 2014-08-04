@@ -48,17 +48,3 @@ Route::resource('timer', 'TimerController');
 App::missing(function($exception){
      return Response::make("Something went wrong! Sad day :(    <br/> So sorry.", 404);
 });		
-
-Route::get('/rss', function()
-{
-	
-	# Instantiating an object of the Action class
-	$actions = new Action();
-	
-	# Get the actions
-	$actions = $actions->getAllActionsUser(['user_id' => Auth::id(), 'actions' => '17']);
-	
-	#tbd
-
-   
-});

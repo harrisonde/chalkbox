@@ -63,9 +63,9 @@
 			<div class="user-info">
 			   
 			   <ul>
-			   
-			   		<li class="user"><p>Logged in as {{{Auth::user()->email}}} </p></li>
-	     
+			   		
+			   		<li><?php echo Gravatar::image( Auth::user()->email); ?> {{{Auth::user()->email}}}</li>
+		 
 			   </ul>
 			   
 			</div>

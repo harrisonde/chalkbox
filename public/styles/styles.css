@@ -75,6 +75,9 @@ header {
   background-image: -webkit-linear-gradient(#F9F9F9, #F6F6F6);
   background-image: linear-gradient(#F9F9F9, #F6F6F6);
   border-bottom: 1px solid #e5e5e5; }
+  header .user-info {
+    font-size: 0.8rem;
+    font-weight: bold; }
 
 footer {
   border-top: 1px solid #e5e5e5;
@@ -318,6 +321,8 @@ header {
           margin-right: 0; } }
     header .user-info ul li {
       padding: 0 1rem 0 0; }
+    header .user-info img {
+      border-radius: 50%; }
   header .user-private {
     float: left;
     display: block;

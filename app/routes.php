@@ -67,6 +67,7 @@ Route::get('/debug', function() {
         $contents = '';
     }
 
+	echo 'hostname:' . gethostname() . '<br>';
     echo "Checking for: ".$path.'<br>';
     echo 'Exists: '.$exists.'<br>';
     echo $contents;

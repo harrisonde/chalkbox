@@ -100,9 +100,7 @@
 							
 							<div class="formElement submit">
 									
-							{{ Form::submit('Stop Timer', ['class' => 'danger']) }}
-							
-							<h4>extras - notes and whatever. So ya.</h4>
+							{{ Form::submit('Stop Timer', ['class' => 'danger']) }}  <span class="helper">Stop tracking my time.</span>
 							
 							</div>
 					
@@ -126,12 +124,10 @@
 					
 					<div class="formElement submit">
 							
-						{{ Form::submit('+ Start Timer', ['class' => 'action']) }}
+						{{ Form::submit('+ Start Timer', ['class' => 'action']) }} <span class="helper">Track my time.</span>
 					
 					</div>
 					
-					<h4>extras - notes and whatever. So ya.</h4>
-			
 				{{ Form::close() }}
 					
 				

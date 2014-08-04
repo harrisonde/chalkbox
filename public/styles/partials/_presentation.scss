@@ -81,8 +81,14 @@ header{
 }
 .helper{
 	font-size: .8em;
-	color: #e5e5e5;
 	font-weight: 600;
+}
+.epic{
+	.helper{
+	color: #e5e5e5;
+}
+
+	
 }
 
 footer{

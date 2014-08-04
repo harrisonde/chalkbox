@@ -53,7 +53,7 @@ Chalkbox makes tracking time really simple. Manage your projects like a web arti
 
 * [ ] Project Notes
 
-* [ ] Project Total Project Hours
+* [x] Project Total Project Hours
 
 * [ ] Share Proejct timeline
 

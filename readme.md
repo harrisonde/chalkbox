@@ -6,10 +6,10 @@
  - Expectation
  - What is in this repository might I ask?
  - Features
-   - User
    - Project
+   - User
    - Validation
- - Extra (Future) Features
+ - Future (Extra) Features
  - Routes
  - Packages
  - User Guide
@@ -68,7 +68,7 @@ Well, yes - you absolutely should ask. This repository holds one Laravel applica
  
 * [x] Success messages
 
-#Extra (Future) Features
+#Future (Extra) Features
 
 * [x] Create Custom Facade for Timer (Stopwatch)
 

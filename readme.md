@@ -1,7 +1,7 @@
 #Chalkbox
 ![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox.png "Chalkbox")
 
-
+[Link to Header](#Project)
 
 Table of Contents
  * [Description](#Description)

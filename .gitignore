@@ -7,3 +7,6 @@ composer.lock
 .DS_Store
 Thumbs.db
 environment.php
+/config/database.php
+/config/mail.php
+/config/local/mail.php

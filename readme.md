@@ -70,7 +70,7 @@ Well, yes - you absolutely should ask. This repository holds one Laravel applica
  
 * [x] Success messages
 
-#Future (Extra) Features
+##Future (Extra) Features
 
 * [x] Create Custom Facade for Timer (Stopwatch)
 
@@ -88,19 +88,19 @@ Well, yes - you absolutely should ask. This repository holds one Laravel applica
 
 * [x] Project Total Project Hours
 
-* [ ] Share Proejct timeline
+* [ ] Share Project timeline
 
 * [ ] User Groups (Roles) 
 
 * [x] RESTful API (notes) resource::edit/store 
 
-* [x] AJAX (notes)
+* [x] AJAX (notes) remove page refresh for pulling note content
 
 * [ ] Expand RESTful API (include project)
 
 * [ ] Graphs
 
-* [ ] Email
+* [x] Email
 
 * [ ] Export
 

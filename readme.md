@@ -1,13 +1,34 @@
 #Chalkbox
 ![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox.png "Chalkbox")
 
-##Description of Chalkbox
+
+[create an anchor](#anchors-in-markdown)
+
+Table of Contents
+ *[Description](#Description)
+ *[Expectation](#Expectation)
+ *[What is in this repository might I ask?](#What is in this repository might I ask?)
+ 
+ *[Features]()
+ **[Project]()
+ **[User]()
+ **[Validation]()
+ 
+ *[Extra (Future) Features]()
+ *[Routes]()
+ *[Packages]()
+ 
+ *[User Guide]()
+ **[Getting Started]()
+ **[User Interface]()
+
+(##Description of Chalkbox)
 Chalkbox makes tracking time really simple. Manage your projects like a web artisan - not an accountant. 
 
-##I should expect what?
+(##Expectation)
 Expect to experience the advanced functions needed to build a web application in the Laravel framework. 
 
-##What is in this repository might I ask?
+(##What is in this repository might I ask?
 Well, yes - you absolutely should ask. This repository holds one Laravel applicaion, Chalkbox, which includes:
 * Super clean user interface
 * Track project time
@@ -15,45 +36,8 @@ Well, yes - you absolutely should ask. This repository holds one Laravel applica
 * Projects News Feed
 * CRUDy management
 
-
-####How to use.
-#####Register or Signin 
-Get started by creating a new [user account](http://p4.harrisondestefano.com/register). Once a new account is created, enjoy, you will be automatically authenticated and redirected to your project management page. If you happen to misplace a password, no worries - [forgot password](http://p4.harrisondestefano.com/password).
-
-#####User Interface
-######Projects
-![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-projects.png "Chalkbox")
-Chalkbox projects are displayed after signing into the application on the “projects” user interface. From this page please enjoy creating and modifying each of your Chalkbox projecs! The UI provides a project news feed too - running list of major project modifications.
-
-######New Project
-![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-new-project.png "Chalkbox")
-Building a new project in Chalkbox is a breeze - all we really need is a name! The “+ New Project” user interface collects all a lot of good information about a project such as name, description, states and date. Just be sure to add your project name - no worries if you make a mistake as we can make edits too.
-
-######Manage a Project
-![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-manager.png "Chalkbox")
-What good is project management if you can not “manage” the project? The project details user interface let’s you do just that - basic project management.
-
-Time tracking is a breeze with the “+ Start Timer” and “Stop Timer” buttons. Clicking the "+ Start Timer” button kicks off a timer, do this while you work. When you done, click the “Stop Timer” button to stop tracking time.  
-
-All the time logged to a project is displayed in the project “epic.". Just look for the project icon.   
-
-Chalkbox can keep project notes too! To create a note, click “+ New Note” tab. Once you’ve created and saved a note, said note will be displayed in the “Note” tab. 
-
-To view an existing note, just click the title of the note. Chalkbox will display the contents of the note right on the page.
-
-##Features
-###User
-* [x] Allow registration 
-
-* [x] Welcome email after registration
-
-* [x] Authentication - sign-in
-
-* [x] Authentication - sign-out
-
-* [x] Authentication - Password Remider
-
-###Project
+(##Features)
+(###Project)
 * [x] Create project
 
 * [x] Update project
@@ -70,7 +54,18 @@ To view an existing note, just click the title of the note. Chalkbox will displa
 
 * [x] Update time (toggle timer button)
 
-###Validation
+(###User)
+* [x] Allow registration 
+
+* [x] Welcome email after registration
+
+* [x] Authentication - sign-in
+
+* [x] Authentication - sign-out
+
+* [x] Authentication - Password Remider
+
+(###Validation)
 * [x] Error messages
  
 * [x] Success messages
@@ -109,7 +104,7 @@ To view an existing note, just click the title of the note. Chalkbox will displa
 
 * [ ] RSS Feed
 
-##Routes
+(##Routes)
 Chalkbox listens at the following routes and will "catch" fhe following HTTP verbs:
 
 | Domain | URI                                  | Name                   | Action                            | Before Filters | After Filters |
@@ -192,11 +187,37 @@ Chalkbox listens at the following routes and will "catch" fhe following HTTP ver
 |        | DELETE note/{note}                   | note.destroy           | NoteController@destroy            |                |               |
 
 
-## Packages
+(##Packages)
 Several packages were used in the making of this application. All are awesome because each is open source - go community!
 
-###GravatarLib
+(###GravatarLib)
 GravatarLib is a small library intended to provide easy integration of gravatar-provided avatars. More @ [thomaswelton/gravatarlib](https://github.com/thomaswelton/gravatarlib)
 
-## The "Black Box" demystified
-The [black box](http://en.wikipedia.org/wiki/Black_box "wikipedia tells all") or webapp is constructed with HTML5, CSS3 and JavaScript. All the really fancy goodies are driven by Bourbon, Neat, Bitters, and Refils. Big thanks to [Thoughtbot](http://thoughtbot.com/ "Visit the gods of SASS") for maintaining and funding the project. Don't know where the development community would be without folks like these!
+(##The "Black Box" demystified)
+The [black box](http://en.wikipedia.org/wiki/Black_box "wikipedia tells all") or web application is constructed with CSS3, HTML5, JavaScript, and PHP. All the really fancy goodies are driven by Bourbon, Neat, Bitters, and Refils. Big thanks to [Thoughtbot](http://thoughtbot.com/ "Visit the gods of SASS") for maintaining and funding the project. Don't know where the development community would be without folks like these!
+
+(##User Guide)
+(###Getting started)
+(####Register or Signin) 
+Get started by creating a new [user account](http://p4.harrisondestefano.com/register). Once a new account is created, enjoy, you will be automatically authenticated and redirected to your project management page. If you happen to misplace a password, no worries - [forgot password](http://p4.harrisondestefano.com/password).
+
+(###User Interface)
+(####Projects)
+![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-projects.png "Chalkbox")
+Chalkbox projects are displayed after signing into the application on the “projects” user interface. From this page please enjoy creating and modifying each of your Chalkbox projecs! The UI provides a project news feed too - running list of major project modifications.
+
+(####New Project)
+![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-new-project.png "Chalkbox")
+Building a new project in Chalkbox is a breeze - all we really need is a name! The “+ New Project” user interface collects all a lot of good information about a project such as name, description, states and date. Just be sure to add your project name - no worries if you make a mistake as we can make edits too.
+
+(#####Manage a Project)
+![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-manager.png "Chalkbox")
+What good is project management if you can not “manage” the project? The project details user interface let’s you do just that - basic project management.
+
+Time tracking is a breeze with the “+ Start Timer” and “Stop Timer” buttons. Clicking the "+ Start Timer” button kicks off a timer, do this while you work. When you done, click the “Stop Timer” button to stop tracking time.  
+
+All the time logged to a project is displayed in the project “epic.". Just look for the project icon.   
+
+Chalkbox can keep project notes too! To create a note, click “+ New Note” tab. Once you’ve created and saved a note, said note will be displayed in the “Note” tab. 
+
+To view an existing note, just click the title of the note. Chalkbox will display the contents of the note right on the page.

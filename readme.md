@@ -12,7 +12,7 @@
  - Future (Extra) Features
  - Routes
  - Packages
- - [User Guide](#user-guide)
+ - [User's Guide](#user-guide)
    - Getting Started
      - Register or Signin
    - User Interface
@@ -198,7 +198,8 @@ GravatarLib is a small library intended to provide easy integration of gravatar-
 ## The "Black Box" demystified
 The [black box](http://en.wikipedia.org/wiki/Black_box "wikipedia tells all") or web application is constructed with CSS3, HTML5, JavaScript, and PHP. All the really fancy goodies are driven by Bourbon, Neat, Bitters, and Refils. Big thanks to [Thoughtbot](http://thoughtbot.com/ "Visit the gods of SASS") for maintaining and funding the project. Don't know where the development community would be without folks like these!
 
-##<a name="user-guide"/>User Guide
+##<a name="user-guide"/>User's Guide
+The User’s Guide is intended get a user aquatinted with Chalkbox. The guide is not written as technical documentation. If you’d like that, I suggest reading the source code.
 ###Getting started
 ####Register or Signin 
 Get started by creating a new [user account](http://p4.harrisondestefano.com/register). Once a new account is created, enjoy, you will be automatically authenticated and redirected to your project management page. If you happen to misplace a password, no worries - [forgot password](http://p4.harrisondestefano.com/password).

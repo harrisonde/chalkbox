@@ -1,31 +1,28 @@
 #Chalkbox
 ![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox.png "Chalkbox")
 
-
-[create an anchor](#anchors-in-markdown)
-
 Table of Contents
- *[Description](#Description)
- *[Expectation](#Expectation)
- *[What is in this repository might I ask?](#What is in this repository might I ask?)
+ * [Description](#Description)
+ * [Expectation](#Expectation)
+ * [What is in this repository might I ask?](#What is in this repository might I ask?)
  
- *[Features]()
- **[Project]()
- **[User]()
- **[Validation]()
+ * [Features]()
+ ** [Project]()
+ ** [User]()
+ ** [Validation]()
  
- *[Extra (Future) Features]()
- *[Routes]()
- *[Packages]()
+ * [Extra (Future) Features]()
+ * [Routes]()
+ * [Packages]()
  
- *[User Guide]()
- **[Getting Started]()
- **[User Interface]()
+ * [User Guide]()
+ ** [Getting Started]()
+ ** [User Interface]()
 
-(##Description of Chalkbox)
+##Description of Chalkbox (#Description)
 Chalkbox makes tracking time really simple. Manage your projects like a web artisan - not an accountant. 
 
-(##Expectation)
+##Expectation (#Expectation)
 Expect to experience the advanced functions needed to build a web application in the Laravel framework. 
 
 (##What is in this repository might I ask?

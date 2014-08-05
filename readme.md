@@ -2,19 +2,19 @@
 ![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox.png "Chalkbox")
 
 ##Table of Contents
- * Description
- * Expectation
- * What is in this repository might I ask?
- * Features
- ** User
- ** Project
- ** Validation
- * Extra (Future) Features
- * Routes
- * Packages
- * User Guide
- ** Getting Started
- ** User Interface
+ - Description
+ - Expectation
+ - What is in this repository might I ask?
+ - Features
+   - User
+   - Project
+   - Validation
+ - Extra (Future) Features
+ - Routes
+ - Packages
+ - User Guide
+   - Getting Started
+   - User Interface
 
 ##Description of Chalkbox
 Chalkbox makes tracking time really simple. Manage your projects like a web artisan - not an accountant. 

@@ -48,14 +48,16 @@ Well, yes - you absolutely should ask. This repository holds one Laravel applica
 
 * [x] Search for projects
 
-* [x] Add time (toggle timer button)
+* [x] Add time (+start timer button)
 
-* [x] Update time (toggle timer button)
+* [x] Update time (stop timer button)
 
 ###User
-* [x] Allow registration 
+* [x] New user registration 
 
-* [x] Welcome email after registration
+* [x] Send welcome email after new user registration
+
+* [x] Automatically authenticate and sign-in after new user registration
 
 * [x] Authentication - sign-in
 
@@ -91,6 +93,8 @@ Well, yes - you absolutely should ask. This repository holds one Laravel applica
 * [ ] User Groups (Roles) 
 
 * [x] RESTful API (notes) resource::edit/store 
+
+* [x] AJAX (notes)
 
 * [ ] Expand RESTful API (include project)
 

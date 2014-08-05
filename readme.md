@@ -107,7 +107,7 @@ Well, yes - you absolutely should ask. This repository holds one Laravel applica
 * [ ] RSS Feed
 
 ##Routes
-Chalkbox listens at the following routes and will "catch" fhe following HTTP verbs:
+Chalkbox listens at the following routes and will "catch" the following HTTP verbs:
 
 | Domain | URI                                  | Name                   | Action                            | Before Filters | After Filters |
 | ------ | ------------------------------------ | ---------------------- | --------------------------------- | -------------- | ------------- |
@@ -218,10 +218,8 @@ The “+ New Project” user interface collects all a lot of good information ab
 What good is project management if you can not “manage” the project? The project details user interface let’s you do just that - basic project management.
 ![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-manager.png "Chalkbox")
 
-Time tracking is a breeze with the “+ Start Timer” and “Stop Timer” buttons. Clicking the "+ Start Timer” button kicks off a timer, do this while you work. When you done, click the “Stop Timer” button to stop tracking time.  
+Time tracking is a breeze with the “+ Start Timer” and “Stop Timer” buttons. Clicking the "+ Start Timer” button kicks off a timer, do this while you work. When you're done working, click the “Stop Timer” button. Chalkbox will stop tracking time to the project.  
 
-All the time logged to a project is displayed in the project “epic.". Just look for the project icon.   
+All time logged to a project is displayed in the project “epic."   
 
-Chalkbox can keep project notes too! To create a note, click “+ New Note” tab. Once you’ve created and saved a note, said note will be displayed in the “Note” tab. 
-
-To view an existing note, just click the title of the note. Chalkbox will display the contents of the note right on the page.
+Chalkbox can keep project notes too! To create a note, click “+ New Note” tab. Once you’ve created and saved a note, said note will be displayed in the “Note” tab. To view the details of a note, just click the note title link. Chalkbox will display the contents of the note right on the page.

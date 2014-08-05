@@ -14,7 +14,11 @@
  - Packages
  - User Guide
    - Getting Started
+     - Register or Signin
    - User Interface
+     - Projects
+     - New Project
+     - Manage a Project
 
 ##Description of Chalkbox
 Chalkbox makes tracking time really simple. Manage your projects like a web artisan - not an accountant. 
@@ -197,16 +201,18 @@ Get started by creating a new [user account](http://p4.harrisondestefano.com/reg
 
 ####User Interface
 #####Projects
+Chalkbox projects are displayed after signing into the application on the “projects” user interface. 
 ![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-projects.png "Chalkbox")
-Chalkbox projects are displayed after signing into the application on the “projects” user interface. From this page please enjoy creating and modifying each of your Chalkbox projecs! The UI provides a project news feed too - running list of major project modifications.
+From this page please enjoy creating and modifying each of your Chalkbox projecs! The UI provides a project news feed too - running list of major project modifications.
 
 #####New Project
+Building a new project in Chalkbox is a breeze - all we really need is a name!
 ![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-new-project.png "Chalkbox")
-Building a new project in Chalkbox is a breeze - all we really need is a name! The “+ New Project” user interface collects all a lot of good information about a project such as name, description, states and date. Just be sure to add your project name - no worries if you make a mistake as we can make edits too.
+The “+ New Project” user interface collects all a lot of good information about a project such as name, description, states and date. Just be sure to add your project name - no worries if you make a mistake as we can make edits too.
 
-######Manage a Project
-![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-manager.png "Chalkbox")
+#####Manage a Project
 What good is project management if you can not “manage” the project? The project details user interface let’s you do just that - basic project management.
+![Chalkbox user interface - projects ](https://raw.githubusercontent.com/harrisonde/chalkbox/master/chalkbox-manager.png "Chalkbox")
 
 Time tracking is a breeze with the “+ Start Timer” and “Stop Timer” buttons. Clicking the "+ Start Timer” button kicks off a timer, do this while you work. When you done, click the “Stop Timer” button to stop tracking time.  
 

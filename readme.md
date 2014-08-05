@@ -1,10 +1,12 @@
 #Chalkbox
 ![Chalkbox image](https://raw.githubusercontent.com/harrisonde/chalkbox/master/public/images/chalkbox.png "Chalkbox")
 
+
+
 Table of Contents
  * [Description](#Description)
  * [Expectation](#Expectation)
- * [What is in this repository might I ask?](#What is in this repository might I ask?)
+ * [What is in this repository might I ask?](what-is-here)
  
  * [Features]()
  ** [Project]()
@@ -19,13 +21,13 @@ Table of Contents
  ** [Getting Started]()
  ** [User Interface]()
 
-##Description of Chalkbox (#Description)
+##Description of Chalkbox [#Description]
 Chalkbox makes tracking time really simple. Manage your projects like a web artisan - not an accountant. 
 
-##Expectation (#Expectation)
+##Expectation [#Expectation]
 Expect to experience the advanced functions needed to build a web application in the Laravel framework. 
 
-(##What is in this repository might I ask?
+##What is in this repository might I ask? [#what-is-here]
 Well, yes - you absolutely should ask. This repository holds one Laravel applicaion, Chalkbox, which includes:
 * Super clean user interface
 * Track project time
